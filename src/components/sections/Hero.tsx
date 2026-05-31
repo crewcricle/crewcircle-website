@@ -14,61 +14,6 @@ export default function Hero() {
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-foreground mb-6 leading-tight tracking-tight">
               {HERO_CONTENT.headline}
             </h1>
-
-        <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-foreground mb-6 leading-tight tracking-tight">
-          <span className="sr-only">CrewCircle — </span>Sorted.
-        </h1>
-
-        <p className="text-lg md:text-xl text-muted-foreground mb-8 max-w-2xl mx-auto leading-relaxed">
-          Tools for your crew.
-        </p>
-
-        <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Link
-              href="#apps"
-              className="px-8 py-3 bg-primary text-primary-foreground rounded-md text-lg font-bold hover:bg-primary/90 transition-colors"
-            >
-              Get it
-            </Link>
-        </div>
-
-        <div className="mt-8 text-sm text-muted-foreground">
-          Tradies. That&apos;s it.
-        </div>
-
-        <div className="mt-12 flex flex-wrap justify-center gap-3">
-            {['Tradies', 'Cafés', 'Shops', 'Healthcare'].map((industry) => (
-              <span
-                key={industry}
-                className="px-4 py-1.5 bg-muted text-muted-foreground rounded-full text-sm font-medium"
-            <p className="text-lg md:text-xl text-muted-foreground mb-10 max-w-2xl leading-relaxed">
-            <p className="text-lg md:text-xl text-muted-foreground mb-10 max-w-2xl leading-relaxed">
-              {HERO_CONTENT.subheadline}
-              {HERO_CONTENT.subheadline}
-            </p>
-            </p>
-
-
-            <div className="flex flex-col sm:flex-row gap-4">
-            <div className="flex flex-col sm:flex-row gap-4">
-              <Link
-              <Link
-                href="#contact"
-                href="#contact"
-                className="inline-flex items-center justify-center px-8 py-3.5 bg-primary text-primary-foreground rounded-lg text-base font-semibold hover:bg-primary/90 transition-all duration-200 shadow-sm"
-                className="inline-flex items-center justify-center px-8 py-3.5 bg-primary text-primary-foreground rounded-lg text-base font-semibold hover:bg-primary/90 transition-all duration-200 shadow-sm"
-              >
-                {HERO_CONTENT.cta}
-              </Link>
-              <Link
-                href="#apps"
-                className="inline-flex items-center justify-center px-8 py-3.5 border border-border bg-background text-foreground rounded-lg text-base font-medium hover:bg-muted transition-all duration-200"
-              >
-                {HERO_CONTENT.secondaryCta}
-              </Link>
-            </div>
-
-
           </div>
 
           <div className="hidden lg:flex justify-center">
