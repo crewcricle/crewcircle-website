@@ -16,7 +16,7 @@ export default function ContactForm() {
     setFormData(prev => ({ ...prev, [name]: value }));
   };
 
-    const handleSubmit = async (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setIsSubmitting(true);
     setSubmitStatus(null);
@@ -29,31 +29,26 @@ export default function ContactForm() {
   };
 
   return (
-    <div className="max-w-2xl mx-auto px-6 py-12 bg-white rounded-2xl shadow-lg border border-gray-100">
-       <h2 className="text-2xl font-bold text-gray-900 mb-6 text-center">Get in touch</h2>
-       <p className="text-gray-600 mb-8 text-center">
-         Have questions or want to learn more? We&apos;d love to hear from you.
-       </p>
-
+    <div className="max-w-2xl mx-auto">
       {submitStatus === 'success' && (
-        <div className="mb-6 p-4 bg-green-50 border border-green-200 rounded-lg">
-           <p className="text-sm text-green-800 font-medium">
-             Thanks for reaching out! We&apos;ll get back to you soon.
-           </p>
+        <div className="mb-6 p-4 bg-accent/10 border border-accent/30 rounded-lg">
+          <p className="text-sm text-accent font-medium">
+            Thanks for reaching out! We&apos;ll get back to you soon.
+          </p>
         </div>
       )}
 
       {submitStatus === 'error' && (
-        <div className="mb-6 p-4 bg-red-50 border border-red-200 rounded-lg">
-          <p className="text-sm text-red-800 font-medium">
-            Oops! Something went wrong. Please try again.
+        <div className="mb-6 p-4 bg-destructive/10 border border-destructive/30 rounded-lg">
+          <p className="text-sm text-destructive font-medium">
+            Something went wrong. Please try again.
           </p>
         </div>
       )}
 
       <form onSubmit={handleSubmit} className="space-y-6">
         <div>
-          <label htmlFor="name" className="block text-sm font-medium text-gray-700 mb-2">
+          <label htmlFor="name" className="block text-sm font-medium text-foreground mb-2">
             Your name
           </label>
           <input
@@ -62,7 +57,7 @@ export default function ContactForm() {
             name="name"
             value={formData.name}
             onChange={handleChange}
-            className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-orange-500 focus:border-orange-500 transition-all"
+            className="w-full px-4 py-3 bg-background border border-border rounded-lg focus:ring-2 focus:ring-ring focus:border-ring transition-all text-foreground placeholder:text-muted-foreground/60"
             placeholder="Enter your name"
             required
             disabled={isSubmitting}
@@ -70,7 +65,7 @@ export default function ContactForm() {
         </div>
 
         <div>
-          <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-2">
+          <label htmlFor="email" className="block text-sm font-medium text-foreground mb-2">
             Email address
           </label>
           <input
@@ -79,7 +74,7 @@ export default function ContactForm() {
             name="email"
             value={formData.email}
             onChange={handleChange}
-            className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-orange-500 focus:border-orange-500 transition-all"
+            className="w-full px-4 py-3 bg-background border border-border rounded-lg focus:ring-2 focus:ring-ring focus:border-ring transition-all text-foreground placeholder:text-muted-foreground/60"
             placeholder="you@yourbusiness.com.au"
             required
             disabled={isSubmitting}
@@ -87,17 +82,17 @@ export default function ContactForm() {
         </div>
 
         <div>
-          <label htmlFor="message" className="block text-sm font-medium text-gray-700 mb-2">
-            Message
+          <label htmlFor="message" className="block text-sm font-medium text-foreground mb-2">
+            What do you need help with?
           </label>
           <textarea
             id="message"
             name="message"
             value={formData.message}
             onChange={handleChange}
-            className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-orange-500 focus:border-orange-500 transition-all"
+            className="w-full px-4 py-3 bg-background border border-border rounded-lg focus:ring-2 focus:ring-ring focus:border-ring transition-all text-foreground placeholder:text-muted-foreground/60 resize-y"
             rows={5}
-            placeholder="How can we help you sort your business?"
+            placeholder="Tell us about your business and what you're trying to sort..."
             required
             disabled={isSubmitting}
           />
@@ -106,9 +101,9 @@ export default function ContactForm() {
         <button
           type="submit"
           disabled={isSubmitting || !formData.name || !formData.email || !formData.message}
-          className="w-full px-6 py-3 bg-orange-500 text-white font-bold rounded-lg hover:bg-orange-600 transition-all disabled:opacity-50 disabled:cursor-not-allowed"
+          className="w-full px-6 py-3.5 bg-primary text-primary-foreground font-semibold rounded-lg hover:bg-primary/90 transition-all duration-200 disabled:opacity-50 disabled:cursor-not-allowed"
         >
-          {isSubmitting ? 'Sending...' : 'Send Message'}
+          {isSubmitting ? 'Sending...' : 'Send message'}
         </button>
       </form>
     </div>
