@@ -1,22 +1,15 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import { GeistSans } from "geist/font/sans";
 import "./globals.css";
 import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
-  subsets: ["latin"],
-});
-
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
-});
+const geistSans = GeistSans;
 
 export const metadata: Metadata = {
-  title: "CrewCircle: Software that sorts your small biz",
-  description: "Software that sorts your small biz, no dramas. Tools for Aussie cafés, tradies, shops & healthcare teams.",
+  title: "CrewCircle | AI Consultancy by Prabhat Ranjan",
+  description:
+      "AI solutions that sort your small biz, no dramas. Practical AI tools and strategy for Australian businesses, by Prabhat Ranjan (ex-Canvas, JPMorgan, MSCI, BNP Paribas).",
 };
 
 export default function RootLayout({
@@ -25,7 +18,10 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}>
+    <html
+      lang="en"
+      className={`${geistSans.variable} h-full antialiased`}
+    >
       <body className="min-h-full flex flex-col">
         <a
           href="#main-content"

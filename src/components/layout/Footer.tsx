@@ -1,56 +1,87 @@
 import Link from 'next/link';
+import Image from 'next/image';
 import { FOOTER_LINKS } from '@/lib/constants';
 
 export default function Footer() {
   return (
-    <footer className="bg-gray-900 text-gray-300 py-16 px-6">
-      <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-12">
-        <div>
-          <h4 className="text-white font-semibold mb-4">Apps</h4>
-          <ul className="space-y-2">
-            {FOOTER_LINKS.apps.map((link) => (
-              <li key={link.label}>
-                <Link
-                  href={link.href}
-                  className="text-sm hover:text-orange-400 transition-colors"
-                >
-                  {link.label}
-                </Link>
-              </li>
-            ))}
-          </ul>
+    <footer className="bg-primary text-primary-foreground/80">
+      <div className="max-w-7xl mx-auto px-6 py-16">
+        <div className="grid grid-cols-1 md:grid-cols-5 gap-12">
+          <div className="md:col-span-2">
+            <Image
+              src="/crewcircle-logo.svg"
+              alt="CrewCircle"
+              width={160}
+              height={40}
+              className="w-auto h-8 brightness-0 invert mb-4"
+            />
+            <p className="text-sm text-primary-foreground/60 max-w-xs leading-relaxed">
+              Practical AI that sorts your small biz, no dramas. Built for Aussie
+              businesses by Aussie builders.
+            </p>
+          </div>
+
+          <div>
+            <h4 className="text-primary-foreground font-semibold mb-4 text-sm uppercase tracking-wider">
+              Services
+            </h4>
+            <ul className="space-y-2.5">
+              {FOOTER_LINKS.services.map((link) => (
+                <li key={link.label}>
+                  <Link
+                    href={link.href}
+                    className="text-sm text-primary-foreground/60 hover:text-primary-foreground transition-colors duration-200"
+                  >
+                    {link.label}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          <div>
+            <h4 className="text-primary-foreground font-semibold mb-4 text-sm uppercase tracking-wider">
+              Our Apps
+            </h4>
+            <ul className="space-y-2.5">
+              {FOOTER_LINKS.apps.map((link) => (
+                <li key={link.label}>
+                  <Link
+                    href={link.href}
+                    className="text-sm text-primary-foreground/60 hover:text-primary-foreground transition-colors duration-200"
+                  >
+                    {link.label}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          <div>
+            <h4 className="text-primary-foreground font-semibold mb-4 text-sm uppercase tracking-wider">
+              Legal
+            </h4>
+            <ul className="space-y-2.5">
+              {FOOTER_LINKS.legal.map((link) => (
+                <li key={link.label}>
+                  <Link
+                    href={link.href}
+                    className="text-sm text-primary-foreground/60 hover:text-primary-foreground transition-colors duration-200"
+                  >
+                    {link.label}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </div>
         </div>
 
-        <div>
-          <h4 className="text-white font-semibold mb-4">Legal</h4>
-          <ul className="space-y-2">
-            {FOOTER_LINKS.legal.map((link) => (
-              <li key={link.label}>
-                <Link
-                  href={link.href}
-                  className="text-sm hover:text-orange-400 transition-colors"
-                >
-                  {link.label}
-                </Link>
-              </li>
-            ))}
-          </ul>
+        <div className="mt-16 pt-8 border-t border-primary-foreground/10 text-center text-sm text-primary-foreground/40">
+          <p>
+            &copy; {new Date().getFullYear()} CrewCircle. All rights reserved. AI
+            that sorts your small biz, no dramas.
+          </p>
         </div>
-
-        <div>
-          <h4 className="text-white font-semibold mb-4">Ready to sort your business?</h4>
-          <p className="text-sm mb-4">Software that sorts your small biz, no dramas.</p>
-            <Link
-              href="/demo"
-              className="inline-block px-5 py-2 bg-orange-500 text-white rounded-md text-sm font-bold hover:bg-orange-600 transition-colors"
-            >
-            Try Crew Roster Demo
-          </Link>
-        </div>
-      </div>
-
-      <div className="max-w-7xl mx-auto mt-12 pt-8 border-t border-gray-800 text-center text-sm">
-        <p>&copy; {new Date().getFullYear()} CrewCircle. All rights reserved. Software that sorts your small biz, no dramas.</p>
       </div>
     </footer>
   );
