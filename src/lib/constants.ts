@@ -38,7 +38,7 @@ export const APPS: AppDef[] = [
     theme: 'blue',
     ctaType: 'visit',
     links: {
-      web: 'https://smartgl.crewcircle.co',
+      web: 'https://smart-hf50tubpw-sensibleanalytic-4114s-projects.vercel.app',
     },
     description: 'AI-powered bookkeeping that categorises wages, supplier bills, and expenses automatically. Generates GST/BAS reports ready for your accountant. No cloud dependence, your data stays private.',
   },
@@ -74,16 +74,16 @@ export const APPS: AppDef[] = [
 
 export const FOUNDER = {
   name: 'Prabhat Ranjan',
-  title: 'Founder & Developer',
+  title: 'Founding Engineer',
   location: 'Sydney, Australia',
   education: 'IIT-BHU (Indian Institute of Technology)',
   shortBio:
-    "Building practical AI tools that work offline and keep your data private. Previously built data infrastructure at Canvas, JPMorgan, MSCI, and BNP Paribas here in Sydney. Now I'm building software that helps Aussie small businesses run smoother. No enterprise bullshit, no sales pitch, just stuff that works.",
+    "Building practical AI tools that work offline and keep your data private. Previously built data infrastructure at Canva, JPMorgan, MSCI, and BNP Paribas here in Sydney. Now I'm building software that helps Aussie small businesses run smoother. No enterprise bullshit, no sales pitch, just stuff that works.",
   currentFocus:
     'Building SensibleDB, an embedded graph-vector database that lets you build AI without sending your data to the cloud.',
   experience: [
-    { company: 'Canvas', role: 'Senior Software Engineer' },
-    { company: 'JPMorgan', role: 'Software Engineer' },
+    { company: 'Canva', role: 'Engineering Lead' },
+    { company: 'JPMorgan', role: 'Engineering Lead' },
     { company: 'MSCI', role: 'Software Engineer' },
     { company: 'BNP Paribas', role: 'Software Engineer' },
   ],
@@ -186,7 +186,7 @@ export const FOOTER_LINKS = {
   ],
   apps: [
     { label: 'Crew Roster', href: 'https://roster.crewcircle.co' },
-    { label: 'Smart GL', href: 'https://smartgl.crewcircle.co' },
+    { label: 'Smart GL', href: 'https://smart-hf50tubpw-sensibleanalytic-4114s-projects.vercel.app' },
     { label: 'Card Snap', href: '/cardsnap' },
     { label: 'XeroAssist', href: 'https://xero-assist.crewcircle.co' },
   ],

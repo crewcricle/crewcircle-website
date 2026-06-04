@@ -9,7 +9,7 @@ const geistSans = GeistSans;
 export const metadata: Metadata = {
   title: "CrewCircle | AI Consultancy by Prabhat Ranjan",
   description:
-      "AI solutions that sort your small biz, no dramas. Practical AI tools and strategy for Australian businesses, by Prabhat Ranjan (ex-Canvas, JPMorgan, MSCI, BNP Paribas).",
+      "AI solutions that sort your small biz, no dramas. Practical AI tools and strategy for Australian businesses, by Prabhat Ranjan (Canva, JPMorgan, MSCI, BNP Paribas).",
 };
 
 export default function RootLayout({
