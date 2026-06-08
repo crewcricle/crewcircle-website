@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width="200" height="200">
+  <!-- CrewCircle Logo: Circle + Sorting/Organization theme -->
+  <!-- Primary orange: #ff6b35 -->
+  
+  <!-- Outer circle (the "Circle" in CrewCircle) -->
+  <circle cx="100" cy="100" r="90" fill="none" stroke="#ff6b35" stroke-width="8"/>
+  
+  <!-- Inner dynamic elements representing "crew" and "sorting" -->
+  <!-- Three stylized people/icons in a circle arrangement -->
+  
+  <!-- Person 1 (top) -->
+  <circle cx="100" cy="60" r="18" fill="#ff6b35"/>
+  <rect x="88" y="78" width="24" height="20" rx="4" fill="#ff6b35"/>
+  
+  <!-- Person 2 (bottom-left) -->
+  <circle cx="65" cy="120" r="18" fill="#ff6b35" opacity="0.8"/>
+  <rect x="53" y="138" width="24" height="20" rx="4" fill="#ff6b35" opacity="0.8"/>
+  
+  <!-- Person 3 (bottom-right) -->
+  <circle cx="135" cy="120" r="18" fill="#ff6b35" opacity="0.6"/>
+  <rect x="123" y="138" width="24" height="20" rx="4" fill="#ff6b35" opacity="0.6"/>
+  
+  <!-- Central "sorted" indicator - checkmark -->
+  <path d="M 90 100 L 95 105 L 115 85" fill="none" stroke="#ffffff" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>
