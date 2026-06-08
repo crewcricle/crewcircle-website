@@ -32,7 +32,6 @@ export default function ContactForm() {
           _captcha: 'false',
         }),
       });
-
       if (!response.ok) throw new Error('Submission failed');
 
       setSubmitStatus('success');
