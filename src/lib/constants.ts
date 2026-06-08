@@ -112,7 +112,7 @@ export const FOUNDER = {
     website: 'https://sensibleanalytics.co',
     substack: 'https://prabhatranjan.substack.com',
   },
-  calendly: 'https://calendly.com/prabhat-ranjan/30min',
+  calendly: 'https://calendly.com/crewcircle-zohomail/30min',
 };
 
 export const IMPACT_STORIES = [

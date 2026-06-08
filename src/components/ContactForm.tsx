@@ -21,26 +21,17 @@ export default function ContactForm() {
     setIsSubmitting(true);
     setSubmitStatus(null);
 
-    const accessKey = process.env.NEXT_PUBLIC_WEB3FORMS_ACCESS_KEY;
-    if (!accessKey) {
-      setSubmitStatus('error');
-      setIsSubmitting(false);
-      return;
-    }
-
     try {
-      const response = await fetch('https://api.web3forms.com/submit', {
+      const response = await fetch('https://formsubmit.co/ajax/crewcircle@zohomail.com.au', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
-          access_key: accessKey,
           name: formData.name,
           email: formData.email,
           message: formData.message,
-          subject: 'New enquiry from crewcircle.co website',
+          _captcha: 'false',
         }),
       });
-
       if (!response.ok) throw new Error('Submission failed');
 
       setSubmitStatus('success');
