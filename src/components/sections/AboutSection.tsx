@@ -1,4 +1,4 @@
-import { FOUNDER } from '@/lib/constants';
+import { FOUNDER, CREWCIRCLE_SOCIAL } from '@/lib/constants';
 import { Award, Code, ExternalLink, GraduationCap, MapPin, User } from 'lucide-react';
 
 export default function AboutSection() {
@@ -146,7 +146,7 @@ export default function AboutSection() {
               </p>
               <div className="space-y-2.5">
                 <a
-                  href={FOUNDER.social.linkedin}
+                  href={CREWCIRCLE_SOCIAL.linkedin}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="flex items-center justify-between w-full px-4 py-2.5 rounded-lg bg-background border border-border hover:border-accent/40 transition-colors text-sm font-medium text-foreground group"
@@ -155,7 +155,16 @@ export default function AboutSection() {
                   <ExternalLink className="w-3.5 h-3.5 text-muted-foreground group-hover:text-accent transition-colors" />
                 </a>
                 <a
-                  href={FOUNDER.social.github}
+                  href={CREWCIRCLE_SOCIAL.twitter}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center justify-between w-full px-4 py-2.5 rounded-lg bg-background border border-border hover:border-accent/40 transition-colors text-sm font-medium text-foreground group"
+                >
+                  <span>X (Twitter)</span>
+                  <ExternalLink className="w-3.5 h-3.5 text-muted-foreground group-hover:text-accent transition-colors" />
+                </a>
+                <a
+                  href={CREWCIRCLE_SOCIAL.github}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="flex items-center justify-between w-full px-4 py-2.5 rounded-lg bg-background border border-border hover:border-accent/40 transition-colors text-sm font-medium text-foreground group"
@@ -164,21 +173,12 @@ export default function AboutSection() {
                   <ExternalLink className="w-3.5 h-3.5 text-muted-foreground group-hover:text-accent transition-colors" />
                 </a>
                 <a
-                  href={FOUNDER.social.substack}
+                  href={CREWCIRCLE_SOCIAL.youtube}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="flex items-center justify-between w-full px-4 py-2.5 rounded-lg bg-background border border-border hover:border-accent/40 transition-colors text-sm font-medium text-foreground group"
                 >
-                  <span>Substack</span>
-                  <ExternalLink className="w-3.5 h-3.5 text-muted-foreground group-hover:text-accent transition-colors" />
-                </a>
-                <a
-                  href={FOUNDER.social.website}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="flex items-center justify-between w-full px-4 py-2.5 rounded-lg bg-background border border-border hover:border-accent/40 transition-colors text-sm font-medium text-foreground group"
-                >
-                  <span>sensibleanalytics.co</span>
+                  <span>YouTube</span>
                   <ExternalLink className="w-3.5 h-3.5 text-muted-foreground group-hover:text-accent transition-colors" />
                 </a>
               </div>
