@@ -72,6 +72,13 @@ export const APPS: AppDef[] = [
   },
 ];
 
+export const CREWCIRCLE_SOCIAL = {
+  linkedin: 'https://www.linkedin.com/company/crewcircle',
+  twitter: 'https://x.com/crewcircle',
+  github: 'https://github.com/crewcircle',
+  youtube: 'https://youtube.com/@crewcircle',
+};
+
 export const FOUNDER = {
   name: 'Prabhat Ranjan',
   title: 'Founding Engineer',
