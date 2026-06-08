@@ -14,6 +14,23 @@ export default function Hero() {
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-foreground mb-6 leading-tight tracking-tight">
               {HERO_CONTENT.headline}
             </h1>
+            <p className="text-lg md:text-xl text-muted-foreground leading-relaxed mb-8">
+              {HERO_CONTENT.subheadline}
+            </p>
+            <div className="flex flex-col sm:flex-row gap-4">
+              <Link
+                href="/#contact"
+                className="inline-flex items-center justify-center px-6 py-3.5 bg-accent text-accent-foreground font-semibold rounded-lg hover:bg-accent/90 transition-all duration-200 text-base"
+              >
+                {HERO_CONTENT.cta}
+              </Link>
+              <Link
+                href="/#apps"
+                className="inline-flex items-center justify-center px-6 py-3.5 border border-border text-foreground font-semibold rounded-lg hover:bg-muted transition-all duration-200 text-base"
+              >
+                {HERO_CONTENT.secondaryCta}
+              </Link>
+            </div>
           </div>
 
           <div className="hidden lg:flex justify-center">

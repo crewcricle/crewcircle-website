@@ -136,6 +136,26 @@ export const IMPACT_STORIES = [
       { value: '0', label: 'Downtime incidents' },
     ],
   },
+  {
+    title: 'Tradie Crew Roster',
+    description:
+      'Replaced paper timesheets with GPS-tracked digital clock-ins for a 30-person construction crew. No more lost hours, no more payroll guesswork.',
+    metrics: [
+      { value: '12', label: 'Hours saved per week' },
+      { value: '100%', label: 'Payroll accuracy' },
+      { value: '4.8★', label: 'Crew satisfaction' },
+    ],
+  },
+  {
+    title: 'Local Cafe Chain',
+    description:
+      'Built a custom AI-powered inventory tracker for a 5-store cafe group. Cut food waste by flagging expiry patterns and automating supplier orders.',
+    metrics: [
+      { value: '22%', label: 'Food waste reduction' },
+      { value: '3', label: 'Hours saved daily' },
+      { value: '$18K', label: 'Annual savings' },
+    ],
+  },
 ];
 
 export const SERVICES = [
