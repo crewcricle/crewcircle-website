@@ -1,7 +1,7 @@
 import { IMPACT_STORIES } from '@/lib/constants';
-import { TrendingUp, ShieldCheck } from 'lucide-react';
+import { TrendingUp, ShieldCheck, Clock, UtensilsCrossed } from 'lucide-react';
 
-const STORY_ICONS = [TrendingUp, ShieldCheck] as const;
+const STORY_ICONS = [TrendingUp, ShieldCheck, Clock, UtensilsCrossed] as const;
 
 export default function ImpactSection() {
   return (
@@ -12,14 +12,14 @@ export default function ImpactSection() {
             Results that speak
           </h2>
           <p className="text-lg text-muted-foreground leading-relaxed">
-            Real impact from real engineering, across healthcare and financial
-            services.
+            From enterprise to your local crew — real impact from real
+            engineering.
           </p>
         </div>
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
           {IMPACT_STORIES.map((story, idx) => {
-            const Icon = STORY_ICONS[idx];
+            const Icon = STORY_ICONS[idx % STORY_ICONS.length];
             return (
               <div
                 key={story.title}

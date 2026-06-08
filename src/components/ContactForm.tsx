@@ -21,11 +21,35 @@ export default function ContactForm() {
     setIsSubmitting(true);
     setSubmitStatus(null);
 
-    await new Promise(resolve => setTimeout(resolve, 1500));
+    const accessKey = process.env.NEXT_PUBLIC_WEB3FORMS_ACCESS_KEY;
+    if (!accessKey) {
+      setSubmitStatus('error');
+      setIsSubmitting(false);
+      return;
+    }
 
-    setSubmitStatus('success');
-    setIsSubmitting(false);
-    setFormData({ name: '', email: '', message: '' });
+    try {
+      const response = await fetch('https://api.web3forms.com/submit', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          access_key: accessKey,
+          name: formData.name,
+          email: formData.email,
+          message: formData.message,
+          subject: 'New enquiry from crewcircle.co website',
+        }),
+      });
+
+      if (!response.ok) throw new Error('Submission failed');
+
+      setSubmitStatus('success');
+      setFormData({ name: '', email: '', message: '' });
+    } catch {
+      setSubmitStatus('error');
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (
