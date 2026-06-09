@@ -1,0 +1,12 @@
+apiVersion: backstage.io/v1alpha1
+kind: Component
+metadata:
+  name: backstage-portal-setup
+  description: Crewcircle Internal Developer Portal — powered by Backstage
+  annotations:
+    github.com/project-slug: Sensible-Analytics/backstage-portal-setup
+    backstage.io/techdocs-ref: dir:.
+spec:
+  type: website
+  owner: crewcircle-engineering
+  lifecycle: experimental
