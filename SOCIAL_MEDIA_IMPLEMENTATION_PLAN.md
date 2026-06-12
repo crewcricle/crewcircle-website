@@ -66,7 +66,7 @@ Before creating any accounts, prepare:
   - Favicon-social variant (for link previews) → `public/social/social-preview-1200x630.png`
 
 **Account Credentials:**
-- [ ] Create a password manager entry (1Password/Bitwarden) for `mybyconsultancy-social`
+- [ ] Create a password manager entry (1Password/Bitwarden) for `crewcircle-social`
 - [ ] Generate unique passwords per platform (min 20 chars, alphanumeric + symbols)
 - [ ] Use a dedicated social media email alias: `social@crewcircle.com` (or forward from Gmail)
 - [ ] Document recovery phone/email for each platform
@@ -100,41 +100,41 @@ Week 1          Week 2          Week 3          Week 4
 
 ```
 Steps:
-□ Create GitHub account with social@mybyconsultancy.com
-□ Username: mybyconsultancy
+□ Create GitHub account with social@crewcircle.com
+□ Username: crewcircle
 □ Profile:
-  - Name: "mybyconsultancy"
+  - Name: "crewcircle"
   - Bio: "Practical AI that sorts your small biz, no dramas. Built for Aussie businesses."
-  - URL: https://mybyconsultancy.com
-  - Company: @mybyconsultancy
+  - URL: https://crewcircle.com
+  - Company: @crewcircle
   - Location: Sydney, Australia
 □ Profile picture: 400×400px logo
 □ Enable 2FA (hardware key or TOTP)
-□ Create organization (mybyconsultancy) for team repos
+□ Create organization (crewcircle) for team repos
 □ Pin repositories:
   1. crewcircle-website (this repo)
   2. xero-assist (Chrome extension)
   3. sensible-db (if public)
-□ Create README profile: github.com/mybyconsultancy/mybyconsultancy
+□ Create README profile: github.com/crewcircle/crewcircle
 □ Add topics to each repo (ai, australia, small-business)
 □ Configure Dependabot alerts
 ```
 
-#### X / Twitter (`x.com/mybyconsultancy`)
+#### X / Twitter (`x.com/crewcircle`)
 
 **Timeline:** Day 1 (instant, but handle must be available)
 
 ```
 Steps:
-□ Create account with social@mybyconsultancy.com
-□ Display name: "mybyconsultancy | CrewCircle"
-□ @username: mybyconsultancy
+□ Create account with social@crewcircle.com
+□ Display name: "crewcircle | CrewCircle"
+□ @username: crewcircle
 □ Bio (max 160 chars):
   "Practical AI that sorts your small biz. 🤖⚡
   Aussie-built tools for tradies, cafes & SMBs.
   ↓ Crew Roster, Smart GL, Card Snap & more"
 □ Location: Sydney, Australia
-□ Website: https://mybyconsultancy.com
+□ Website: https://crewcircle.com
 □ Profile picture: 400×400px logo
 □ Header image: 1500×500px banner
 □ Enable 2FA
@@ -144,7 +144,7 @@ Steps:
 □ Set content preferences: Show replies, media
 ```
 
-#### LinkedIn (`linkedin.com/company/my-by-consultancy`)
+#### LinkedIn (`linkedin.com/company/crew-circle`)
 
 **Timeline:** 1-3 weeks for verification — START IMMEDIATELY
 
@@ -153,10 +153,10 @@ Steps:
 □ Go to LinkedIn Create a Company Page
   → https://www.linkedin.com/company/setup/
 □ Choose: Company > "Small business" or "Other"
-□ Company name: "mybyconsultancy"
-□ LinkedIn vanity URL: /company/my-by-consultancy
+□ Company name: "crewcircle"
+□ LinkedIn vanity URL: /company/crew-circle
   (must be 3-100 characters, letters/numbers/hyphens only)
-  NOTE: "mybyconsultancy" (no hyphens) may be taken — use "my-by-consultancy"
+  NOTE: "crewcircle" (no hyphens) may be taken — use "crew-circle"
 
 □ Page details:
   - Tagline: "Practical AI that sorts your small biz"
@@ -186,30 +186,30 @@ Steps:
 □ Cover story: Short video or image (30 sec max)
 
 □ Verification:
-  - Verify domain: Add DNS TXT record or HTML file to mybyconsultancy.com
+  - Verify domain: Add DNS TXT record or HTML file to crewcircle.com
     TXT record: `linkedin-domain-verification=<verification-code>`
   OR
   - Upload business registration document
   - Provide business email (not free provider)
   - Wait for LinkedIn review (1-3 weeks)
 
-□ Add CTA button: "Visit Website" → https://mybyconsultancy.com
+□ Add CTA button: "Visit Website" → https://crewcircle.com
 □ Add featured posts (once content exists)
 □ Create Showcase Pages (future):
   - CrewCircle Roster
   - Smart GL
 ```
 
-#### YouTube (`youtube.com/@mybyconsultancy`)
+#### YouTube (`youtube.com/@crewcircle`)
 
 **Timeline:** Day 14 (after content is ready)
 
 ```
 Steps:
-□ Use Google account tied to mybyconsultancy (Gmail/Workspace)
-□ Channel name: "mybyconsultancy"
-□ Handle: @mybyconsultancy
-□ Channel URL: https://youtube.com/@mybyconsultancy
+□ Use Google account tied to crewcircle (Gmail/Workspace)
+□ Channel name: "crewcircle"
+□ Handle: @crewcircle
+□ Channel URL: https://youtube.com/@crewcircle
 
 □ Channel description:
   "Practical AI that sorts your small biz. 
@@ -296,17 +296,17 @@ Practical AI that sorts your small biz. Aussie-built tools. Crew Roster, Smart G
 Each platform should link to the others where possible:
 
 ```
-Website (mybyconsultancy.com)
+Website (crewcircle.com)
   ├── Footer: LinkedIn, X/Twitter, GitHub, YouTube icons
   ├── About Section: Social links panel (already implemented)
   └── Blog posts: Social share buttons (future)
 
 LinkedIn Company Page
-  ├── Website: https://mybyconsultancy.com
+  ├── Website: https://crewcircle.com
   └── Featured: Link to YouTube channel, GitHub
 
 X/Twitter Profile
-  ├── Website: https://mybyconsultancy.com
+  ├── Website: https://crewcircle.com
   └── Can add: LinkedIn company URL in bio
 
 YouTube Channel
@@ -314,17 +314,17 @@ YouTube Channel
   └── Featured channel: None (until relevant partners)
 
 GitHub Organization
-  ├── Website: https://mybyconsultancy.com
+  ├── Website: https://crewcircle.com
   └── README.md: Badge links to LinkedIn, Twitter
 ```
 
 ### 4.2 Website Footer (Already Implemented)
 
 The footer in `src/components/layout/Footer.tsx` currently links to:
-- LinkedIn: `https://www.linkedin.com/company/my-by-consultancy`
-- X/Twitter: `https://x.com/mybyconsultancy`
-- GitHub: `https://github.com/mybyconsultancy`
-- YouTube: `https://youtube.com/@mybyconsultancy`
+- LinkedIn: `https://www.linkedin.com/company/crew-circle`
+- X/Twitter: `https://x.com/crewcircle`
+- GitHub: `https://github.com/crewcircle`
+- YouTube: `https://youtube.com/@crewcircle`
 
 **Constants file:** `src/lib/constants.ts` → `CREWCIRCLE_SOCIAL` object (lines 75-80)
 
@@ -332,16 +332,16 @@ The footer in `src/components/layout/Footer.tsx` currently links to:
 
 ### 4.3 URL Uniformity
 
-All platforms use the `mybyconsultancy` handle. Document expected URLs:
+All platforms use the `crewcircle` handle. Document expected URLs:
 
 | Platform | Expected URL | Status |
 |----------|-------------|--------|
-| LinkedIn Company | `https://linkedin.com/company/my-by-consultancy` | ✅ configured (note: hyphen due to LinkedIn URL rules) |
-| X/Twitter | `https://x.com/mybyconsultancy` | ✅ configured |
-| GitHub | `https://github.com/mybyconsultancy` | ✅ configured |
-| YouTube | `https://youtube.com/@mybyconsultancy` | ✅ configured |
-| Instagram | `https://instagram.com/mybyconsultancy` | 🔲 future |
-| Website | `https://mybyconsultancy.com` | ✅ live |
+| LinkedIn Company | `https://linkedin.com/company/crew-circle` | ✅ configured (note: hyphen due to LinkedIn URL rules) |
+| X/Twitter | `https://x.com/crewcircle` | ✅ configured |
+| GitHub | `https://github.com/crewcircle` | ✅ configured |
+| YouTube | `https://youtube.com/@crewcircle` | ✅ configured |
+| Instagram | `https://instagram.com/crewcircle` | 🔲 future |
+| Website | `https://crewcircle.com` | ✅ live |
 
 ### 4.4 Email Signature
 
@@ -350,12 +350,12 @@ Add to email signature (HTML):
 ```html
 <div style="font-family: sans-serif; font-size: 12px; color: #666;">
   <p><strong>Prabhat Ranjan</strong> · Founding Engineer</p>
-  <p>mybyconsultancy · Practical AI for Aussie small biz</p>
+  <p>crewcircle · Practical AI for Aussie small biz</p>
   <p>
-    <a href="https://mybyconsultancy.com" style="color: #ff6b35;">Website</a> ·
-    <a href="https://linkedin.com/company/my-by-consultancy" style="color: #ff6b35;">LinkedIn</a> ·
-    <a href="https://x.com/mybyconsultancy" style="color: #ff6b35;">X</a> ·
-    <a href="https://github.com/mybyconsultancy" style="color: #ff6b35;">GitHub</a>
+    <a href="https://crewcircle.com" style="color: #ff6b35;">Website</a> ·
+    <a href="https://linkedin.com/company/crew-circle" style="color: #ff6b35;">LinkedIn</a> ·
+    <a href="https://x.com/crewcircle" style="color: #ff6b35;">X</a> ·
+    <a href="https://github.com/crewcircle" style="color: #ff6b35;">GitHub</a>
   </p>
 </div>
 ```
@@ -379,10 +379,10 @@ Add to email signature (HTML):
 #### Day 1 — GitHub
 
 ```
-Repository: mybyconsultancy/mybyconsultancy (profile README)
+Repository: crewcircle/crewcircle (profile README)
 
 Content:
-## mybyconsultancy
+## crewcircle
 
 Practical AI that sorts your small biz, no dramas. 🛠️
 
@@ -392,19 +392,19 @@ We build tools for Australian small businesses:
 - **Card Snap** — Business card OCR (on-device)
 - **XeroAssist** — Chrome extension for Xero power users
 
-Built by [Prabhat Ranjan](https://mybyconsultancy.com), ex-Canva, JPMorgan.
+Built by [Prabhat Ranjan](https://crewcircle.com), ex-Canva, JPMorgan.
 Based in Sydney, Australia.
 
-📍 https://mybyconsultancy.com
-🐦 https://x.com/mybyconsultancy
-💼 https://linkedin.com/company/my-by-consultancy
-▶️ https://youtube.com/@mybyconsultancy
+📍 https://crewcircle.com
+🐦 https://x.com/crewcircle
+💼 https://linkedin.com/company/crew-circle
+▶️ https://youtube.com/@crewcircle
 ```
 
 #### Day 1 — X / Twitter (Pinned Tweet)
 
 ```
-Welcome to mybyconsultancy. 🤖⚡
+Welcome to crewcircle. 🤖⚡
 
 We build practical software that sorts out the boring stuff for Aussie small businesses.
 
@@ -416,18 +416,18 @@ We build practical software that sorts out the boring stuff for Aussie small bus
 Built in Sydney. No enterprise nonsense.
 ↓
 
-https://mybyconsultancy.com
+https://crewcircle.com
 ```
 
 #### Day 1 — LinkedIn Welcome Post
 
 ```
-🚀 We're live: mybyconsultancy
+🚀 We're live: crewcircle
 
 After 15+ years building software at Canva, JPMorgan, and MSCI, I'm 
 launching something closer to home.
 
-mybyconsultancy builds practical AI tools for Australian small businesses. 
+crewcircle builds practical AI tools for Australian small businesses. 
 No hype. No jargon. Just software that actually sorts your day-to-day.
 
 Our tools so far:
@@ -438,7 +438,7 @@ Our tools so far:
 
 Built here in Sydney, for Aussie businesses.
 
-Check us out → https://mybyconsultancy.com
+Check us out → https://crewcircle.com
 
 #AIAustralia #SmallBusiness #SydneyTech #CrewCircle
 ```
@@ -451,7 +451,7 @@ Script:
 
 [Prabhat, voiceover]
 "Most software for small businesses is either too complicated 
-or too simple. At mybyconsultancy, we build tools that hit 
+or too simple. At crewcircle, we build tools that hit 
 the sweet spot.
 
 Crew Roster replaces paper timesheets with GPS-tracked 
@@ -461,7 +461,7 @@ Card Snap saves business cards without the clutter.
 No enterprise sales pitch. No fake AI hype. 
 Just practical tools for Aussie small businesses.
 
-Check us out at mybyconsultancy.com"
+Check us out at crewcircle.com"
 
 [End card: Logo + Website URL + Subscribe button]
 ```
@@ -537,12 +537,12 @@ Check us out at mybyconsultancy.com"
 Test all URLs before any public announcement:
 
 ```
-□ https://mybyconsultancy.com → loads, shows correct site
-□ https://linkedin.com/company/my-by-consultancy → resolves
-□ https://x.com/mybyconsultancy → resolves
-□ https://github.com/mybyconsultancy → resolves
-□ https://youtube.com/@mybyconsultancy → resolves
-□ https://instagram.com/mybyconsultancy → (if created) resolves
+□ https://crewcircle.com → loads, shows correct site
+□ https://linkedin.com/company/crew-circle → resolves
+□ https://x.com/crewcircle → resolves
+□ https://github.com/crewcircle → resolves
+□ https://youtube.com/@crewcircle → resolves
+□ https://instagram.com/crewcircle → (if created) resolves
 
 □ Footer LinkedIn icon → opens LinkedIn in new tab
 □ Footer X icon → opens X in new tab
@@ -563,10 +563,10 @@ Run after all accounts are created:
 
 ```
 Check each platform for:
-□ Display name matches "mybyconsultancy" (or "mybyconsultancy | CrewCircle")
+□ Display name matches "crewcircle" (or "crewcircle | CrewCircle")
 □ Profile picture is same high-res logo (400×400px)
 □ Bio/description consistent tone and key messages
-□ Website URL is https://mybyconsultancy.com
+□ Website URL is https://crewcircle.com
 □ Location is Sydney, Australia (or Sydney, NSW)
 □ Industry is Computer Software / Technology
 
@@ -580,7 +580,7 @@ Content check:
 Cross-platform:
 □ Brand colors match across banners/images
 □ Logo orientation is consistent (not flipped/rotated on one platform)
-□ Handle @mybyconsultancy is the same everywhere (where available)
+□ Handle @crewcircle is the same everywhere (where available)
 ```
 
 ### 7.3 Functional Testing
@@ -622,7 +622,7 @@ describe('Social media links', () => {
   it.each(links)('$name URL is valid', ({ url }) => {
     expect(url).toMatch(/^https:\/\//);
     expect(url).not.toContain('crewcircle'); // must not point to old brand
-    expect(url).toContain('mybyconsultancy');
+    expect(url).toContain('crewcircle');
   });
 
   it('all links use noopener noreferrer', () => {
@@ -712,7 +712,7 @@ Data sources to connect:
 □ Twitter API → via Supermetrics or manual CSV
 □ YouTube Analytics API → native connector
 □ GitHub API → via Supermetrics or manual CSV
-□ Google Analytics 4 → mybyconsultancy.com traffic
+□ Google Analytics 4 → crewcircle.com traffic
 
 Dashboard pages:
 1. Overview — Follower totals, weekly growth, top content
@@ -723,7 +723,7 @@ Dashboard pages:
 
 **Option B: Simple Spreadsheet (No-Code)**
 ```
-File: Google Sheets → "mybyconsultancy Social Media Dashboard"
+File: Google Sheets → "crewcircle Social Media Dashboard"
 
 Tabs:
 1. Weekly Tracker
@@ -815,12 +815,12 @@ Day 1:
 □ Create brand assets (profile pictures, banners for all platforms)
 □ Prepare business verification documents
 □ Set up password manager entry
-□ Claim social@mybyconsultancy.com email alias
-□ Register GitHub organization: github.com/mybyconsultancy
+□ Claim social@crewcircle.com email alias
+□ Register GitHub organization: github.com/crewcircle
 □ Create GitHub profile README
 
 Day 2:
-□ Create X/Twitter account: @mybyconsultancy
+□ Create X/Twitter account: @crewcircle
 □ Full profile setup (bio, avatar, banner, pinned tweet)
 □ Enable 2FA on both accounts
 ```
@@ -829,7 +829,7 @@ Day 2:
 
 ```
 Day 3-4:
-□ Create LinkedIn company page: /company/my-by-consultancy
+□ Create LinkedIn company page: /company/crew-circle
 □ Submit domain verification (TXT record)
 □ Full page setup while waiting for verification
 □ Begin applying to LinkedIn for Services Page (future)
@@ -974,7 +974,7 @@ Long-form content (YouTube tutorial / LinkedIn article)
   ├──→ 3-5 X/Twitter threads (key takeaways)
   ├──→ 2-3 LinkedIn posts (teasers with link to full content)
   ├──→ 1 GitHub gist (code snippets from tutorial)
-  └──→ Blog post on mybyconsultancy.com (if applicable)
+  └──→ Blog post on crewcircle.com (if applicable)
 
 Example:
 "YouTube: How to set up Crew Roster GPS clock-in"
