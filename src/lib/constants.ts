@@ -25,7 +25,7 @@ export const APPS: AppDef[] = [
     theme: 'orange',
     ctaType: 'visit',
     links: {
-      web: 'https://roster.crewcircle.co',
+      web: 'https://roster.crewcircle.com',
     },
     description: 'Replace paper timesheets with digital clock-ins. GPS-tracked shifts, award compliance rules baked in, and automated payroll export. Your crew signs in from the job site, you get the hours sorted automatically at the end of the week.',
   },
@@ -73,9 +73,9 @@ export const APPS: AppDef[] = [
 ];
 
 export const CREWCIRCLE_SOCIAL = {
-  linkedin: 'https://www.linkedin.com/company/crewcircle',
-  twitter: 'https://x.com/crewcircle',
-  github: 'https://github.com/crewcircle',
+  linkedin: 'https://www.linkedin.com/company/crew-circle',
+  twitter: 'https://x.com/crew_circle',
+  github: 'https://github.com/crew-circle',
   youtube: 'https://youtube.com/@crewcircle',
 };
 
@@ -116,10 +116,10 @@ export const FOUNDER = {
   social: {
     linkedin: 'https://www.linkedin.com/in/prabhatr/',
     github: 'https://github.com/rprabhat',
-    website: 'https://sensibleanalytics.co',
+    website: 'https://crewcircle.com',
     substack: 'https://prabhatranjan.substack.com',
   },
-  calendly: 'https://calendly.com/crewcircle-zohomail/30min',
+  calendly: 'https://calendly.com/crewcircle/30min',
 };
 
 export const IMPACT_STORIES = [
@@ -212,10 +212,10 @@ export const FOOTER_LINKS = {
     { label: 'Support', href: '/#services' },
   ],
   apps: [
-    { label: 'Crew Roster', href: 'https://roster.crewcircle.co' },
+    { label: 'Crew Roster', href: 'https://roster.crewcircle.com' },
     { label: 'Smart GL', href: 'https://smart-hf50tubpw-sensibleanalytic-4114s-projects.vercel.app' },
     { label: 'Card Snap', href: '/cardsnap' },
-    { label: 'XeroAssist', href: 'https://xero-assist.crewcircle.co' },
+    { label: 'XeroAssist', href: 'https://xero-assist.crewcircle.com' },
   ],
   legal: [
     { label: 'Privacy Policy', href: '/cardsnap/privacy-policy' },

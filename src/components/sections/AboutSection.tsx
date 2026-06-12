@@ -135,54 +135,52 @@ export default function AboutSection() {
               </div>
             </div>
 
-            <div className="rounded-xl border border-border bg-accent/5 p-6">
-              <h4 className="text-sm font-semibold text-foreground uppercase tracking-wider mb-3">
-                Let&apos;s connect
-              </h4>
-              <p className="text-sm text-muted-foreground mb-4 leading-relaxed">
-                Got a problem? I&apos;d love to hear about it. No sales pitch,
-                no pressure, just a chat about what you&apos;re trying to
-                solve.
-              </p>
-              <div className="space-y-2.5">
-                <a
-                  href={CREWCIRCLE_SOCIAL.linkedin}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="flex items-center justify-between w-full px-4 py-2.5 rounded-lg bg-background border border-border hover:border-accent/40 transition-colors text-sm font-medium text-foreground group"
-                >
-                  <span>LinkedIn</span>
-                  <ExternalLink className="w-3.5 h-3.5 text-muted-foreground group-hover:text-accent transition-colors" />
-                </a>
-                <a
-                  href={CREWCIRCLE_SOCIAL.twitter}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="flex items-center justify-between w-full px-4 py-2.5 rounded-lg bg-background border border-border hover:border-accent/40 transition-colors text-sm font-medium text-foreground group"
-                >
-                  <span>X (Twitter)</span>
-                  <ExternalLink className="w-3.5 h-3.5 text-muted-foreground group-hover:text-accent transition-colors" />
-                </a>
-                <a
-                  href={CREWCIRCLE_SOCIAL.github}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="flex items-center justify-between w-full px-4 py-2.5 rounded-lg bg-background border border-border hover:border-accent/40 transition-colors text-sm font-medium text-foreground group"
-                >
-                  <span>GitHub</span>
-                  <ExternalLink className="w-3.5 h-3.5 text-muted-foreground group-hover:text-accent transition-colors" />
-                </a>
-                <a
-                  href={CREWCIRCLE_SOCIAL.youtube}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="flex items-center justify-between w-full px-4 py-2.5 rounded-lg bg-background border border-border hover:border-accent/40 transition-colors text-sm font-medium text-foreground group"
-                >
-                  <span>YouTube</span>
-                  <ExternalLink className="w-3.5 h-3.5 text-muted-foreground group-hover:text-accent transition-colors" />
-                </a>
-              </div>
-            </div>
+<div className="rounded-xl border border-border bg-accent/5 p-6">
+               <h4 className="text-sm font-semibold text-foreground uppercase tracking-wider mb-3">
+                 Follow crew circle
+               </h4>
+               <p className="text-sm text-muted-foreground mb-4 leading-relaxed">
+                 Get the latest updates, insights, and behind-the-scenes content from our crew circle journey.
+               </p>
+               <div className="space-y-2.5">
+                 <a
+                   href={CREWCIRCLE_SOCIAL.linkedin}
+                   target="_blank"
+                   rel="noopener noreferrer"
+                   className="flex items-center justify-between w-full px-4 py-2.5 rounded-lg bg-background border border-border hover:border-accent/40 transition-colors text-sm font-medium text-foreground group"
+                 >
+                   <span>LinkedIn</span>
+                   <ExternalLink className="w-3.5 h-3.5 text-muted-foreground group-hover:text-accent transition-colors" />
+                 </a>
+                 <a
+                   href={CREWCIRCLE_SOCIAL.twitter}
+                   target="_blank"
+                   rel="noopener noreferrer"
+                   className="flex items-center justify-between w-full px-4 py-2.5 rounded-lg bg-background border border-border hover:border-accent/40 transition-colors text-sm font-medium text-foreground group"
+                 >
+                   <span>X (Twitter)</span>
+                   <ExternalLink className="w-3.5 h-3.5 text-muted-foreground group-hover:text-accent transition-colors" />
+                 </a>
+                 <a
+                   href={CREWCIRCLE_SOCIAL.github}
+                   target="_blank"
+                   rel="noopener noreferrer"
+                   className="flex items-center justify-between w-full px-4 py-2.5 rounded-lg bg-background border border-border hover:border-accent/40 transition-colors text-sm font-medium text-foreground group"
+                 >
+                   <span>GitHub</span>
+                   <ExternalLink className="w-3.5 h-3.5 text-muted-foreground group-hover:text-accent transition-colors" />
+                 </a>
+                 <a
+                   href={CREWCIRCLE_SOCIAL.youtube}
+                   target="_blank"
+                   rel="noopener noreferrer"
+                   className="flex items-center justify-between w-full px-4 py-2.5 rounded-lg bg-background border border-border hover:border-accent/40 transition-colors text-sm font-medium text-foreground group"
+                 >
+                   <span>YouTube</span>
+                   <ExternalLink className="w-3.5 h-3.5 text-muted-foreground group-hover:text-accent transition-colors" />
+                 </a>
+               </div>
+             </div>
           </div>
         </div>
       </div>
