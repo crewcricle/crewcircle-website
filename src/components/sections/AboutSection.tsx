@@ -6,6 +6,9 @@ export default function AboutSection() {
     <section id="about" className="py-20 md:py-28 px-6 bg-background">
       <div className="max-w-7xl mx-auto">
         <div className="max-w-2xl mx-auto text-center mb-12">
+          <span className="text-xs font-semibold tracking-widest uppercase text-accent mb-3 block">
+            Meet the founder
+          </span>
           <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
             Who&apos;s behind this
           </h2>
@@ -18,7 +21,7 @@ export default function AboutSection() {
         <div className="grid grid-cols-1 lg:grid-cols-5 gap-12">
           <div className="lg:col-span-3 space-y-8">
             <div className="flex items-start gap-5">
-              <div className="w-20 h-20 rounded-full overflow-hidden bg-gradient-to-br from-accent/10 to-primary/10 border-2 border-border flex-shrink-0 flex items-center justify-center">
+              <div className="relative w-20 h-20 rounded-full overflow-hidden bg-gradient-to-br from-accent/10 to-primary/10 border-2 border-accent/20 flex-shrink-0 flex items-center justify-center">
                 <svg
                   viewBox="0 0 200 200"
                   className="w-16 h-16 text-foreground/30"
@@ -27,6 +30,9 @@ export default function AboutSection() {
                   <circle cx="100" cy="70" r="35" />
                   <ellipse cx="100" cy="170" rx="65" ry="50" />
                 </svg>
+                <div className="absolute -bottom-0.5 -right-0.5 w-5 h-5 rounded-full bg-green-500 border-2 border-background flex items-center justify-center">
+                  <div className="w-2 h-2 rounded-full bg-white" />
+                </div>
               </div>
               <div className="pt-1">
                 <h3 className="text-2xl font-bold text-foreground">
