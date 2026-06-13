@@ -3,9 +3,12 @@ import AppCard from '@/components/ui/AppCard';
 
 export default function AppsGrid() {
   return (
-    <section id="apps" className="py-20 md:py-28 px-6">
+    <section id="apps" className="py-24 md:py-32 px-6 bg-muted/30">
       <div className="max-w-7xl mx-auto">
         <div className="max-w-2xl mb-14">
+          <span className="text-xs font-semibold tracking-widest uppercase text-accent mb-3 block">
+            Built in-house
+          </span>
           <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
             Our apps
           </h2>

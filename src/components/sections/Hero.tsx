@@ -1,41 +1,69 @@
 import Link from 'next/link';
 import Image from 'next/image';
-import { HERO_CONTENT } from '@/lib/constants';
+import { HERO_CONTENT, TRUST_METRICS } from '@/lib/constants';
+import { ArrowRight, ChevronRight } from 'lucide-react';
 
 export default function Hero() {
   return (
-    <section className="relative min-h-[85vh] flex items-center bg-background overflow-hidden">
-      <div className="absolute inset-0 bg-gradient-to-br from-primary/5 via-background to-accent/5" />
-      <div className="absolute inset-0 bg-[url('/grid.svg')] opacity-[0.03]" />
+    <section className="relative min-h-[90vh] flex items-center bg-background overflow-hidden">
+      <div className="absolute inset-0 bg-gradient-to-br from-accent/[0.03] via-background to-primary/[0.03]" />
+      <div className="absolute inset-0 bg-[url('/grid.svg')] opacity-[0.02]" />
+      <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-accent/[0.04] rounded-full blur-3xl -translate-y-1/2 translate-x-1/3" />
+      <div className="absolute bottom-0 left-0 w-[400px] h-[400px] bg-primary/[0.03] rounded-full blur-3xl translate-y-1/2 -translate-x-1/3" />
 
-      <div className="relative w-full max-w-7xl mx-auto px-6 py-20 md:py-32">
+      <div className="relative w-full max-w-7xl mx-auto px-6 py-24 md:py-32">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-          <div>
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-foreground mb-6 leading-tight tracking-tight">
-              {HERO_CONTENT.headline}
+          <div className="max-w-xl">
+            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-accent/5 border border-accent/15 text-sm text-accent font-medium mb-8">
+              <span className="relative flex h-2 w-2">
+                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-accent opacity-75"></span>
+                <span className="relative inline-flex rounded-full h-2 w-2 bg-accent"></span>
+              </span>
+              AI consultancy for Aussie small business
+            </div>
+
+            <h1 className="text-4xl md:text-5xl lg:text-[3.5rem] font-bold text-foreground mb-6 leading-[1.1] tracking-tight">
+              Software that actually sorts{' '}
+              <span className="text-accent">your small biz.</span>
             </h1>
-            <p className="text-lg md:text-xl text-muted-foreground leading-relaxed mb-8">
+
+            <p className="text-lg md:text-xl text-muted-foreground leading-relaxed mb-10 max-w-lg">
               {HERO_CONTENT.subheadline}
             </p>
-            <div className="flex flex-col sm:flex-row gap-4">
+
+            <div className="flex flex-col sm:flex-row gap-4 mb-12">
               <Link
                 href="/#contact"
-                className="inline-flex items-center justify-center px-6 py-3.5 bg-accent text-accent-foreground font-semibold rounded-lg hover:bg-accent/90 transition-all duration-200 text-base"
+                className="group inline-flex items-center justify-center gap-2 px-7 py-4 bg-accent text-accent-foreground font-semibold rounded-xl hover:bg-accent/90 hover:shadow-lg hover:shadow-accent/20 transition-all duration-300 text-base"
               >
                 {HERO_CONTENT.cta}
+                <ArrowRight className="w-4 h-4 group-hover:translate-x-0.5 transition-transform" />
               </Link>
               <Link
                 href="/#apps"
-                className="inline-flex items-center justify-center px-6 py-3.5 border border-border text-foreground font-semibold rounded-lg hover:bg-muted transition-all duration-200 text-base"
+                className="group inline-flex items-center justify-center gap-2 px-7 py-4 border border-border text-foreground font-semibold rounded-xl hover:bg-muted hover:border-border/80 transition-all duration-300 text-base"
               >
                 {HERO_CONTENT.secondaryCta}
+                <ChevronRight className="w-4 h-4 group-hover:translate-x-0.5 transition-transform" />
               </Link>
+            </div>
+
+            <div className="flex flex-wrap gap-x-8 gap-y-4 pt-8 border-t border-border/60">
+              {TRUST_METRICS.map((metric) => (
+                <div key={metric.label} className="flex items-baseline gap-2">
+                  <span className="text-2xl font-bold text-foreground">{metric.value}</span>
+                  <span className="text-sm text-muted-foreground">{metric.label}</span>
+                </div>
+              ))}
             </div>
           </div>
 
-          <div className="hidden lg:flex justify-center">
+          <div className="hidden lg:flex justify-center lg:justify-end">
             <div className="relative">
-              <div className="w-80 h-96 rounded-2xl overflow-hidden border border-border shadow-lg">
+              <div className="absolute -inset-3 rounded-3xl bg-gradient-to-br from-accent/20 via-accent/5 to-transparent blur-sm" />
+              <div className="absolute -inset-1 rounded-2xl bg-gradient-to-br from-accent/10 to-primary/10" />
+              
+              <div className="relative w-80 h-96 rounded-2xl overflow-hidden border border-border/50 shadow-2xl shadow-accent/10">
                 <Image
                   src="/hero-small-biz.jpg"
                   alt="Small business owner"
@@ -44,11 +72,17 @@ export default function Hero() {
                   className="w-full h-full object-cover"
                   priority
                 />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/10 to-transparent" />
               </div>
-              <div className="absolute -bottom-3 -right-3 w-full h-full rounded-2xl border border-accent/10 -z-10" />
-              <div className="absolute top-4 left-4 inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-background/90 backdrop-blur-sm border border-border text-xs text-foreground font-medium shadow-sm">
-                <span className="w-1.5 h-1.5 rounded-full bg-green-500" />
-                Real human, no sales team
+
+              <div className="absolute -bottom-4 -left-4 inline-flex items-center gap-2 px-4 py-2.5 rounded-xl bg-background/95 backdrop-blur-md border border-border shadow-lg">
+                <div className="w-8 h-8 rounded-lg bg-green-500/10 flex items-center justify-center">
+                  <span className="w-2.5 h-2.5 rounded-full bg-green-500" />
+                </div>
+                <div>
+                  <p className="text-xs font-semibold text-foreground">Real human</p>
+                  <p className="text-[10px] text-muted-foreground">No sales team</p>
+                </div>
               </div>
             </div>
           </div>

@@ -10,6 +10,7 @@ export default function ContactForm() {
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitStatus, setSubmitStatus] = useState<null | 'success' | 'error'>(null);
+  const [honeypot, setHoneypot] = useState('');
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     const { name, value } = e.target;
@@ -18,6 +19,14 @@ export default function ContactForm() {
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+
+    // Honeypot check — if filled, silently reject (bot trapped)
+    if (honeypot) {
+      setSubmitStatus('success');
+      setFormData({ name: '', email: '', message: '' });
+      return;
+    }
+
     setIsSubmitting(true);
     setSubmitStatus(null);
 
@@ -45,23 +54,39 @@ export default function ContactForm() {
 
   return (
     <div className="max-w-2xl mx-auto">
-      {submitStatus === 'success' && (
-        <div className="mb-6 p-4 bg-accent/10 border border-accent/30 rounded-lg">
-          <p className="text-sm text-accent font-medium">
-            Thanks for reaching out! We&apos;ll get back to you soon.
-          </p>
-        </div>
-      )}
+      <div aria-live="polite" aria-atomic="true">
+        {submitStatus === 'success' && (
+          <div className="mb-6 p-4 bg-accent/10 border border-accent/30 rounded-lg">
+            <p className="text-sm text-accent font-medium">
+              Thanks for reaching out! We&apos;ll get back to you soon.
+            </p>
+          </div>
+        )}
 
-      {submitStatus === 'error' && (
-        <div className="mb-6 p-4 bg-destructive/10 border border-destructive/30 rounded-lg">
-          <p className="text-sm text-destructive font-medium">
-            Something went wrong. Please try again.
-          </p>
-        </div>
-      )}
+        {submitStatus === 'error' && (
+          <div className="mb-6 p-4 bg-destructive/10 border border-destructive/30 rounded-lg">
+            <p className="text-sm text-destructive font-medium">
+              Something went wrong. Please try again.
+            </p>
+          </div>
+        )}
+      </div>
 
       <form onSubmit={handleSubmit} className="space-y-6">
+        {/* Honeypot field — hidden from users, traps spam bots */}
+        <div className="sr-only" aria-hidden="true">
+          <label htmlFor="website">Website</label>
+          <input
+            type="text"
+            id="website"
+            name="website"
+            value={honeypot}
+            onChange={e => setHoneypot(e.target.value)}
+            tabIndex={-1}
+            autoComplete="off"
+          />
+        </div>
+
         <div>
           <label htmlFor="name" className="block text-sm font-medium text-foreground mb-2">
             Your name

@@ -116,14 +116,14 @@ export default function Footer() {
 
         <div className="mt-12 pt-8 border-t border-primary-foreground/10">
           <div className="flex flex-col md:flex-row items-center justify-between gap-6">
-            <div className="flex items-center gap-5">
+            <div className="flex items-center gap-4">
               {SOCIAL_ICONS.map(({ href, icon, label }) => (
                 <a
                   key={label}
                   href={href}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-primary-foreground/40 hover:text-accent transition-colors"
+                  className="text-primary-foreground/40 hover:text-primary-foreground hover:bg-primary-foreground/10 p-2 rounded-lg transition-all duration-200"
                   aria-label={label}
                 >
                   {icon('w-5 h-5')}

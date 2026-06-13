@@ -7,6 +7,9 @@ export default function ContactSection() {
     <section id="contact" className="py-20 md:py-28 px-6 bg-background">
       <div className="max-w-7xl mx-auto">
         <div className="max-w-2xl mx-auto text-center mb-12">
+          <span className="text-xs font-semibold tracking-widest uppercase text-accent mb-3 block">
+            Get started
+          </span>
           <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
             Let&apos;s talk
           </h2>

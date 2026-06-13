@@ -145,3 +145,11 @@
     @apply font-heading;
   }
 }
+
+@media (prefers-reduced-motion: reduce) {
+  .animate-fade-in,
+  .animate-pulse-soft,
+  .animate-slide-up {
+    animation: none;
+  }
+}

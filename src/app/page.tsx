@@ -18,7 +18,13 @@ const AppsGrid = dynamic(() => import('@/components/sections/AppsGrid'), {
 
 export default function HomePage() {
   return (
-    <div className="flex flex-col">
+    <div id="main-content" className="flex flex-col">
+      <a
+        href="#main-content"
+        className="sr-only focus:not-sr-only focus:absolute focus:z-50 focus:p-4 focus:bg-background focus:text-foreground focus:outline-ring"
+      >
+        Skip to content
+      </a>
       <Hero />
       <AppsGrid />
       <ServicesSection />
