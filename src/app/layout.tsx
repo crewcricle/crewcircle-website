@@ -14,13 +14,13 @@ export const metadata: Metadata = {
   description:
       "AI solutions that sort your small biz, no dramas. Practical AI tools and strategy for Australian businesses, by Prabhat Ranjan (Canva, JPMorgan, MSCI, BNP Paribas).",
   openGraph: {
-    title: "CrewCircle",
+    title: "CrewCircle | AI Consultancy by Prabhat Ranjan",
     description:
-      "AI solutions that sort your small biz, no dramas. Practical AI tools and strategy for Australian businesses, by Prabhat Ranjan.",
-    url: "https://crewcircle.com",
+      "AI solutions that sort your small biz, no dramas. Practical AI tools and strategy for Australian businesses, by Prabhat Ranjan (ex-Canva, JPMorgan, MSCI).",
+    url: "https://crewcircle.co",
     siteName: "CrewCircle",
     images: [{
-      url: "/social/social-preview-1200x630.png",
+      url: "https://crewcircle.co/social/social-preview-1200x630.png",
       width: 1200,
       height: 630,
       alt: "CrewCircle - AI Consultancy for Australian Businesses",
@@ -30,10 +30,15 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
+    site: "@crewcircle",
+    creator: "@prabhatranjann",
     title: "CrewCircle",
     description:
       "AI solutions that sort your small biz, no dramas. Practical AI tools and strategy for Australian businesses.",
-    images: ["/social/social-preview-1200x630.png"],
+    images: ["https://crewcircle.co/social/social-preview-1200x630.png"],
+  },
+  other: {
+    "linkedin:owner": "linkedin.com/company/crewcircle",
   },
 };
 
