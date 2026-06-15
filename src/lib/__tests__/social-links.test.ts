@@ -8,8 +8,8 @@ import { CREWCIRCLE_SOCIAL } from '../constants';
 
 describe('Social Media Implementation Verification', () => {
   it('should have consistent social media handles across all platforms', () => {
-    expect(CREWCIRCLE_SOCIAL.linkedin).toMatch(/^https:\/\/linkedin\.com\/company\/crewcircle$/);
-    expect(CREWCIRCLE_SOCIAL.twitter).toMatch(/^https:\/\/x\.com\/crewcircle$/);
+    expect(CREWCIRCLE_SOCIAL.linkedin).toMatch(/^https:\/\/linkedin\.com\/company\/crew-circle$/);
+    expect(CREWCIRCLE_SOCIAL.twitter).toMatch(/^https:\/\/x\.com\/crewcircle_ai$/);
     expect(CREWCIRCLE_SOCIAL.github).toMatch(/^https:\/\/github\.com\/crewcircle$/);
     expect(CREWCIRCLE_SOCIAL.youtube).toMatch(/^https:\/\/youtube\.com\/@crewcircle$/);
   });
@@ -38,8 +38,8 @@ describe('Social Media Implementation Verification', () => {
 
   it('should have cross-platform consistency in branding', () => {
     const brandNames = [
-      'crewcircle',
-      'crewcircle',
+      'crew-circle',
+      'crewcircle_ai',
       'crewcircle'
     ];
     

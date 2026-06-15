@@ -73,8 +73,8 @@ export const APPS: AppDef[] = [
 ];
 
 export const CREWCIRCLE_SOCIAL = {
-  linkedin: 'https://linkedin.com/company/crewcircle',
-  twitter: 'https://x.com/crewcircle',
+  linkedin: 'https://linkedin.com/company/crew-circle',
+  twitter: 'https://x.com/crewcircle_ai',
   github: 'https://github.com/crewcircle',
   youtube: 'https://youtube.com/@crewcircle',
   instagram: 'https://instagram.com/crewcircle.co',
