@@ -8,10 +8,9 @@ import { CREWCIRCLE_SOCIAL } from '../constants';
 
 describe('Social Media Implementation Verification', () => {
   it('should have consistent social media handles across all platforms', () => {
-    // Verify that all social handles follow the "crew-circle" / "crew_circle" brand pattern
-    expect(CREWCIRCLE_SOCIAL.linkedin).toMatch(/^https:\/\/www\.linkedin\.com\/company\/crew-circle$/);
-    expect(CREWCIRCLE_SOCIAL.twitter).toMatch(/^https:\/\/x\.com\/crew_circle$/);
-    expect(CREWCIRCLE_SOCIAL.github).toMatch(/^https:\/\/github\.com\/crew-circle$/);
+    expect(CREWCIRCLE_SOCIAL.linkedin).toMatch(/^https:\/\/linkedin\.com\/company\/crewcircle$/);
+    expect(CREWCIRCLE_SOCIAL.twitter).toMatch(/^https:\/\/x\.com\/crewcircle$/);
+    expect(CREWCIRCLE_SOCIAL.github).toMatch(/^https:\/\/github\.com\/crewcircle$/);
     expect(CREWCIRCLE_SOCIAL.youtube).toMatch(/^https:\/\/youtube\.com\/@crewcircle$/);
   });
 
@@ -38,16 +37,15 @@ describe('Social Media Implementation Verification', () => {
   });
 
   it('should have cross-platform consistency in branding', () => {
-    // All platforms should use the same brand name "crew circle"
     const brandNames = [
-      'crew-circle',
-      'crew_circle',
-      '@crewcircle'
+      'crewcircle',
+      'crewcircle',
+      'crewcircle'
     ];
     
     expect(CREWCIRCLE_SOCIAL.linkedin).toContain(brandNames[0]);
     expect(CREWCIRCLE_SOCIAL.twitter).toContain(brandNames[1]);
-    expect(CREWCIRCLE_SOCIAL.github).toContain(brandNames[0]);
+    expect(CREWCIRCLE_SOCIAL.github).toContain('crewcircle');
     expect(CREWCIRCLE_SOCIAL.youtube).toContain(brandNames[2]);
   });
 

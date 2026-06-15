@@ -21,7 +21,7 @@ export const APPS: AppDef[] = [
     slug: 'crew-roster',
     oneLiner: 'Digital timesheet for your crew, sorted.',
     features: ['Roster scheduling', 'GPS clock-in/out', 'Award compliance'],
-    icon: '⏱',
+    icon: 'Timer',
     theme: 'orange',
     ctaType: 'visit',
     links: {
@@ -34,11 +34,11 @@ export const APPS: AppDef[] = [
     slug: 'smart-gl',
     oneLiner: 'AI does the books for your crew.',
     features: ['AI categorisation', 'GST/BAS reports', 'Ledger tracking'],
-    icon: '📒',
+    icon: 'BookOpen',
     theme: 'blue',
     ctaType: 'visit',
     links: {
-      web: 'https://smart-hf50tubpw-sensibleanalytic-4114s-projects.vercel.app',
+      web: '#', // placeholder — no production URL yet
     },
     description: 'AI-powered bookkeeping that categorises wages, supplier bills, and expenses automatically. Generates GST/BAS reports ready for your accountant. No cloud dependence, your data stays private.',
   },
@@ -47,7 +47,7 @@ export const APPS: AppDef[] = [
     slug: 'card-snap',
     oneLiner: 'Snap cards for your crew.',
     features: ['ML Kit OCR', 'Contact save', 'Card history'],
-    icon: '📷',
+    icon: 'Camera',
     theme: 'green',
     ctaType: 'download',
     links: {
@@ -62,7 +62,7 @@ export const APPS: AppDef[] = [
     slug: 'xero-assist',
     oneLiner: 'Xero spanner for your crew.',
     features: ['ABN validation', 'BAS tracker', 'ATO rates'],
-    icon: '🔧',
+    icon: 'Wrench',
     theme: 'purple',
     ctaType: 'download',
     links: {
@@ -73,10 +73,11 @@ export const APPS: AppDef[] = [
 ];
 
 export const CREWCIRCLE_SOCIAL = {
-  linkedin: 'https://www.linkedin.com/company/crew-circle',
-  twitter: 'https://x.com/crew_circle',
-  github: 'https://github.com/crew-circle',
+  linkedin: 'https://linkedin.com/company/crewcircle',
+  twitter: 'https://x.com/crewcircle',
+  github: 'https://github.com/crewcircle',
   youtube: 'https://youtube.com/@crewcircle',
+  instagram: 'https://instagram.com/crewcircle.co',
 };
 
 export const FOUNDER = {
@@ -115,7 +116,7 @@ export const FOUNDER = {
   },
   social: {
     linkedin: 'https://www.linkedin.com/in/prabhatr/',
-    github: 'https://github.com/rprabhat',
+    github: 'https://github.com/crewcircle',
     website: 'https://crewcircle.com',
     substack: 'https://prabhatranjan.substack.com',
   },
@@ -200,7 +201,7 @@ export const NAV_ITEMS = [
   { label: 'About', href: '/#about', hasDropdown: false },
   { label: 'Services', href: '/#services', hasDropdown: false },
   { label: 'Our Apps', href: '/#apps', hasDropdown: false },
-  { label: 'Blog', href: '/blog', hasDropdown: false },
+  // { label: 'Blog', href: '/blog', hasDropdown: false }, // commented out — no blog page yet
   { label: 'Contact', href: '/#contact', hasDropdown: false },
 ];
 
@@ -213,14 +214,14 @@ export const FOOTER_LINKS = {
   ],
   apps: [
     { label: 'Crew Roster', href: 'https://roster.crewcircle.com' },
-    { label: 'Smart GL', href: 'https://smart-hf50tubpw-sensibleanalytic-4114s-projects.vercel.app' },
+    { label: 'Smart GL', href: '#', }, // placeholder — no production URL yet
     { label: 'Card Snap', href: '/cardsnap' },
     { label: 'XeroAssist', href: 'https://xero-assist.crewcircle.com' },
   ],
   legal: [
-    { label: 'Privacy Policy', href: '/cardsnap/privacy-policy' },
-    { label: 'Terms of Service', href: '/terms' },
-    { label: 'Documentation', href: '/docs' },
+    { label: 'Privacy Policy', href: '#', }, // placeholder — no legal pages yet
+    { label: 'Terms of Service', href: '#', }, // placeholder — no legal pages yet
+    { label: 'Documentation', href: '#', }, // placeholder — no legal pages yet
   ],
 };
 
