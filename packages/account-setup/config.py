@@ -35,7 +35,7 @@ def _load_dotenv(path: Path) -> None:
             os.environ[key] = value
 
 
-# Load .env.local from monorepo root (two levels up from this file)
+# Load .env.local from monorepo root (three levels up from this file)
 _repo_root = Path(__file__).parent.parent.parent
 _load_dotenv(_repo_root / ".env.local")
 # Also try local .env.local in this package (for isolated testing)
