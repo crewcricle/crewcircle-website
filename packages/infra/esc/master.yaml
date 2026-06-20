@@ -1,0 +1,18 @@
+imports:
+  - doppler://crewcircle-master/prod
+values:
+  # Provider SDKs read from os.environ, not pulumi.Config
+  environmentVariables:
+    GITHUB_TOKEN: ${GITHUB_TOKEN}
+    SENTRY_TOKEN: ${SENTRY_TOKEN}
+    DOPPLER_TOKEN: ${DOPPLER_TOKEN}
+  pulumiConfig:
+    github_org: ${CC_GITHUB_USERNAME}
+    doppler_token: ${DOPPLER_TOKEN}
+    supabase_access_token: ${SUPABASE_ACCESS_TOKEN}
+    supabase_org_id: ${SUPABASE_ORG_ID}
+    sentry_auth_token: ${SENTRY_TOKEN}
+    sentry_org: ${CC_SENTRY_ORG}
+    cloudflare_api_token: ${CLOUDFLARE_API_TOKEN}
+    cloudflare_zone_id: ${CLOUDFLARE_ZONE_ID}
+    stripe_secret_key: ${STRIPE_SECRET_KEY}

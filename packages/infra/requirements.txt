@@ -1,0 +1,12 @@
+# -- Master stack --
+# pip install -r requirements.txt
+pulumi>=3.142.0
+pulumi-github>=6.0.0
+pulumiverse-sentry>=0.0.6,<0.1.0
+
+# -- Template stack (additional) --
+# Used in template/requirements.txt
+# pulumi-cloudflare
+
+# -- Shared dependencies --
+# None beyond stdlib (os, json, pathlib)

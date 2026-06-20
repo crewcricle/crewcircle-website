@@ -1,0 +1,26 @@
+# Pulumi
+.pulumi/
+# Stack config files with encrypted secrets (if any). Unencrypted ones are safe to commit.
+Pulumi.*.yaml
+!Pulumi.master.yaml
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.egg-info/
+dist/
+build/
+
+# Environment
+.env.local
+.env.master
+
+# Registry (auto-generated)
+registry.json
+
+# IDE
+.idea/
+.vscode/
+*.swp
+*.swo

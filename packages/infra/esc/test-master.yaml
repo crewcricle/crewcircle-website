@@ -1,0 +1,10 @@
+# Test ESC environment for the master stack.
+# Imports the real master ESC which pulls secrets from Doppler.
+# Used during development/testing to preview master stack changes.
+imports:
+  - crewcircle/master
+values:
+  pulumiConfig:
+    # Override or add any test-specific config below.
+    # Deployed resources will use secrets from crewcircle/master.
+    smoke_test: "true"

@@ -1,0 +1,97 @@
+#!/usr/bin/env bash
+# packages/infra/bin/newproject
+# Provision a new CrewCircle project: init stack, bind ESC, deploy.
+set -euo pipefail
+
+SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+INFRA_DIR="$(dirname "$SCRIPT_DIR")"
+TEMPLATE_DIR="$INFRA_DIR/template"
+REGISTRY="$INFRA_DIR/registry.json"
+
+REPO_ROOT="$(dirname "$(dirname "$INFRA_DIR")")"
+[ -f "$REPO_ROOT/.env.local" ] && set -a && source "$REPO_ROOT/.env.local" && set +a
+
+if [[ $# -lt 3 ]]; then
+    echo "Usage: bin/newproject <project-id> <name> <description> [price-cents]"
+    echo "Example: bin/newproject local-biz-au 'Local Biz' 'AU SMB automation' 19900"
+    exit 1
+fi
+
+PROJECT_ID="$1"
+PROJECT_NAME="$2"
+DESCRIPTION="$3"
+PRICE_CENTS="${4:-19900}"
+
+if ! echo "$PROJECT_ID" | grep -qE '^[a-z][a-z0-9-]+$'; then
+    echo "ERROR: project-id must be lowercase letters, numbers, hyphens only"
+    exit 1
+fi
+
+if [[ -f "$REGISTRY" ]]; then
+    python3 -c "
+import json, sys
+data = json.load(open('$REGISTRY'))
+ids = [p['id'] for p in data.get('projects', [])]
+sys.exit(1 if '$PROJECT_ID' in ids else 0)
+    " || {
+        echo "ERROR: Project '$PROJECT_ID' already exists in registry.json"
+        exit 1
+    }
+fi
+
+echo ""
+echo "  Project : $PROJECT_NAME ($PROJECT_ID)"
+echo "  Price   : \$$(echo "scale=2; $PRICE_CENTS/100" | bc) AUD/month"
+echo "  ESC     : crewcircle/$PROJECT_ID"
+echo ""
+read -rp "Proceed? [y/N] " confirm
+[[ "$confirm" =~ ^[yY]$ ]] || { echo "Aborted."; exit 0; }
+
+# Create ESC environment for this project (imports from master)
+pulumi env init "crewcircle/$PROJECT_ID" --file "$INFRA_DIR/esc/project.yaml"
+
+cd "$TEMPLATE_DIR"
+
+pulumi stack init "$PROJECT_ID" 2>/dev/null || pulumi stack select "$PROJECT_ID"
+
+# Bind ESC environment to the stack
+# Bind ESC environment to the stack (use --yes for non-interactive)
+pulumi config env add "crewcircle/$PROJECT_ID" --yes
+
+# Set project-specific config values
+pulumi config set project_id   "$PROJECT_ID"
+pulumi config set project_name "$PROJECT_NAME"
+pulumi config set description  "$DESCRIPTION"
+pulumi config set price_cents  "$PRICE_CENTS"
+
+# Remove standard Python SDKs that conflict with TF-bridged provider packages
+# (standard supabase SDK has create_client/Client but TF provider has Project etc.)
+pip uninstall -y supabase stripe 2>/dev/null || true
+
+# Install Terraform-bridged providers needed by template/__main__.py
+# (supabase/supabase generates module 'supabase', humanlayer/pulumi-stripe generates
+#  module 'stripe' — must not conflict with standard Python SDKs above)
+if ! pulumi package ls 2>/dev/null | grep -q supabase; then
+  pulumi package add terraform-provider supabase/supabase
+fi
+if ! pulumi package ls 2>/dev/null | grep -qi stripe; then
+  pulumi package add terraform-provider humanlayer/pulumi-stripe
+fi
+
+echo "→ Provisioning (Supabase takes ~60s)..."
+pulumi up --yes --suppress-outputs
+
+echo ""
+echo "→ Outputs:"
+pulumi stack output
+
+python3 -c "
+import sys
+sys.path.insert(0, '$INFRA_DIR/shared')
+import registry
+registry.register('$PROJECT_ID', '$PROJECT_NAME', '$DESCRIPTION', $PRICE_CENTS)
+print('✓ Registry updated')
+"
+
+echo ""
+echo "✓ Project '$PROJECT_ID' ready."

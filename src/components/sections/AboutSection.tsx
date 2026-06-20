@@ -1,4 +1,5 @@
-import { FOUNDER, CREWCIRCLE_SOCIAL } from '@/lib/constants';
+import { FOUNDER } from '@/lib/config/founder';
+import { CREWCIRCLE_SOCIAL } from '@/lib/config/social';
 import { Award, Code, ExternalLink, GraduationCap, MapPin, User } from 'lucide-react';
 
 export default function AboutSection() {

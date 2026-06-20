@@ -1,4 +1,4 @@
-import { APPS } from '@/lib/constants';
+import { APPS } from '@/lib/config/apps';
 import AppCard from '@/components/ui/AppCard';
 
 export default function AppsGrid() {

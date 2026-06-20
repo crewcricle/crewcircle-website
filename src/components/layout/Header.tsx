@@ -3,7 +3,7 @@
 import { useState, useCallback, useEffect } from 'react';
 import Link from 'next/link';
 import { Menu, X } from 'lucide-react';
-import { NAV_ITEMS } from '@/lib/constants';
+import { NAV_ITEMS } from '@/lib/config/site';
 import { cn } from '@/lib/utils';
 
 export default function Header() {
