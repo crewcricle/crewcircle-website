@@ -3,13 +3,43 @@ import { GeistSans } from "geist/font/sans";
 import "./globals.css";
 import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
+import { Analytics } from "@vercel/analytics/react";
+import { SpeedInsights } from "@vercel/speed-insights/next";
 
 const geistSans = GeistSans;
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://crewcircle.co"),
   title: "CrewCircle | AI Consultancy by Prabhat Ranjan",
   description:
       "AI solutions that sort your small biz, no dramas. Practical AI tools and strategy for Australian businesses, by Prabhat Ranjan (Canva, JPMorgan, MSCI, BNP Paribas).",
+  openGraph: {
+    title: "CrewCircle | AI Consultancy by Prabhat Ranjan",
+    description:
+      "AI solutions that sort your small biz, no dramas. Practical AI tools and strategy for Australian businesses, by Prabhat Ranjan (ex-Canva, JPMorgan, MSCI).",
+    url: "https://crewcircle.co",
+    siteName: "CrewCircle",
+    images: [{
+      url: "https://crewcircle.co/social/social-preview-1200x630.png",
+      width: 1200,
+      height: 630,
+      alt: "CrewCircle - AI Consultancy for Australian Businesses",
+    }],
+    locale: "en_AU",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    site: "@crewcircle",
+    creator: "@prabhatranjann",
+    title: "CrewCircle",
+    description:
+      "AI solutions that sort your small biz, no dramas. Practical AI tools and strategy for Australian businesses.",
+    images: ["https://crewcircle.co/social/social-preview-1200x630.png"],
+  },
+  other: {
+    "linkedin:owner": "linkedin.com/company/crewcircle",
+  },
 };
 
 export default function RootLayout({
@@ -32,6 +62,8 @@ export default function RootLayout({
         <Header />
         <main id="main-content" className="flex-1">{children}</main>
         <Footer />
+        <Analytics />
+        <SpeedInsights />
       </body>
     </html>
   );

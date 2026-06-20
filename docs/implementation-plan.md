@@ -40,6 +40,8 @@ export const CREWCIRCLE_SOCIAL = {
 
 **Status:** COMPLETED - Updated to "Follow crew circle" and adjusted copy text to match brand voice.
 
+**Note:** All social media references in this document should use `https://github.com/crewcircle` (org handle) consistently.
+
 ---
 
 ## Phase 2: Add Social to More Surfaces
