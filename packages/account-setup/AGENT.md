@@ -309,8 +309,20 @@ packages/account-setup/
 │   ├── human_pause.py    ← pauses for human action
 │   └── progress.py       ← saves/resumes progress
 └── creators/
-    ├── cloudflare.py     ← one file per account
+    ├── anthropic.py      ← one file per account
+    ├── cloudflare.py
+    ├── crazy_domains.py
+    ├── dataforseo.py
+    ├── digitalocean.py
+    ├── doppler.py
     ├── github.py
+    ├── google_cloud.py
+    ├── pulumi_account.py
+    ├── resend.py
+    ├── sentry.py
     ├── stripe.py
-    └── ... (13 more)
+    ├── supabase.py
+    ├── tally.py
+    ├── twilio.py
+    └── uptime_robot.py
 ```

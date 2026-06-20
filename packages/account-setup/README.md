@@ -58,7 +58,7 @@ doppler run --project crewcircle-master --config prod -- \
   pulumi stack select master && pulumi up --yes
 
 # 5. Spin up a new project (run whenever you have a new idea)
-./bin/newproject local-biz-au "Local Biz Automation" "AU SMB automation" 19900
+packages/infra/bin/newproject local-biz-au "Local Biz Automation" "AU SMB automation" 19900
 ```
 
 ## Adding the account-setup package to existing repo
