@@ -1,7 +1,7 @@
 "use strict";
 
 import { describe, it, expect, vi } from 'vitest';
-import { CREWCIRCLE_SOCIAL } from '../constants';
+import { CREWCIRCLE_SOCIAL } from '../config/social';
 
 // Social link verification tests for crew-circle implementation
 // Tests the implementation of Phase 7: Verification & Testing from the implementation plan

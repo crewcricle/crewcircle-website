@@ -1,4 +1,4 @@
-import { SERVICES } from '@/lib/constants';
+import { SERVICES } from '@/lib/config/services';
 import { Lightbulb, Wrench, BarChart3, Headphones } from 'lucide-react';
 
 const iconMap: Record<string, React.ReactNode> = {

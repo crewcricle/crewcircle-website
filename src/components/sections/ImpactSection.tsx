@@ -1,4 +1,4 @@
-import { IMPACT_STORIES } from '@/lib/constants';
+import { IMPACT_STORIES } from '@/lib/config/content';
 import { TrendingUp, ShieldCheck, Clock, UtensilsCrossed } from 'lucide-react';
 
 const STORY_ICONS = [TrendingUp, ShieldCheck, Clock, UtensilsCrossed] as const;

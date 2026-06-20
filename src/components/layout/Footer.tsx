@@ -1,6 +1,7 @@
 import Link from 'next/link';
 import Image from 'next/image';
-import { FOOTER_LINKS, CREWCIRCLE_SOCIAL } from '@/lib/constants';
+import { FOOTER_LINKS } from '@/lib/config/content';
+import { CREWCIRCLE_SOCIAL } from '@/lib/config/social';
 const SOCIAL_ICONS = [
   {
     href: CREWCIRCLE_SOCIAL.linkedin,

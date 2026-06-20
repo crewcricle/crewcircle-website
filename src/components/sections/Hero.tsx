@@ -1,6 +1,6 @@
 import Link from 'next/link';
 import Image from 'next/image';
-import { HERO_CONTENT, TRUST_METRICS } from '@/lib/constants';
+import { HERO_CONTENT, TRUST_METRICS } from '@/lib/config/site';
 import { ArrowRight, ChevronRight } from 'lucide-react';
 
 export default function Hero() {

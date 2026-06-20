@@ -1,5 +1,5 @@
 import { Calendar, ExternalLink } from 'lucide-react';
-import { FOUNDER } from '@/lib/constants';
+import { FOUNDER } from '@/lib/config/founder';
 import ContactForm from '@/components/ContactForm';
 
 export default function ContactSection() {

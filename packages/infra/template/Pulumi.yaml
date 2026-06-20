@@ -1,0 +1,6 @@
+name: project-infra
+runtime:
+  name: python
+  options:
+    virtualenv: .venv
+description: Per-project infrastructure for CrewCircle (Supabase, Stripe, GitHub, Cloudflare, Sentry, Doppler)

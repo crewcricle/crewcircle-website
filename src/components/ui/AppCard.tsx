@@ -1,7 +1,7 @@
 'use client';
 
 import Link from 'next/link';
-import { AppDef } from '@/lib/constants';
+import type { AppDef } from '@/lib/config/apps';
 import { Timer, BookOpen, Camera, Wrench, ArrowRight, Download, ExternalLink } from 'lucide-react';
 
 const appIcons: Record<string, React.ReactNode> = {
