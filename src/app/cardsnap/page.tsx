@@ -4,6 +4,7 @@ import { useState } from 'react';
 import Link from 'next/link';
 import { Camera, Check, Share2, Globe, Lock, Smartphone, ScanLine, ArrowRight, Code2, ChevronRight, Menu, X } from 'lucide-react';
 import { Button } from '@/components/ui/button';
+import { Logo } from '@/components/Logo';
 
 const NAV_LINKS = [
   { label: 'How It Works', href: '#how-it-works' },
@@ -21,9 +22,7 @@ export default function CardSnap() {
       <header className="sticky top-0 z-50 bg-background border-b border-border">
         <div className="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
           <div className="flex items-center gap-3">
-            <div className="w-10 h-10 bg-primary rounded-lg flex items-center justify-center text-primary-foreground font-bold text-lg">
-              CS
-            </div>
+            <Logo className="h-10 w-10" />
             <span className="text-xl font-bold text-foreground">CardSnap</span>
           </div>
           <nav className="hidden md:flex items-center gap-6">

@@ -6,6 +6,7 @@ import { Menu, X } from 'lucide-react';
 import { NAV_ITEMS } from '@/lib/config/site';
 import { cn } from '@/lib/utils';
 import { Button } from '@/components/ui/button';
+import { Logo } from '@/components/Logo';
 
 export default function Header() {
   const [isOpen, setIsOpen] = useState(false);
@@ -26,9 +27,7 @@ export default function Header() {
     <header className="sticky top-0 z-50 bg-background/90 backdrop-blur-md border-b border-border">
       <div className="max-w-7xl mx-auto px-6 py-3.5 flex items-center justify-between relative z-10">
         <Link href="/" className="flex items-center gap-2">
-          <div className="flex items-center justify-center rounded-full bg-gradient-to-br from-orange-500 to-amber-600 shadow-md w-8 h-8">
-            <span className="text-white font-bold text-sm">C</span>
-          </div>
+          <Logo className="h-8 w-8" />
           <span className="text-xl font-bold tracking-tight text-foreground">
             Crew<span className="text-accent">Circle</span>
           </span>

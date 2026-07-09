@@ -1,6 +1,6 @@
 import Link from 'next/link';
-import Image from 'next/image';
 import { Button } from '@/components/ui/button';
+import { Logo } from '@/components/Logo';
 import { FOOTER_LINKS } from '@/lib/config/content';
 import { CREWCIRCLE_SOCIAL } from '@/lib/config/social';
 const SOCIAL_ICONS = [
@@ -57,13 +57,7 @@ export default function Footer() {
       <div className="max-w-7xl mx-auto px-6 py-16">
         <div className="grid grid-cols-1 md:grid-cols-5 gap-12">
           <div className="md:col-span-2">
-            <Image
-              src="/crewcircle-logo.svg"
-              alt="CrewCircle"
-              width={160}
-              height={40}
-              className="w-auto h-8 brightness-0 invert mb-4"
-            />
+            <Logo className="h-8 w-8 mb-4" />
             <p className="text-sm text-primary-foreground/60 max-w-xs leading-relaxed">
               Practical AI that sorts your small biz, no dramas. Built for Aussie
               businesses by Aussie builders.
