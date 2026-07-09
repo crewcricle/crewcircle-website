@@ -2,6 +2,7 @@ import Link from 'next/link';
 import Image from 'next/image';
 import { HERO_CONTENT, TRUST_METRICS } from '@/lib/config/site';
 import { ArrowRight, ChevronRight } from 'lucide-react';
+import { Button } from '@/components/ui/button';
 
 export default function Hero() {
   return (
@@ -32,13 +33,15 @@ export default function Hero() {
             </p>
 
             <div className="flex flex-col sm:flex-row gap-4 mb-12">
-              <Link
-                href="/#contact"
-                className="group inline-flex items-center justify-center gap-2 px-7 py-4 bg-accent text-accent-foreground font-semibold rounded-xl hover:bg-accent/90 hover:shadow-lg hover:shadow-accent/20 transition-all duration-300 text-base"
+              <Button
+                variant="accent"
+                size="xl"
+                className="hover:shadow-lg hover:shadow-accent/20"
+                render={<Link href="/#contact" />}
               >
                 {HERO_CONTENT.cta}
-                <ArrowRight className="w-4 h-4 group-hover:translate-x-0.5 transition-transform" />
-              </Link>
+                <ArrowRight className="w-4 h-4 group-hover/button:translate-x-0.5 transition-transform" />
+              </Button>
               <Link
                 href="/#apps"
                 className="group inline-flex items-center justify-center gap-2 px-7 py-4 border border-border text-foreground font-semibold rounded-xl hover:bg-muted hover:border-border/80 transition-all duration-300 text-base"

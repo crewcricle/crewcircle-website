@@ -1,5 +1,6 @@
 import Link from 'next/link';
 import Image from 'next/image';
+import { Button } from '@/components/ui/button';
 import { FOOTER_LINKS } from '@/lib/config/content';
 import { CREWCIRCLE_SOCIAL } from '@/lib/config/social';
 const SOCIAL_ICONS = [
@@ -128,16 +129,16 @@ export default function Footer() {
           <div className="flex flex-col md:flex-row items-center justify-between gap-6">
             <div className="flex items-center gap-4">
               {SOCIAL_ICONS.map(({ href, icon, label }) => (
-                <a
+                <Button
                   key={label}
-                  href={href}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-primary-foreground/40 hover:text-primary-foreground hover:bg-primary-foreground/10 p-2 rounded-lg transition-all duration-200"
+                  variant="ghost"
+                  size="icon"
+                  className="text-primary-foreground/40 hover:text-primary-foreground hover:bg-primary-foreground/10"
                   aria-label={label}
+                  render={<Link href={href} target="_blank" rel="noopener noreferrer" />}
                 >
                   {icon('w-5 h-5')}
-                </a>
+                </Button>
               ))}
             </div>
             <p className="text-sm text-primary-foreground/40">

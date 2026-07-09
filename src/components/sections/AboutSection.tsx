@@ -4,7 +4,7 @@ import { Award, Code, ExternalLink, GraduationCap, MapPin, User } from 'lucide-r
 
 export default function AboutSection() {
   return (
-    <section id="about" className="py-20 md:py-28 px-6 bg-background">
+      <section id="about" className="py-24 md:py-32 px-6 bg-background">
       <div className="max-w-7xl mx-auto">
         <div className="max-w-2xl mx-auto text-center mb-12">
           <span className="text-xs font-semibold tracking-widest uppercase text-accent mb-3 block">

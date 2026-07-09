@@ -3,6 +3,7 @@
 import Link from 'next/link';
 import type { AppDef } from '@/lib/config/apps';
 import { Timer, BookOpen, Camera, Wrench, ArrowRight, Download, ExternalLink } from 'lucide-react';
+import { Button } from '@/components/ui/button';
 
 const appIcons: Record<string, React.ReactNode> = {
   Timer: <Timer className="w-6 h-6" />,
@@ -44,53 +45,63 @@ export default function AppCard({ app }: AppCardProps) {
 
       <div className="space-y-3">
         {app.links.web && (
-          <Link
-            href={app.links.web}
-            className="group/btn flex items-center justify-center gap-2 w-full px-5 py-3 bg-primary text-primary-foreground rounded-lg text-sm font-semibold hover:bg-accent hover:text-accent-foreground transition-all duration-200"
+          <Button
+            variant="default"
+            size="default"
+            className="w-full hover:bg-accent hover:text-accent-foreground"
+            render={<Link href={app.links.web} />}
           >
             Visit {app.name}
-            <ArrowRight className="w-4 h-4 group-hover/btn:translate-x-0.5 transition-transform" />
-          </Link>
+            <ArrowRight className="w-4 h-4 group-hover/button:translate-x-0.5 transition-transform" />
+          </Button>
         )}
 
         {app.ctaType === 'demo' && (
-          <Link
-            href="/demo"
-            className="group/btn flex items-center justify-center gap-2 w-full px-5 py-3 bg-primary text-primary-foreground rounded-lg text-sm font-semibold hover:bg-accent hover:text-accent-foreground transition-all duration-200"
+          <Button
+            variant="default"
+            size="default"
+            className="w-full hover:bg-accent hover:text-accent-foreground"
+            render={<Link href="/demo" />}
           >
             Try it
-            <ExternalLink className="w-4 h-4 group-hover/btn:translate-x-0.5 transition-transform" />
-          </Link>
+            <ExternalLink className="w-4 h-4 group-hover/button:translate-x-0.5 transition-transform" />
+          </Button>
         )}
 
         {app.ctaType === 'download' && (
           <div className="flex gap-2">
             {app.links.appStore && (
-              <Link
-                href={app.links.appStore}
-                className="flex-1 flex items-center justify-center gap-1.5 px-3 py-3 bg-secondary text-secondary-foreground rounded-lg text-sm font-semibold hover:bg-accent hover:text-accent-foreground transition-all duration-200"
+              <Button
+                variant="secondary"
+                size="sm"
+                className="flex-1 hover:bg-accent hover:text-accent-foreground"
+                render={<Link href={app.links.appStore} />}
               >
                 <Download className="w-3.5 h-3.5" />
                 App Store
-              </Link>
+              </Button>
             )}
             {app.links.playStore && (
-              <Link
-                href={app.links.playStore}
-                className="flex-1 flex items-center justify-center gap-1.5 px-3 py-3 bg-secondary text-secondary-foreground rounded-lg text-sm font-semibold hover:bg-accent hover:text-accent-foreground transition-all duration-200"
+              <Button
+                variant="secondary"
+                size="sm"
+                className="flex-1 hover:bg-accent hover:text-accent-foreground"
+                render={<Link href={app.links.playStore} />}
               >
                 <Download className="w-3.5 h-3.5" />
                 Play Store
-              </Link>
+              </Button>
             )}
             {app.links.chromeStore && (
-              <Link
-                href={app.links.chromeStore}
-                className="flex-1 flex items-center justify-center gap-1.5 px-3 py-3 bg-secondary text-secondary-foreground rounded-lg text-sm font-semibold hover:bg-accent hover:text-accent-foreground transition-all duration-200"
+              <Button
+                variant="secondary"
+                size="sm"
+                className="flex-1 hover:bg-accent hover:text-accent-foreground"
+                render={<Link href={app.links.chromeStore} />}
               >
                 <Download className="w-3.5 h-3.5" />
                 Chrome
-              </Link>
+              </Button>
             )}
           </div>
         )}

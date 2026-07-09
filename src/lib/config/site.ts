@@ -2,7 +2,7 @@ export const NAV_ITEMS = [
   { label: 'About', href: '/#about', hasDropdown: false },
   { label: 'Services', href: '/#services', hasDropdown: false },
   { label: 'Our Apps', href: '/#apps', hasDropdown: false },
-  // { label: 'Blog', href: '/blog', hasDropdown: false }, // commented out — no blog page yet
+  { label: 'Blog', href: '/blog', hasDropdown: false },
   { label: 'Contact', href: '/#contact', hasDropdown: false },
 ];
 
