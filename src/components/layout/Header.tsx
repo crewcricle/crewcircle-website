@@ -5,6 +5,7 @@ import Link from 'next/link';
 import { Menu, X } from 'lucide-react';
 import { NAV_ITEMS } from '@/lib/config/site';
 import { cn } from '@/lib/utils';
+import { Button } from '@/components/ui/button';
 
 export default function Header() {
   const [isOpen, setIsOpen] = useState(false);
@@ -43,12 +44,14 @@ export default function Header() {
               {item.label}
             </Link>
           ))}
-          <Link
-            href="#contact"
-            className="ml-2 px-5 py-2 bg-primary text-primary-foreground rounded-lg text-sm font-semibold hover:bg-accent hover:text-accent-foreground transition-all duration-200"
+          <Button
+            variant="default"
+            size="sm"
+            className="ml-2 hover:bg-accent hover:text-accent-foreground"
+            render={<Link href="#contact" />}
           >
             Get in touch
-          </Link>
+          </Button>
         </nav>
 
         <button
@@ -97,13 +100,14 @@ export default function Header() {
             </Link>
           ))}
           <div className="mt-2 px-3">
-            <Link
-              href="#contact"
-              onClick={closeMenu}
-              className="block w-full px-5 py-2.5 bg-primary text-primary-foreground rounded-lg text-center text-sm font-semibold hover:bg-primary/90 transition-all duration-200"
+            <Button
+              variant="default"
+              size="sm"
+              className="w-full hover:bg-accent hover:text-accent-foreground"
+              render={<Link href="#contact" onClick={closeMenu} />}
             >
               Get in touch
-            </Link>
+            </Button>
           </div>
         </nav>
       </div>

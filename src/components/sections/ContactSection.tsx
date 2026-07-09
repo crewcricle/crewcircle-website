@@ -1,10 +1,12 @@
+import Link from 'next/link';
 import { Calendar, ExternalLink } from 'lucide-react';
 import { FOUNDER } from '@/lib/config/founder';
 import ContactForm from '@/components/ContactForm';
+import { Button } from '@/components/ui/button';
 
 export default function ContactSection() {
   return (
-    <section id="contact" className="py-20 md:py-28 px-6 bg-background">
+      <section id="contact" className="py-24 md:py-32 px-6 bg-background">
       <div className="max-w-7xl mx-auto">
         <div className="max-w-2xl mx-auto text-center mb-12">
           <span className="text-xs font-semibold tracking-widest uppercase text-accent mb-3 block">
@@ -39,16 +41,16 @@ export default function ContactSection() {
                 pitch, just a conversation about what you&apos;re trying to
                 solve.
               </p>
-              <a
-                href={FOUNDER.calendly}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center justify-center gap-2 w-full px-5 py-3 bg-accent text-accent-foreground rounded-lg text-sm font-semibold hover:bg-accent/90 transition-all duration-200"
+              <Button
+                variant="accent"
+                size="default"
+                className="w-full"
+                render={<Link href={FOUNDER.calendly} target="_blank" rel="noopener noreferrer" />}
               >
                 <Calendar className="w-4 h-4" />
                 Book a 30-min call
                 <ExternalLink className="w-3.5 h-3.5" />
-              </a>
+              </Button>
             </div>
           </div>
 
