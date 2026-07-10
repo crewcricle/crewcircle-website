@@ -9,7 +9,10 @@ import { SpeedInsights } from "@vercel/speed-insights/next";
 const geistSans = GeistSans;
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://crewcircle.co"),
+  metadataBase: new URL("https://crewcircle.com.au"),
+  alternates: {
+    canonical: "https://crewcircle.com.au",
+  },
   title: "CrewCircle | AI Consultancy by Prabhat Ranjan",
   description:
       "AI solutions that sort your small biz, no dramas. Practical AI tools and strategy for Australian businesses, by Prabhat Ranjan (Canva, JPMorgan, MSCI, BNP Paribas).",
@@ -17,10 +20,10 @@ export const metadata: Metadata = {
     title: "CrewCircle | AI Consultancy by Prabhat Ranjan",
     description:
       "AI solutions that sort your small biz, no dramas. Practical AI tools and strategy for Australian businesses, by Prabhat Ranjan (ex-Canva, JPMorgan, MSCI).",
-    url: "https://crewcircle.co",
+    url: "https://crewcircle.com.au",
     siteName: "CrewCircle",
     images: [{
-      url: "https://crewcircle.co/social/social-preview-1200x630.png",
+      url: "https://crewcircle.com.au/social/social-preview-1200x630.png",
       width: 1200,
       height: 630,
       alt: "CrewCircle - AI Consultancy for Australian Businesses",
@@ -35,7 +38,7 @@ export const metadata: Metadata = {
     title: "CrewCircle",
     description:
       "AI solutions that sort your small biz, no dramas. Practical AI tools and strategy for Australian businesses.",
-    images: ["https://crewcircle.co/social/social-preview-1200x630.png"],
+    images: ["https://crewcircle.com.au/social/social-preview-1200x630.png"],
   },
   other: {
     "linkedin:owner": "linkedin.com/company/crewcircle",
