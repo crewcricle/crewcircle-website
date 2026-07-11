@@ -2,7 +2,7 @@
 
 import Link from 'next/link';
 import type { AppDef } from '@/lib/config/apps';
-import { Timer, BookOpen, Camera, Wrench, ArrowRight, Download, ExternalLink } from 'lucide-react';
+import { Timer, BookOpen, Camera, Wrench, Users, Calculator, ArrowRight, Download, ExternalLink } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 
 const appIcons: Record<string, React.ReactNode> = {
@@ -10,6 +10,8 @@ const appIcons: Record<string, React.ReactNode> = {
   BookOpen: <BookOpen className="w-6 h-6" />,
   Camera: <Camera className="w-6 h-6" />,
   Wrench: <Wrench className="w-6 h-6" />,
+  Users: <Users className="w-6 h-6" />,
+  Calculator: <Calculator className="w-6 h-6" />,
 };
 
 interface AppCardProps {
@@ -19,6 +21,9 @@ interface AppCardProps {
 export default function AppCard({ app }: AppCardProps) {
   return (
     <div className="bg-card border border-border rounded-xl p-6 hover:shadow-md hover:border-accent/20 transition-all duration-200 group relative overflow-hidden">
+      {app.featured && (
+        <span className="absolute right-4 top-4 z-10 inline-flex items-center rounded-full bg-accent px-2.5 py-0.5 text-xs font-semibold text-accent-foreground">Featured</span>
+      )}
       <div className="absolute top-0 left-0 right-0 h-0.5 bg-gradient-to-r from-accent/0 via-accent/40 to-accent/0 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
       <div className="flex items-center gap-4 mb-4">
         <div className="w-12 h-12 bg-accent/10 text-accent rounded-xl flex items-center justify-center group-hover:bg-accent group-hover:text-accent-foreground transition-all duration-200">
