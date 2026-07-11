@@ -2,11 +2,11 @@ import Link from 'next/link';
 import { Button } from '@/components/ui/button';
 import { FOUNDER } from '@/lib/config/founder';
 import { SOCIAL_ICONS } from '@/lib/config/social';
-import { Award, Code, GraduationCap, MapPin, User } from 'lucide-react';
+import { Code, MapPin, User } from 'lucide-react';
 
 export default function AboutSection() {
   return (
-      <section id="about" className="py-24 md:py-32 px-6 bg-background">
+    <section id="about" className="py-24 md:py-32 px-6 bg-background">
       <div className="max-w-7xl mx-auto">
         <div className="max-w-2xl mx-auto text-center mb-12">
           <span className="text-xs font-semibold tracking-widest uppercase text-accent mb-3 block">
@@ -16,8 +16,8 @@ export default function AboutSection() {
             Who&apos;s behind this
           </h2>
           <p className="text-lg text-muted-foreground leading-relaxed">
-            Just a builder who&apos;s been doing this for 15+ years. No sales
-            team, no suits, no nonsense.
+            Built by an engineer who spent 15 years inside big tech, now
+            obsessed with sorting the boring stuff for small business.
           </p>
         </div>
 
@@ -49,20 +49,13 @@ export default function AboutSection() {
                     <MapPin className="w-3.5 h-3.5" />
                     {FOUNDER.location}
                   </span>
-                  <span className="flex items-center gap-1.5">
-                    <GraduationCap className="w-3.5 h-3.5" />
-                    {FOUNDER.education}
-                  </span>
                 </div>
               </div>
             </div>
 
-            <div className="text-muted-foreground leading-relaxed space-y-3">
-              <p>{FOUNDER.shortBio}</p>
-              <p className="text-sm text-muted-foreground/80">
-                {FOUNDER.currentFocus}
-              </p>
-            </div>
+            <p className="text-muted-foreground leading-relaxed">
+              {FOUNDER.shortBio}
+            </p>
 
             <div>
               <h4 className="text-sm font-semibold text-foreground uppercase tracking-wider mb-4 flex items-center gap-2">
@@ -90,47 +83,13 @@ export default function AboutSection() {
                 ))}
               </div>
             </div>
-
-            {/* Certifications */}
-            <div>
-              <h4 className="text-sm font-semibold text-foreground uppercase tracking-wider mb-4 flex items-center gap-2">
-                <Award className="w-4 h-4 text-accent" />
-                Certifications
-              </h4>
-              <div className="flex flex-wrap gap-2">
-                {FOUNDER.certifications.map((cert) => (
-                  <span
-                    key={`${cert.issuer}-${cert.credential}`}
-                    className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-accent/5 border border-accent/20 text-xs font-medium text-accent"
-                  >
-                    {cert.issuer} &middot; {cert.credential}
-                  </span>
-                ))}
-              </div>
-            </div>
-
-            {/* Anthropic Partnership */}
-            <div className="rounded-xl border border-accent/30 bg-accent/5 p-5 flex items-start gap-4">
-              <div className="w-10 h-10 rounded-lg bg-accent/10 flex items-center justify-center flex-shrink-0">
-                <Award className="w-5 h-5 text-accent" />
-              </div>
-              <div>
-                <p className="text-sm font-semibold text-foreground">
-                  {FOUNDER.anthropicPartnership.badge}
-                </p>
-                <p className="text-xs text-muted-foreground mt-0.5">
-                  {FOUNDER.anthropicPartnership.note}
-                </p>
-              </div>
-            </div>
           </div>
 
           <div className="lg:col-span-2 space-y-8">
-            {/* Specialties */}
             <div className="rounded-xl border border-border bg-muted/30 p-6">
               <h4 className="text-sm font-semibold text-foreground uppercase tracking-wider mb-4 flex items-center gap-2">
                 <User className="w-4 h-4 text-accent" />
-                Specialties
+                What I&apos;m good at
               </h4>
               <div className="flex flex-wrap gap-2">
                 {FOUNDER.specialties.map((s) => (
@@ -144,28 +103,28 @@ export default function AboutSection() {
               </div>
             </div>
 
-<div className="rounded-xl border border-border bg-accent/5 p-6">
-               <h4 className="text-sm font-semibold text-foreground uppercase tracking-wider mb-3">
-                 Follow crew circle
-               </h4>
-               <p className="text-sm text-muted-foreground mb-4 leading-relaxed">
-                 Get the latest updates, insights, and behind-the-scenes content from our crew circle journey.
-               </p>
-               <div className="flex flex-wrap gap-2">
-                 {SOCIAL_ICONS.map(({ href, icon, label }) => (
-                   <Button
-                     key={label}
-                     variant="ghost"
-                     size="icon"
-                     className="text-muted-foreground hover:text-foreground hover:bg-accent/10"
-                     aria-label={label}
-                     render={<Link href={href} target="_blank" rel="noopener noreferrer" />}
-                   >
-                     {icon('w-5 h-5')}
-                   </Button>
-                 ))}
-               </div>
-             </div>
+            <div className="rounded-xl border border-border bg-accent/5 p-6">
+              <h4 className="text-sm font-semibold text-foreground uppercase tracking-wider mb-3">
+                Follow crew circle
+              </h4>
+              <p className="text-sm text-muted-foreground mb-4 leading-relaxed">
+                Get the latest updates, insights, and behind-the-scenes content from our crew circle journey.
+              </p>
+              <div className="flex flex-wrap gap-2">
+                {SOCIAL_ICONS.map(({ href, icon, label }) => (
+                  <Button
+                    key={label}
+                    variant="ghost"
+                    size="icon"
+                    className="text-muted-foreground hover:text-foreground hover:bg-accent/10"
+                    aria-label={label}
+                    render={<Link href={href} target="_blank" rel="noopener noreferrer" />}
+                  >
+                    {icon('w-5 h-5')}
+                  </Button>
+                ))}
+              </div>
+            </div>
           </div>
         </div>
       </div>

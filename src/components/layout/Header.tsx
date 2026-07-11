@@ -5,7 +5,6 @@ import Link from 'next/link';
 import { Menu, X } from 'lucide-react';
 import { NAV_ITEMS } from '@/lib/config/site';
 import { cn } from '@/lib/utils';
-import { Button } from '@/components/ui/button';
 import { Logo } from '@/components/Logo';
 
 export default function Header() {
@@ -43,14 +42,6 @@ export default function Header() {
               {item.label}
             </Link>
           ))}
-          <Button
-            variant="default"
-            size="sm"
-            className="ml-2 hover:bg-accent hover:text-accent-foreground"
-            render={<Link href="#contact" />}
-          >
-            Get in touch
-          </Button>
         </nav>
 
         <button
@@ -98,16 +89,6 @@ export default function Header() {
               {item.label}
             </Link>
           ))}
-          <div className="mt-2 px-3">
-            <Button
-              variant="default"
-              size="sm"
-              className="w-full hover:bg-accent hover:text-accent-foreground"
-              render={<Link href="#contact" onClick={closeMenu} />}
-            >
-              Get in touch
-            </Button>
-          </div>
         </nav>
       </div>
     </header>

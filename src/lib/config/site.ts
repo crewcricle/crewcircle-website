@@ -14,13 +14,6 @@ export const HERO_CONTENT = {
   secondaryCta: 'See what I build',
 };
 
-export const TRUST_METRICS = [
-  { value: '15+', label: 'Years building software' },
-  { value: '4', label: 'Enterprise clients' },
-  { value: 'IIT-BHU', label: 'Engineering alumnus' },
-  { value: 'Sydney', label: 'Based & building' },
-];
-
 export const AUSSIE_TERMS = {
   tagline: 'Sorted.',
   subtitle: 'AI for your crew.',

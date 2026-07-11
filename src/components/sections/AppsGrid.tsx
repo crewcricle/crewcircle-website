@@ -12,11 +12,12 @@ export default function AppsGrid() {
           <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
             Our apps
           </h2>
-          <p className="text-lg text-muted-foreground leading-relaxed">
-            Six tools, one mission: sorting your business so you can focus on
-            what matters. Built for Aussie tradies, cafés, shops and healthcare
-            teams.
-          </p>
+            <p className="text-lg text-muted-foreground leading-relaxed">
+              Six tools built around one idea: let AI do the boring bits so you
+              can run your business. Two are fully AI-driven, the rest automate
+              the day-to-day. Built for Aussie tradies, cafés, shops and
+              healthcare teams.
+            </p>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8">
