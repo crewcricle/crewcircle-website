@@ -1,6 +1,8 @@
+import Link from 'next/link';
+import { Button } from '@/components/ui/button';
 import { FOUNDER } from '@/lib/config/founder';
-import { CREWCIRCLE_SOCIAL } from '@/lib/config/social';
-import { Award, Code, ExternalLink, GraduationCap, MapPin, User } from 'lucide-react';
+import { SOCIAL_ICONS } from '@/lib/config/social';
+import { Award, Code, GraduationCap, MapPin, User } from 'lucide-react';
 
 export default function AboutSection() {
   return (
@@ -149,43 +151,19 @@ export default function AboutSection() {
                <p className="text-sm text-muted-foreground mb-4 leading-relaxed">
                  Get the latest updates, insights, and behind-the-scenes content from our crew circle journey.
                </p>
-               <div className="space-y-2.5">
-                 <a
-                   href={CREWCIRCLE_SOCIAL.linkedin}
-                   target="_blank"
-                   rel="noopener noreferrer"
-                   className="flex items-center justify-between w-full px-4 py-2.5 rounded-lg bg-background border border-border hover:border-accent/40 transition-colors text-sm font-medium text-foreground group"
-                 >
-                   <span>LinkedIn</span>
-                   <ExternalLink className="w-3.5 h-3.5 text-muted-foreground group-hover:text-accent transition-colors" />
-                 </a>
-                 <a
-                   href={CREWCIRCLE_SOCIAL.twitter}
-                   target="_blank"
-                   rel="noopener noreferrer"
-                   className="flex items-center justify-between w-full px-4 py-2.5 rounded-lg bg-background border border-border hover:border-accent/40 transition-colors text-sm font-medium text-foreground group"
-                 >
-                   <span>X (Twitter)</span>
-                   <ExternalLink className="w-3.5 h-3.5 text-muted-foreground group-hover:text-accent transition-colors" />
-                 </a>
-                 <a
-                   href={CREWCIRCLE_SOCIAL.github}
-                   target="_blank"
-                   rel="noopener noreferrer"
-                   className="flex items-center justify-between w-full px-4 py-2.5 rounded-lg bg-background border border-border hover:border-accent/40 transition-colors text-sm font-medium text-foreground group"
-                 >
-                   <span>GitHub</span>
-                   <ExternalLink className="w-3.5 h-3.5 text-muted-foreground group-hover:text-accent transition-colors" />
-                 </a>
-                 <a
-                   href={CREWCIRCLE_SOCIAL.youtube}
-                   target="_blank"
-                   rel="noopener noreferrer"
-                   className="flex items-center justify-between w-full px-4 py-2.5 rounded-lg bg-background border border-border hover:border-accent/40 transition-colors text-sm font-medium text-foreground group"
-                 >
-                   <span>YouTube</span>
-                   <ExternalLink className="w-3.5 h-3.5 text-muted-foreground group-hover:text-accent transition-colors" />
-                 </a>
+               <div className="flex flex-wrap gap-2">
+                 {SOCIAL_ICONS.map(({ href, icon, label }) => (
+                   <Button
+                     key={label}
+                     variant="ghost"
+                     size="icon"
+                     className="text-muted-foreground hover:text-foreground hover:bg-accent/10"
+                     aria-label={label}
+                     render={<Link href={href} target="_blank" rel="noopener noreferrer" />}
+                   >
+                     {icon('w-5 h-5')}
+                   </Button>
+                 ))}
                </div>
              </div>
           </div>

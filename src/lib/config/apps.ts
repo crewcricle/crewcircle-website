@@ -13,9 +13,24 @@ export interface AppDef {
     chromeStore?: string;
   };
   description: string;
+  featured?: boolean;
 }
 
 export const APPS: AppDef[] = [
+  {
+    name: 'Tax Flow',
+    slug: 'tax-flow',
+    oneLiner: 'Tax sorted by AI, not by you.',
+    features: ['Snap & forget receipts', 'GST tracked for you', 'ATO-ready BAS'],
+    icon: 'Calculator',
+    theme: 'orange',
+    ctaType: 'visit',
+    links: {
+      web: 'https://taxflow.crewcircle.com.au',
+    },
+    description: 'Let the AI do your tax paperwork. Snap a receipt or forward an invoice and it works out the GST, keeps track of what you owe, and hands your accountant a BAS that is already ATO-ready. No shoebox of dockets, no panic the night before lodgement.',
+    featured: true,
+  },
   {
     name: 'Crew Roster',
     slug: 'crew-roster',
@@ -69,5 +84,18 @@ export const APPS: AppDef[] = [
       chromeStore: '#chrome',
     },
     description: 'Chrome extension that gives Xero superpowers. Validate ABNs instantly, track BAS deadlines, pull ATO rates without leaving your browser. Built for bookkeepers who live in Xero every day.',
+  },
+  {
+    name: 'Local Meet',
+    slug: 'local-meet',
+    oneLiner: 'Meet the right locals, no awkward networking.',
+    features: ['Smart local matching', 'People near you', 'Real faces, real crew'],
+    icon: 'Users',
+    theme: 'blue',
+    ctaType: 'visit',
+    links: {
+      web: 'https://localmate.crewcircle.com.au',
+    },
+    description: 'Build your local business crew without the cringe. Our AI quietly learns who is worth knowing — the supplier who always delivers, the tradie round the corner, the cafe owner who sends you customers — and introduces you to the right locals so your network actually shows up in real life, not just in your feed.',
   },
 ];

@@ -13,7 +13,7 @@ export default function AppsGrid() {
             Our apps
           </h2>
           <p className="text-lg text-muted-foreground leading-relaxed">
-            Four tools, one mission: sorting your business so you can focus on
+            Six tools, one mission: sorting your business so you can focus on
             what matters. Built for Aussie tradies, cafés, shops and healthcare
             teams.
           </p>
