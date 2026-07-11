@@ -2,7 +2,7 @@ import Link from 'next/link';
 import { Button } from '@/components/ui/button';
 import { FOUNDER } from '@/lib/config/founder';
 import { SOCIAL_ICONS } from '@/lib/config/social';
-import { Code, MapPin, User } from 'lucide-react';
+import { MapPin } from 'lucide-react';
 
 export default function AboutSection() {
   return (
@@ -56,53 +56,9 @@ export default function AboutSection() {
             <p className="text-muted-foreground leading-relaxed">
               {FOUNDER.shortBio}
             </p>
-
-            <div>
-              <h4 className="text-sm font-semibold text-foreground uppercase tracking-wider mb-4 flex items-center gap-2">
-                <Code className="w-4 h-4 text-accent" />
-                Where I&apos;ve built stuff
-              </h4>
-              <div className="space-y-2">
-                {FOUNDER.experience.map((exp) => (
-                  <div
-                    key={exp.company}
-                    className="flex items-center gap-3 px-4 py-2.5 rounded-lg bg-muted/50 border border-border/50"
-                  >
-                    <div className="w-8 h-8 rounded-md bg-primary/10 flex items-center justify-center text-xs font-bold text-primary">
-                      {exp.company.slice(0, 2).toUpperCase()}
-                    </div>
-                    <div>
-                      <span className="font-medium text-foreground text-sm">
-                        {exp.role}
-                      </span>
-                      <span className="text-muted-foreground text-sm ml-2">
-                        @ {exp.company}
-                      </span>
-                    </div>
-                  </div>
-                ))}
-              </div>
-            </div>
           </div>
 
           <div className="lg:col-span-2 space-y-8">
-            <div className="rounded-xl border border-border bg-muted/30 p-6">
-              <h4 className="text-sm font-semibold text-foreground uppercase tracking-wider mb-4 flex items-center gap-2">
-                <User className="w-4 h-4 text-accent" />
-                What I&apos;m good at
-              </h4>
-              <div className="flex flex-wrap gap-2">
-                {FOUNDER.specialties.map((s) => (
-                  <span
-                    key={s}
-                    className="px-3 py-1.5 rounded-lg bg-background border border-border text-xs font-medium text-foreground/80"
-                  >
-                    {s}
-                  </span>
-                ))}
-              </div>
-            </div>
-
             <div className="rounded-xl border border-border bg-accent/5 p-6">
               <h4 className="text-sm font-semibold text-foreground uppercase tracking-wider mb-3">
                 Follow crew circle
