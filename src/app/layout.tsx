@@ -6,6 +6,7 @@ import Footer from "@/components/layout/Footer";
 import { Analytics } from "@vercel/analytics/react";
 import { SpeedInsights } from "@vercel/speed-insights/next";
 import GoogleAnalytics from "@/components/analytics/GoogleAnalytics";
+import LocalBusinessJsonLd from "@/components/seo/LocalBusinessJsonLd";
 
 const geistSans = GeistSans;
 
@@ -66,6 +67,7 @@ export default function RootLayout({
         <Header />
         <main id="main-content" className="flex-1">{children}</main>
         <Footer />
+        <LocalBusinessJsonLd />
         <Analytics />
         <SpeedInsights />
         <GoogleAnalytics />

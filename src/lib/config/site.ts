@@ -3,6 +3,7 @@ export const NAV_ITEMS = [
   { label: 'Services', href: '/#services', hasDropdown: false },
   { label: 'Our Apps', href: '/#apps', hasDropdown: false },
   { label: 'Solutions', href: '/solutions', hasDropdown: false },
+  { label: 'Locations', href: '/locations', hasDropdown: false },
   { label: 'Pricing', href: '/pricing', hasDropdown: false },
   { label: 'Blog', href: '/blog', hasDropdown: false },
   { label: 'Contact', href: '/#contact', hasDropdown: false },
