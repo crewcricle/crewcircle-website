@@ -6,7 +6,7 @@ export const CREWCIRCLE_SOCIAL = {
   github: 'https://github.com/crewcircle',
   youtube: 'https://youtube.com/@crewcircle',
   instagram: 'https://instagram.com/crewcircle',
-  substack: 'https://crewcircle.substack.com',
+  substack: 'https://prabhatranjan.substack.com',
 };
 
 export const SOCIAL_BIOS = {

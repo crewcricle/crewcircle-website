@@ -4,7 +4,7 @@ export const FOUNDER = {
   location: 'Sydney, Australia',
   education: 'IIT-BHU (Indian Institute of Technology)',
   shortBio:
-    "After 15 years building software for some of the world's biggest companies — Canva, JPMorgan, MSCI and BNP Paribas — I watched the small businesses doing the real work in this country get left behind by tools that are expensive, confusing and built for someone else. So I started CrewCircle: practical AI that sorts the boring stuff for Aussie tradies, cafés, shops and healthcare teams. No sales team, no jargon, just software that works.",
+    "I spent 15 years building software at Canva, JPMorgan, MSCI and BNP Paribas. Now I build practical AI for Aussie small businesses — the tradies, cafés, clinics and shops that keep this country running. No jargon, no sales team, just tools that work.",
   experience: [
     { company: 'Canva', role: 'Engineering Lead' },
     { company: 'JPMorgan', role: 'Engineering Lead' },
@@ -21,8 +21,8 @@ export const FOUNDER = {
   social: {
     linkedin: 'https://www.linkedin.com/in/prabhatr/',
     github: 'https://github.com/crewcircle',
-    website: 'https://crewcircle.com',
+    website: 'https://crewcircle.com.au',
     substack: 'https://prabhatranjan.substack.com',
   },
-  calendly: 'https://calendly.com/crewcircle/30min',
+  calendly: 'https://calendly.com/sensible-analytic/30min',
 };

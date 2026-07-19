@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import { Mail, Phone } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Logo } from '@/components/Logo';
 import { FOOTER_LINKS } from '@/lib/config/content';
@@ -15,6 +16,32 @@ export default function Footer() {
               Practical AI that sorts your small biz, no dramas. Built for Aussie
               businesses by Aussie builders.
             </p>
+            <div className="mt-6 space-y-2.5 text-sm">
+              <a
+                href="mailto:prabhat@crewcircle.com.au"
+                className="flex items-center gap-2 text-primary-foreground/70 hover:text-primary-foreground transition-colors duration-200"
+              >
+                <Mail className="w-4 h-4" />
+                prabhat@crewcircle.com.au
+              </a>
+              <details className="group">
+                <summary className="cursor-pointer list-none flex items-center gap-2 text-primary-foreground/70 hover:text-primary-foreground transition-colors duration-200">
+                  <Phone className="w-4 h-4" />
+                  <span>Mobile</span>
+                  <span className="text-xs underline">(click to show)</span>
+                </summary>
+                <a
+                  href="tel:+61410603242"
+                  className="flex items-center gap-2 mt-2 text-primary-foreground hover:text-primary-foreground transition-colors duration-200"
+                >
+                  <Phone className="w-4 h-4" />
+                  0410 603 242
+                </a>
+              </details>
+              <p className="text-primary-foreground/60 pt-1">
+                ABN 86 699 000 5064
+              </p>
+            </div>
           </div>
 
           <div>

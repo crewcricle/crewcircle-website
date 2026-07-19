@@ -16,8 +16,8 @@ export const PRICING_TIERS: PricingTier[] = [
     period: "forever",
     blurb: "The everyday helpers, on the house.",
     features: [
-      "Card Snap — snap business cards straight to contacts",
-      "Aura — ABN lookup, BAS reminders, ATO rates at a glance",
+      "CardSnap — snap business cards straight to contacts",
+      "AuRate — ABN lookup, BAS reminders, ATO rates at a glance",
       "No account needed",
     ],
     cta: { label: "Grab the free tools", href: "/#apps" },
@@ -28,7 +28,7 @@ export const PRICING_TIERS: PricingTier[] = [
     period: "month",
     blurb: "One AI tool for one headache.",
     features: [
-      "Pick any single app — Tax Flow, Local Meet, Smart GL or Crew Roster",
+      "Pick any single app — TaxFlowAI, LocalMate, SmartGL or CrewRoster",
       "Every AI feature included",
       "Email support",
     ],
@@ -40,9 +40,9 @@ export const PRICING_TIERS: PricingTier[] = [
     period: "month",
     blurb: "Every tool — the full AI back-office.",
     features: [
-      "All six apps in one login",
-      "Tax Flow + Local Meet AI flagships",
-      "Smart GL + Crew Roster full apps",
+      "All tools in one login",
+      "TaxFlowAI + LocalMate AI flagships",
+      "SmartGL + CrewRoster full apps",
       "Priority support",
     ],
     highlight: true,

@@ -20,7 +20,7 @@ export const IMPACT_STORIES = [
     ],
   },
   {
-    title: 'Tradie Crew Roster',
+    title: 'Tradie CrewRoster',
     description:
       'Replaced paper timesheets with GPS-tracked digital clock-ins for a 30-person construction crew. No more lost hours, no more payroll guesswork.',
     metrics: [
@@ -49,10 +49,12 @@ export const FOOTER_LINKS = {
     { label: 'Support', href: '/#services' },
   ],
   apps: [
-    { label: 'Crew Roster', href: 'https://roster.crewcircle.com' },
-    { label: 'Smart GL', href: '#' }, // placeholder — no production URL yet
-    { label: 'Card Snap', href: '/cardsnap' },
-    { label: 'XeroAssist', href: 'https://xero-assist.crewcircle.com' },
+    { label: 'TaxFlowAI', href: 'https://taxflow.crewcircle.com.au' },
+    { label: 'LocalMate', href: 'https://localmate.crewcircle.com.au' },
+    { label: 'CrewRoster', href: 'https://roster.crewcircle.com' },
+    { label: 'SmartGL', href: '#' }, // placeholder — no production URL yet
+    { label: 'CardSnap', href: '/cardsnap' },
+    { label: 'AuRate', href: '#' },
   ],
   legal: [
     { label: 'Privacy Policy', href: '#' }, // placeholder — no legal pages yet

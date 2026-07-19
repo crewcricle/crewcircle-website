@@ -18,8 +18,8 @@ export const SEGMENTS: Segment[] = [
     tagline: 'Less paperwork, more on the tools.',
     pain: 'You’re flat out on site. Receipts pile up, BAS creeps up, and rostering the crew is a whiteboard nightmare.',
     outcome:
-      'Snap receipts as they land, let AI sort the GST, and roster the crew from the job site. BAS becomes a non-event.',
-    appSlugs: ['tax-flow', 'crew-roster', 'aura'],
+      'Get GST and BAS questions answered with cited ATO sources, roster the crew from the job site, and validate ABNs in one click.',
+    appSlugs: ['taxflowai', 'crewroster', 'aurate'],
   },
   {
     slug: 'cafes',
@@ -28,8 +28,8 @@ export const SEGMENTS: Segment[] = [
     tagline: 'Run the floor, not the spreadsheets.',
     pain: 'Rosters, wages, and supplier bills eat your mornings. BAS is a mystery you pay someone else to worry about.',
     outcome:
-      'Automate the roster with award rates built in, track GST as you go, and keep the day-to-day admin free with Aura.',
-    appSlugs: ['crew-roster', 'tax-flow', 'aura'],
+      'Automate the roster with award rates built in, reply to reviews and track local SEO with LocalMate, and keep day-to-day ATO admin free with AuRate.',
+    appSlugs: ['crewroster', 'localmate', 'aurate'],
   },
   {
     slug: 'clinics',
@@ -38,8 +38,8 @@ export const SEGMENTS: Segment[] = [
     tagline: 'Patient care first, admin last.',
     pain: 'Solo or small practice, you’re the receptionist, bookkeeper and clinician. Compliance and BAS compete with care.',
     outcome:
-      'Keep GST and BAS sorted automatically, validate ABNs instantly, and spend the saved hours on patients.',
-    appSlugs: ['tax-flow', 'aura', 'smart-gl'],
+      'Get GST and BAS questions answered with cited ATO sources, validate ABNs instantly, and keep the books sorted with SmartGL.',
+    appSlugs: ['taxflowai', 'aurate', 'smartgl'],
   },
   {
     slug: 'retail',
@@ -48,7 +48,7 @@ export const SEGMENTS: Segment[] = [
     tagline: 'Sell more, admin less.',
     pain: 'Stock, staff, and supplier invoices. The back office grows faster than the floor.',
     outcome:
-      'Roster staff to demand, categorise expenses automatically, and never miss a BAS deadline again.',
-    appSlugs: ['crew-roster', 'smart-gl', 'aura'],
+      'Roster staff to demand, categorise expenses automatically with SmartGL, and never miss a BAS deadline with AuRate.',
+    appSlugs: ['crewroster', 'smartgl', 'aurate'],
   },
 ];

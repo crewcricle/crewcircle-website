@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import { Calendar, ExternalLink } from 'lucide-react';
+import { Calendar, ExternalLink, Mail, Phone } from 'lucide-react';
 import { FOUNDER } from '@/lib/config/founder';
 import ContactForm from '@/components/ContactForm';
 import { Button } from '@/components/ui/button';
@@ -51,6 +51,33 @@ export default function ContactSection() {
                 Book a 30-min call
                 <ExternalLink className="w-3.5 h-3.5" />
               </Button>
+
+              <div className="mt-6 pt-6 border-t border-border space-y-2.5 text-sm">
+                <a
+                  href="mailto:prabhat@crewcircle.com.au"
+                  className="flex items-center gap-2 text-muted-foreground hover:text-foreground transition-colors duration-200"
+                >
+                  <Mail className="w-4 h-4" />
+                  prabhat@crewcircle.com.au
+                </a>
+                <details className="group">
+                  <summary className="cursor-pointer list-none flex items-center gap-2 text-muted-foreground hover:text-foreground transition-colors duration-200">
+                    <Phone className="w-4 h-4" />
+                    <span>Mobile</span>
+                    <span className="text-xs underline text-accent">(click to show)</span>
+                  </summary>
+                  <a
+                    href="tel:+61410603242"
+                    className="flex items-center gap-2 mt-2 text-foreground hover:text-foreground transition-colors duration-200"
+                  >
+                    <Phone className="w-4 h-4" />
+                    0410 603 242
+                  </a>
+                </details>
+                <p className="text-muted-foreground pt-1">
+                  ABN 86 699 000 5064
+                </p>
+              </div>
             </div>
           </div>
 

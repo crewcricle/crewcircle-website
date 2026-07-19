@@ -1,3 +1,4 @@
+import Image from 'next/image';
 import Link from 'next/link';
 import { Button } from '@/components/ui/button';
 import { FOUNDER } from '@/lib/config/founder';
@@ -24,15 +25,15 @@ export default function AboutSection() {
         <div className="grid grid-cols-1 lg:grid-cols-5 gap-12">
           <div className="lg:col-span-3 space-y-8">
             <div className="flex items-start gap-5">
-              <div className="relative w-20 h-20 rounded-full overflow-hidden bg-gradient-to-br from-accent/10 to-primary/10 border-2 border-accent/20 flex-shrink-0 flex items-center justify-center">
-                <svg
-                  viewBox="0 0 200 200"
-                  className="w-16 h-16 text-foreground/30"
-                  fill="currentColor"
-                >
-                  <circle cx="100" cy="70" r="35" />
-                  <ellipse cx="100" cy="170" rx="65" ry="50" />
-                </svg>
+              <div className="relative w-20 h-20 rounded-full overflow-hidden bg-gradient-to-br from-accent/10 to-primary/10 border-2 border-accent/20 flex-shrink-0">
+                <Image
+                  src="/founder.jpg"
+                  alt={FOUNDER.name}
+                  fill
+                  className="object-cover"
+                  sizes="80px"
+                  priority
+                />
                 <div className="absolute -bottom-0.5 -right-0.5 w-5 h-5 rounded-full bg-green-500 border-2 border-background flex items-center justify-center">
                   <div className="w-2 h-2 rounded-full bg-white" />
                 </div>

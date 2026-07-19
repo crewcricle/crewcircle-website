@@ -13,10 +13,9 @@ export default function AppsGrid() {
             Our apps
           </h2>
             <p className="text-lg text-muted-foreground leading-relaxed">
-              Six tools built around one idea: let AI do the boring bits so you
-              can run your business. Two are fully AI-driven, the rest automate
-              the day-to-day. Built for Aussie tradies, cafés, shops and
-              healthcare teams.
+              Two AI flagships handle the heavy lifting — tax research and local
+              business automation. Four more helpers are in beta, each built to
+              remove a specific admin headache for Aussie small business.
             </p>
         </div>
 

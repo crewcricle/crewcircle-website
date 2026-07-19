@@ -14,14 +14,15 @@ export interface AppDef {
   };
   description: string;
   featured?: boolean;
+  beta?: boolean;
 }
 
 export const APPS: AppDef[] = [
   {
-    name: 'Tax Flow',
-    slug: 'tax-flow',
-    oneLiner: 'Tax sorted by AI, not by you.',
-    features: ['Snap & forget receipts', 'GST tracked for you', 'ATO-ready BAS'],
+    name: 'TaxFlowAI',
+    slug: 'taxflowai',
+    oneLiner: 'ATO tax research, done.',
+    features: ['Cited ATO answers', 'ATO letter response drafting', 'Firm knowledge base', 'Document generation'],
     icon: 'Calculator',
     theme: 'orange',
     ctaType: 'visit',
@@ -29,14 +30,14 @@ export const APPS: AppDef[] = [
       web: 'https://taxflow.crewcircle.com.au',
     },
     description:
-      'Our flagship AI agent. Snap a receipt or forward an invoice and it works out the GST, keeps track of what you owe, and hands your accountant a BAS that is already ATO-ready. No shoebox of dockets, no panic the night before lodgement.',
+      'AI research assistant built for Australian tax professionals and accounting firms. Ask ATO questions in plain English and get cited answers drawn from public rulings, tax determinations, and legislation. Upload an ATO letter and get a drafted response, generate firm-branded documents, and build a private knowledge base from your own precedents. Every answer shows its sources.',
     featured: true,
   },
   {
-    name: 'Local Meet',
-    slug: 'local-meet',
-    oneLiner: 'Meet the right locals, no awkward networking.',
-    features: ['Smart local matching', 'People near you', 'Real faces, real crew'],
+    name: 'LocalMate',
+    slug: 'localmate',
+    oneLiner: 'Local business automation for Aussie SMBs.',
+    features: ['AI review replies', 'Local SEO tracking', 'Competitor monitoring', 'Rebooking follow-ups'],
     icon: 'Users',
     theme: 'blue',
     ctaType: 'visit',
@@ -44,14 +45,14 @@ export const APPS: AppDef[] = [
       web: 'https://localmate.crewcircle.com.au',
     },
     description:
-      'Our second AI-built app. It quietly learns who is worth knowing — the supplier who always delivers, the tradie round the corner, the cafe owner who sends you customers — and introduces you to the right locals so your network actually shows up in real life, not just in your feed.',
+      'Local business automation for Australian SMBs. One dashboard runs five AI jobs: Review Guard drafts replies to Google and Yelp reviews; Rank Report tracks your local SEO weekly; Competitor Watch keeps an eye on nearby rivals; Rebook follows up lapsed customers by SMS and email; Menu Sync pushes updates from Google Sheets to Google Business Profile and Square. Built to save hours every week.',
     featured: true,
   },
   {
-    name: 'Smart GL',
-    slug: 'smart-gl',
-    oneLiner: 'AI does the books for your crew.',
-    features: ['AI categorisation', 'GST/BAS reports', 'Ledger tracking'],
+    name: 'SmartGL',
+    slug: 'smartgl',
+    oneLiner: 'AI bookkeeping with Australian GST in mind.',
+    features: ['Bank feed sync', 'AI categorisation', 'Double-entry ledger', 'GST/BAS ready'],
     icon: 'BookOpen',
     theme: 'blue',
     ctaType: 'visit',
@@ -59,13 +60,15 @@ export const APPS: AppDef[] = [
       web: '#', // placeholder — no production URL yet
     },
     description:
-      'A full bookkeeping app with AI baked in. It categorises wages, supplier bills, and expenses automatically, then generates GST/BAS reports ready for your accountant. No cloud dependence, your data stays private.',
+      'AI bookkeeping engine that connects to Australian bank feeds, categorises transactions automatically, and maintains a double-entry ledger. Built around the Formance ledger with Australian GST and BAS reporting in mind. Currently in beta — ideal for early accounting firms and bookkeepers who want to test the workflow.',
+    featured: false,
+    beta: true,
   },
   {
-    name: 'Crew Roster',
-    slug: 'crew-roster',
-    oneLiner: 'Digital timesheet for your crew, sorted.',
-    features: ['Roster scheduling', 'GPS clock-in/out', 'Award compliance'],
+    name: 'CrewRoster',
+    slug: 'crewroster',
+    oneLiner: 'Rostering and timesheets for your crew.',
+    features: ['Shift scheduling', 'GPS clock-in/out', 'Payroll export', 'Award compliance'],
     icon: 'Timer',
     theme: 'orange',
     ctaType: 'visit',
@@ -73,13 +76,15 @@ export const APPS: AppDef[] = [
       web: 'https://roster.crewcircle.com',
     },
     description:
-      'A full rostering app that automates the week. GPS-tracked shifts, award compliance rules baked in, and automated payroll export. Your crew signs in from the job site, you get the hours sorted automatically.',
+      'Digital rostering and timesheets for shift-based crews. Schedule shifts, record GPS clock-in and clock-out, and export hours for payroll. Award compliance helpers are being added. Currently in beta and open for early crews.',
+    featured: false,
+    beta: true,
   },
   {
-    name: 'Card Snap',
-    slug: 'card-snap',
-    oneLiner: 'Snap cards for your crew.',
-    features: ['ML Kit OCR', 'Contact save', 'Card history'],
+    name: 'CardSnap',
+    slug: 'cardsnap',
+    oneLiner: 'Snap cards, save contacts.',
+    features: ['On-device OCR', 'Contact save', 'CSV export', 'Search history'],
     icon: 'Camera',
     theme: 'green',
     ctaType: 'download',
@@ -89,13 +94,15 @@ export const APPS: AppDef[] = [
       playStore: '#android',
     },
     description:
-      'A free little helper. Snap a photo of any business card and the details land straight in your contacts. On-device OCR means nothing leaves your phone. Export to CSV, search history, never lose a contact again.',
+      'Free business-card scanner. Snap a card with your phone and the contact details land straight in your address book. On-device OCR means nothing leaves your phone. Export to CSV, search your history, and never lose a lead again.',
+    featured: false,
+    beta: true,
   },
   {
-    name: 'Aura',
-    slug: 'aura',
-    oneLiner: 'The free sidekick for your day-to-day.',
-    features: ['ABN lookup', 'BAS reminders', 'ATO rates at a glance'],
+    name: 'AuRate',
+    slug: 'aurate',
+    oneLiner: 'ATO admin in one click.',
+    features: ['ABN lookup', 'ATO rates', 'BAS reminders', 'Chrome extension'],
     icon: 'Wrench',
     theme: 'purple',
     ctaType: 'download',
@@ -103,6 +110,8 @@ export const APPS: AppDef[] = [
       chromeStore: '#chrome',
     },
     description:
-      'A free Chrome helper that keeps the everyday admin sorted — validate an ABN in a click, never miss a BAS deadline, and pull ATO rates without leaving your browser. No account, no cost, just the small stuff done.',
+      'Free Chrome sidekick for Australian sole traders and small businesses. Validate an ABN in one click, check ATO rates and thresholds, and get BAS deadline reminders without leaving your browser. No account required.',
+    featured: false,
+    beta: true,
   },
 ];

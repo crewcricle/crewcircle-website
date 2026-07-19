@@ -7,7 +7,7 @@ import { PRICING_TIERS } from '@/lib/config/pricing';
 export const metadata: Metadata = {
   title: 'Pricing — CrewCircle',
   description:
-    'Simple, transparent pricing for small business. Start free with Card Snap and Aura, then upgrade to AI-powered tools when you are ready.',
+    'Simple, transparent pricing for small business. Start free with CardSnap and AuRate, then upgrade to AI-powered tools when you are ready.',
 };
 
 function formatPrice(price: number, period: string): string {
