@@ -1,51 +1,124 @@
 export interface PricingTier {
   name: string;
   price: number;
-  period: "month" | "forever";
+  period: "month" | "year" | "forever";
   blurb: string;
   features: string[];
   highlight?: boolean;
   cta: { label: string; href: string };
 }
 
-// Prices are placeholders — adjust before any paid launch.
-export const PRICING_TIERS: PricingTier[] = [
+export interface PricingSection {
+  appName: string;
+  appSlug: string;
+  description: string;
+  note?: string;
+  tiers: PricingTier[];
+}
+
+export const PRICING_SECTIONS: PricingSection[] = [
   {
-    name: "Free",
-    price: 0,
-    period: "forever",
-    blurb: "The everyday helpers, on the house.",
-    features: [
-      "CardSnap — snap business cards straight to contacts",
-      "AuRate — ABN lookup, BAS reminders, ATO rates at a glance",
-      "No account needed",
+    appName: "LocalMate",
+    appSlug: "localmate",
+    description:
+      "Local business automation for Australian trades, cafés, clinics, and shops. Pick a plan that runs the jobs you actually need.",
+    note: "14-day free trial. No credit card required. Cancel anytime. Prices are in AUD and include GST.",
+    tiers: [
+      {
+        name: "Starter",
+        price: 49,
+        period: "month",
+        blurb: "Track the keywords that bring customers to your suburb.",
+        features: [
+          "Rank Report — weekly local SEO email",
+          "5 suburb keywords tracked",
+          "Email support",
+        ],
+        cta: {
+          label: "Start free trial",
+          href: "https://localmate.crewcircle.com.au",
+        },
+      },
+      {
+        name: "Growth",
+        price: 79,
+        period: "month",
+        blurb: "Reply to reviews and watch competitors while you work.",
+        features: [
+          "Review Guard — AI-drafted Google/Yelp replies",
+          "Rank Report — weekly local SEO email",
+          "Competitor Watch — Monday morning brief",
+          "Email support",
+        ],
+        highlight: true,
+        cta: {
+          label: "Start free trial",
+          href: "https://localmate.crewcircle.com.au",
+        },
+      },
+      {
+        name: "Complete",
+        price: 100,
+        period: "month",
+        blurb: "The full set-and-forget local marketing assistant.",
+        features: [
+          "Everything in Growth",
+          "Rebook — lapsed patient SMS follow-up",
+          "Menu Sync — Google Sheets to GBP + Square",
+          "Priority support",
+        ],
+        cta: {
+          label: "Start free trial",
+          href: "https://localmate.crewcircle.com.au",
+        },
+      },
     ],
-    cta: { label: "Grab the free tools", href: "/#apps" },
   },
   {
-    name: "Solo",
-    price: 9,
-    period: "month",
-    blurb: "One AI tool for one headache.",
-    features: [
-      "Pick any single app — TaxFlowAI, LocalMate, SmartGL or CrewRoster",
-      "Every AI feature included",
-      "Email support",
+    appName: "TaxFlowAI",
+    appSlug: "taxflowai",
+    description:
+      "ATO tax research and advisory AI built for Australian accounting firms. Billed yearly.",
+    note: "Prices are in AUD and exclude GST. Both plans include the ATO correspondence module.",
+    tiers: [
+      {
+        name: "Starter",
+        price: 2400,
+        period: "year",
+        blurb: "For smaller firms starting to automate tax research.",
+        features: [
+          "300 research queries / month",
+          "50 documents / month",
+          "ATO correspondence module",
+          "Email support",
+        ],
+        cta: {
+          label: "Request access",
+          href: "https://taxflow.crewcircle.com.au",
+        },
+      },
+      {
+        name: "Professional",
+        price: 6000,
+        period: "year",
+        blurb: "For firms that want unlimited research plus a private knowledge base.",
+        features: [
+          "Unlimited research queries",
+          "Unlimited documents",
+          "ATO correspondence module",
+          "Firm knowledge base",
+          "Regulatory alerts",
+          "Priority support",
+        ],
+        highlight: true,
+        cta: {
+          label: "Request access",
+          href: "https://taxflow.crewcircle.com.au",
+        },
+      },
     ],
-    cta: { label: "Start Solo", href: "/#apps" },
-  },
-  {
-    name: "Crew Bundle",
-    price: 29,
-    period: "month",
-    blurb: "Every tool — the full AI back-office.",
-    features: [
-      "All tools in one login",
-      "TaxFlowAI + LocalMate AI flagships",
-      "SmartGL + CrewRoster full apps",
-      "Priority support",
-    ],
-    highlight: true,
-    cta: { label: "Get the Bundle", href: "/#contact" },
   },
 ];
+
+export const FREE_TOOLS_BLURB =
+  "CardSnap and AuRate are free helpers. They are launching soon on the App Store, Google Play, and Chrome Web Store.";

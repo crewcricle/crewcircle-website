@@ -2,17 +2,17 @@ import type { Metadata } from 'next';
 import Link from 'next/link';
 import { Check } from 'lucide-react';
 import { Button } from '@/components/ui/button';
-import { PRICING_TIERS } from '@/lib/config/pricing';
+import { PRICING_SECTIONS, FREE_TOOLS_BLURB } from '@/lib/config/pricing';
 
 export const metadata: Metadata = {
   title: 'Pricing — CrewCircle',
   description:
-    'Simple, transparent pricing for small business. Start free with CardSnap and AuRate, then upgrade to AI-powered tools when you are ready.',
+    'Transparent pricing for TaxFlowAI and LocalMate. Start with a 14-day free trial, or request access for firm-grade tax research.',
 };
 
 function formatPrice(price: number, period: string): string {
   if (price === 0) return 'Free';
-  return `$${price}/${period}`;
+  return `$${price.toLocaleString('en-AU')}/${period}`;
 }
 
 export default function PricingPage() {
@@ -23,88 +23,116 @@ export default function PricingPage() {
           Pricing
         </span>
         <h1 className="mt-2 text-3xl md:text-4xl font-bold text-foreground">
-          Simple pricing for small business.
+          Transparent pricing.
         </h1>
         <p className="mt-4 text-lg text-muted-foreground max-w-2xl">
-          Pick the tools you need. Start free, upgrade when the AI is doing the
-          heavy lifting.
+          No hidden tiers, no surprise add-ons. Each app is priced separately so
+          you pay for what you actually use.
         </p>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8 mt-12">
-          {PRICING_TIERS.map((tier) => {
-            const isHighlighted = tier.highlight === true;
-
-            return (
-              <div
-                key={tier.name}
-                className={
-                  isHighlighted
-                    ? 'rounded-2xl border border-accent bg-accent text-accent-foreground p-8 flex flex-col'
-                    : 'rounded-2xl border border-border bg-background p-8 flex flex-col'
-                }
-              >
-                <h2 className="text-xl font-semibold">{tier.name}</h2>
-
-                <div className="mt-4">
-                  <span className="text-4xl font-bold">
-                    {formatPrice(tier.price, tier.period)}
-                  </span>
-                </div>
-
-                <p
-                  className={
-                    isHighlighted
-                      ? 'mt-2 text-sm text-accent-foreground/80'
-                      : 'mt-2 text-sm text-muted-foreground'
-                  }
-                >
-                  {tier.blurb}
+        <div className="mt-16 space-y-20">
+          {PRICING_SECTIONS.map((section) => (
+            <div key={section.appSlug}>
+              <div className="mb-8">
+                <h2 className="text-2xl font-semibold text-foreground">
+                  {section.appName}
+                </h2>
+                <p className="mt-2 text-muted-foreground max-w-3xl">
+                  {section.description}
                 </p>
+                {section.note && (
+                  <p className="mt-2 text-sm text-muted-foreground">
+                    {section.note}
+                  </p>
+                )}
+              </div>
 
-                <div
-                  className={
-                    isHighlighted
-                      ? 'mt-6 border-t border-accent-foreground/20'
-                      : 'mt-6 border-t border-border'
-                  }
-                />
+              <div
+                className={`grid grid-cols-1 gap-6 ${
+                  section.tiers.length === 2
+                    ? 'md:grid-cols-2'
+                    : 'md:grid-cols-3'
+                }`}
+              >
+                {section.tiers.map((tier) => {
+                  const isHighlighted = tier.highlight === true;
 
-                <ul className="mt-6 space-y-3">
-                  {tier.features.map((feature) => (
-                    <li key={feature} className="flex items-start gap-3">
-                      <Check
+                  return (
+                    <div
+                      key={tier.name}
+                      className={
+                        isHighlighted
+                          ? 'rounded-2xl border border-accent bg-accent text-accent-foreground p-8 flex flex-col'
+                          : 'rounded-2xl border border-border bg-background p-8 flex flex-col'
+                      }
+                    >
+                      <h3 className="text-xl font-semibold">{tier.name}</h3>
+
+                      <div className="mt-4">
+                        <span className="text-4xl font-bold">
+                          {formatPrice(tier.price, tier.period)}
+                        </span>
+                      </div>
+
+                      <p
                         className={
                           isHighlighted
-                            ? 'w-5 h-5 shrink-0 text-accent-foreground'
-                            : 'w-5 h-5 shrink-0 text-accent'
+                            ? 'mt-2 text-sm text-accent-foreground/80'
+                            : 'mt-2 text-sm text-muted-foreground'
+                        }
+                      >
+                        {tier.blurb}
+                      </p>
+
+                      <div
+                        className={
+                          isHighlighted
+                            ? 'mt-6 border-t border-accent-foreground/20'
+                            : 'mt-6 border-t border-border'
                         }
                       />
-                      <span className="text-sm">{feature}</span>
-                    </li>
-                  ))}
-                </ul>
 
-                <div className="mt-auto pt-6">
-                  <Button
-                    variant={isHighlighted ? 'default' : 'accent'}
-                    size="xl"
-                    className="w-full"
-                    render={<Link href={tier.cta.href} />}
-                  >
-                    {tier.cta.label}
-                  </Button>
-                </div>
+                      <ul className="mt-6 space-y-3">
+                        {tier.features.map((feature) => (
+                          <li key={feature} className="flex items-start gap-3">
+                            <Check
+                              className={
+                                isHighlighted
+                                  ? 'w-5 h-5 shrink-0 text-accent-foreground'
+                                  : 'w-5 h-5 shrink-0 text-accent'
+                              }
+                            />
+                            <span className="text-sm">{feature}</span>
+                          </li>
+                        ))}
+                      </ul>
+
+                      <div className="mt-auto pt-6">
+                        <Button
+                          variant={isHighlighted ? 'default' : 'accent'}
+                          size="xl"
+                          className="w-full"
+                          render={<Link href={tier.cta.href} />}
+                        >
+                          {tier.cta.label}
+                        </Button>
+                      </div>
+                    </div>
+                  );
+                })}
               </div>
-            );
-          })}
+            </div>
+          ))}
+        </div>
+
+        <div className="mt-20 rounded-2xl border border-border bg-muted/30 p-8">
+          <h2 className="text-xl font-semibold text-foreground">Free tools</h2>
+          <p className="mt-2 text-muted-foreground">{FREE_TOOLS_BLURB}</p>
         </div>
 
         <p className="mt-12 text-center text-muted-foreground">
-          All prices in AUD, GST included. Not sure which fits?{' '}
-          <Button
-            variant="link"
-            render={<Link href="/#contact" />}
-          >
+          Not sure which plan fits?{' '}
+          <Button variant="link" render={<Link href="/#contact" />}>
             Let&apos;s talk
           </Button>
         </p>

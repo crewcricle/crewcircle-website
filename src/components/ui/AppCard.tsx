@@ -113,6 +113,17 @@ export default function AppCard({ app }: AppCardProps) {
             )}
           </div>
         )}
+
+        {app.ctaType === 'coming-soon' && (
+          <Button
+            variant="outline"
+            size="default"
+            className="w-full"
+            disabled
+          >
+            Coming soon
+          </Button>
+        )}
       </div>
     </div>
   );

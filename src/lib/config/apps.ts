@@ -5,7 +5,7 @@ export interface AppDef {
   features: string[];
   icon: string;
   theme: 'orange' | 'blue' | 'green' | 'purple';
-  ctaType: 'demo' | 'visit' | 'download';
+  ctaType: 'demo' | 'visit' | 'download' | 'coming-soon';
   links: {
     web?: string;
     appStore?: string;
@@ -51,23 +51,21 @@ export const APPS: AppDef[] = [
   {
     name: 'SmartGL',
     slug: 'smartgl',
-    oneLiner: 'AI bookkeeping with Australian GST in mind.',
+    oneLiner: 'AI bookkeeping with Australian GST in mind. Beta — waitlist open.',
     features: ['Bank feed sync', 'AI categorisation', 'Double-entry ledger', 'GST/BAS ready'],
     icon: 'BookOpen',
     theme: 'blue',
-    ctaType: 'visit',
-    links: {
-      web: '#', // placeholder — no production URL yet
-    },
+    ctaType: 'coming-soon',
+    links: {},
     description:
-      'AI bookkeeping engine that connects to Australian bank feeds, categorises transactions automatically, and maintains a double-entry ledger. Built around the Formance ledger with Australian GST and BAS reporting in mind. Currently in beta — ideal for early accounting firms and bookkeepers who want to test the workflow.',
+      'AI bookkeeping engine that connects to Australian bank feeds, categorises transactions automatically, and maintains a double-entry ledger. Built around the Formance ledger with Australian GST and BAS reporting in mind. Still in early beta — join the waitlist if you want to test the workflow.',
     featured: false,
     beta: true,
   },
   {
     name: 'CrewRoster',
     slug: 'crewroster',
-    oneLiner: 'Rostering and timesheets for your crew.',
+    oneLiner: 'Rostering and timesheets for your crew. Beta — early crews welcome.',
     features: ['Shift scheduling', 'GPS clock-in/out', 'Payroll export', 'Award compliance'],
     icon: 'Timer',
     theme: 'orange',
@@ -83,34 +81,28 @@ export const APPS: AppDef[] = [
   {
     name: 'CardSnap',
     slug: 'cardsnap',
-    oneLiner: 'Snap cards, save contacts.',
+    oneLiner: 'Snap cards, save contacts. Mobile app — coming soon.',
     features: ['On-device OCR', 'Contact save', 'CSV export', 'Search history'],
     icon: 'Camera',
     theme: 'green',
-    ctaType: 'download',
-    links: {
-      web: '/cardsnap',
-      appStore: '#ios',
-      playStore: '#android',
-    },
+    ctaType: 'coming-soon',
+    links: {},
     description:
-      'Free business-card scanner. Snap a card with your phone and the contact details land straight in your address book. On-device OCR means nothing leaves your phone. Export to CSV, search your history, and never lose a lead again.',
+      'Free business-card scanner. Snap a card with your phone and the contact details land straight in your address book. On-device OCR means nothing leaves your phone. Export to CSV, search your history, and never lose a lead again. Launching on the App Store and Google Play soon.',
     featured: false,
     beta: true,
   },
   {
     name: 'AuRate',
     slug: 'aurate',
-    oneLiner: 'ATO admin in one click.',
+    oneLiner: 'ATO admin in one click. Chrome extension — coming soon.',
     features: ['ABN lookup', 'ATO rates', 'BAS reminders', 'Chrome extension'],
     icon: 'Wrench',
     theme: 'purple',
-    ctaType: 'download',
-    links: {
-      chromeStore: '#chrome',
-    },
+    ctaType: 'coming-soon',
+    links: {},
     description:
-      'Free Chrome sidekick for Australian sole traders and small businesses. Validate an ABN in one click, check ATO rates and thresholds, and get BAS deadline reminders without leaving your browser. No account required.',
+      'Free Chrome sidekick for Australian sole traders and small businesses. Validate an ABN in one click, check ATO rates and thresholds, and get BAS deadline reminders without leaving your browser. No account required. Launching on the Chrome Web Store soon.',
     featured: false,
     beta: true,
   },

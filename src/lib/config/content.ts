@@ -43,22 +43,22 @@ export const IMPACT_STORIES = [
 
 export const FOOTER_LINKS = {
   services: [
-    { label: 'AI Strategy', href: '/#services' },
-    { label: 'Custom Tools', href: '/#services' },
-    { label: 'Data & Analytics', href: '/#services' },
-    { label: 'Support', href: '/#services' },
+    { label: 'Pricing', href: '/pricing' },
+    { label: 'Apps', href: '/#apps' },
+    { label: 'About', href: '/#about' },
+    { label: 'Contact', href: '/#contact' },
   ],
   apps: [
     { label: 'TaxFlowAI', href: 'https://taxflow.crewcircle.com.au' },
     { label: 'LocalMate', href: 'https://localmate.crewcircle.com.au' },
     { label: 'CrewRoster', href: 'https://roster.crewcircle.com' },
-    { label: 'SmartGL', href: '#' }, // placeholder — no production URL yet
+    { label: 'SmartGL', href: '/#apps' },
     { label: 'CardSnap', href: '/cardsnap' },
-    { label: 'AuRate', href: '#' },
+    { label: 'AuRate', href: '/#apps' },
   ],
   legal: [
-    { label: 'Privacy Policy', href: '#' }, // placeholder — no legal pages yet
-    { label: 'Terms of Service', href: '#' }, // placeholder — no legal pages yet
-    { label: 'Documentation', href: '#' }, // placeholder — no legal pages yet
+    { label: 'Privacy Policy', href: '/privacy' },
+    { label: 'Terms of Service', href: '/terms' },
+    { label: 'Documentation', href: '/documentation' },
   ],
 };
