@@ -15,35 +15,35 @@ export const metadata: Metadata = {
   alternates: {
     canonical: "https://crewcircle.com.au",
   },
-  title: "CrewCircle | AI Consultancy by Prabhat Ranjan",
+  title: "CrewCircle | Practical AI Tools for Australian Small Business",
   description:
-      "AI solutions that sort your small biz, no dramas. Practical AI tools and strategy for Australian businesses, by Prabhat Ranjan (Canva, JPMorgan, MSCI, BNP Paribas).",
+      "Practical AI tools built for Australian small business: TaxFlowAI for tax research, LocalMate for local biz automation, plus four more helpers in beta.",
   openGraph: {
-    title: "CrewCircle | AI Consultancy by Prabhat Ranjan",
+    title: "CrewCircle | Practical AI Tools for Australian Small Business",
     description:
-      "AI solutions that sort your small biz, no dramas. Practical AI tools and strategy for Australian businesses, by Prabhat Ranjan (ex-Canva, JPMorgan, MSCI).",
+      "Practical AI tools built for Australian small business: TaxFlowAI for tax research, LocalMate for local biz automation, plus four more helpers in beta.",
     url: "https://crewcircle.com.au",
     siteName: "CrewCircle",
     images: [{
       url: "https://crewcircle.com.au/social/social-preview-1200x630.png",
       width: 1200,
       height: 630,
-      alt: "CrewCircle - AI Consultancy for Australian Businesses",
+      alt: "CrewCircle - Practical AI Tools for Australian Small Business",
     }],
     locale: "en_AU",
     type: "website",
   },
   twitter: {
     card: "summary_large_image",
-    site: "@crewcircle",
+    site: "@crewcircle_ai",
     creator: "@prabhatranjann",
     title: "CrewCircle",
     description:
-      "AI solutions that sort your small biz, no dramas. Practical AI tools and strategy for Australian businesses.",
+      "Practical AI tools built for Australian small business: TaxFlowAI for tax research, LocalMate for local biz automation, plus four more helpers in beta.",
     images: ["https://crewcircle.com.au/social/social-preview-1200x630.png"],
   },
   other: {
-    "linkedin:owner": "linkedin.com/company/crewcircle",
+    "linkedin:owner": "linkedin.com/company/crew-circle",
   },
 };
 
