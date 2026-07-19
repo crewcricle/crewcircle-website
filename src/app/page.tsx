@@ -1,10 +1,9 @@
 import dynamic from 'next/dynamic';
 import Hero from '@/components/sections/Hero';
 import ServicesSection from '@/components/sections/ServicesSection';
-import ImpactSection from '@/components/sections/ImpactSection';
+import ProofSection from '@/components/sections/ProofSection';
 import AboutSection from '@/components/sections/AboutSection';
 import ContactSection from '@/components/sections/ContactSection';
-import Testimonials from '@/components/sections/Testimonials';
 
 const AppsGrid = dynamic(() => import('@/components/sections/AppsGrid'), {
   loading: () => (
@@ -23,9 +22,8 @@ export default function HomePage() {
       <Hero />
       <AppsGrid />
       <ServicesSection />
-      <ImpactSection />
+      <ProofSection />
       <AboutSection />
-      <Testimonials />
       <ContactSection />
     </>
   );
