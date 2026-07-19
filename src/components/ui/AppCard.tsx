@@ -16,11 +16,12 @@ const appIcons: Record<string, React.ReactNode> = {
 
 interface AppCardProps {
   app: AppDef;
+  compact?: boolean;
 }
 
-export default function AppCard({ app }: AppCardProps) {
+export default function AppCard({ app, compact = false }: AppCardProps) {
   return (
-    <div className="bg-card border border-border rounded-xl p-6 hover:shadow-md hover:border-accent/20 transition-all duration-200 group relative overflow-hidden">
+    <div className={`bg-card border border-border rounded-xl hover:shadow-md hover:border-accent/20 transition-all duration-200 group relative overflow-hidden ${compact ? 'p-5' : 'p-6'}`}>
       {app.featured && (
         <span className="absolute right-4 top-4 z-10 inline-flex items-center rounded-full bg-accent px-2.5 py-0.5 text-xs font-semibold text-accent-foreground">Featured</span>
       )}
@@ -28,21 +29,21 @@ export default function AppCard({ app }: AppCardProps) {
         <span className="absolute right-4 top-4 z-10 inline-flex items-center rounded-full bg-muted px-2.5 py-0.5 text-xs font-semibold text-muted-foreground">Beta</span>
       )}
       <div className="absolute top-0 left-0 right-0 h-0.5 bg-gradient-to-r from-accent/0 via-accent/40 to-accent/0 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-      <div className="flex items-center gap-4 mb-4">
-        <div className="w-12 h-12 bg-accent/10 text-accent rounded-xl flex items-center justify-center group-hover:bg-accent group-hover:text-accent-foreground transition-all duration-200">
-          {appIcons[app.icon] || <Wrench className="w-6 h-6" />}
+      <div className={`flex items-center gap-4 ${compact ? 'mb-3' : 'mb-4'}`}>
+        <div className={`bg-accent/10 text-accent rounded-xl flex items-center justify-center group-hover:bg-accent group-hover:text-accent-foreground transition-all duration-200 ${compact ? 'w-10 h-10' : 'w-12 h-12'}`}>
+          {appIcons[app.icon] || <Wrench className={`${compact ? 'w-5 h-5' : 'w-6 h-6'}`} />}
         </div>
         <div>
-          <h3 className="text-lg font-bold text-foreground">{app.name}</h3>
+          <h3 className={`font-bold text-foreground ${compact ? 'text-base' : 'text-lg'}`}>{app.name}</h3>
           <p className="text-sm text-muted-foreground">{app.oneLiner}</p>
         </div>
       </div>
 
-      <p className="text-muted-foreground text-sm mb-5 leading-relaxed">
+      <p className={`text-muted-foreground leading-relaxed ${compact ? 'text-sm mb-4' : 'text-sm mb-5'}`}>
         {app.description}
       </p>
 
-      <ul className="space-y-2 mb-6 border-t border-border/50 pt-4">
+      <ul className={`space-y-2 border-t border-border/50 ${compact ? 'mb-4 pt-3' : 'mb-6 pt-4'}`}>
         {app.features.map((f) => (
           <li key={f} className="flex items-center gap-2 text-sm text-muted-foreground">
             <span className="w-1.5 h-1.5 rounded-full bg-accent shrink-0" />

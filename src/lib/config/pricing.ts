@@ -78,13 +78,13 @@ export const PRICING_SECTIONS: PricingSection[] = [
     appName: "TaxFlowAI",
     appSlug: "taxflowai",
     description:
-      "ATO tax research and advisory AI built for Australian accounting firms. Billed yearly.",
+      "ATO tax research and advisory AI built for Australian accounting firms. Billed monthly.",
     note: "Prices are in AUD and exclude GST. Both plans include the ATO correspondence module.",
     tiers: [
       {
         name: "Starter",
-        price: 2400,
-        period: "year",
+        price: 100,
+        period: "month",
         blurb: "For smaller firms starting to automate tax research.",
         features: [
           "300 research queries / month",
@@ -99,8 +99,8 @@ export const PRICING_SECTIONS: PricingSection[] = [
       },
       {
         name: "Professional",
-        price: 6000,
-        period: "year",
+        price: 250,
+        period: "month",
         blurb: "For firms that want unlimited research plus a private knowledge base.",
         features: [
           "Unlimited research queries",
@@ -118,7 +118,50 @@ export const PRICING_SECTIONS: PricingSection[] = [
       },
     ],
   },
+  {
+    appName: "CrewRoster",
+    appSlug: "crewroster",
+    description:
+      "Rostering and timesheets for shift-based crews. Start free and only pay once you grow past 5 employees.",
+    note: "Prices are in AUD and exclude GST. Subscriptions are billed monthly based on active employees.",
+    tiers: [
+      {
+        name: "Free",
+        price: 0,
+        period: "month",
+        blurb: "For the little guys starting out.",
+        features: [
+          "Up to 5 employees",
+          "Full rostering features",
+          "Mobile app for your team",
+          "GPS clock in/out",
+        ],
+        cta: {
+          label: "Start for free",
+          href: "https://roster.crewcircle.com.au",
+        },
+      },
+      {
+        name: "Starter",
+        price: 4,
+        period: "month",
+        blurb: "For growing teams.",
+        features: [
+          "Unlimited employees",
+          "Pay for what you use",
+          "Priority support",
+          "CSV export for payroll",
+          "Labour cost tracking",
+        ],
+        highlight: true,
+        cta: {
+          label: "Start free trial",
+          href: "https://roster.crewcircle.com.au",
+        },
+      },
+    ],
+  },
 ];
 
 export const FREE_TOOLS_BLURB =
-  "CardSnap and AuRate are free helpers. They are launching soon on the App Store, Google Play, and Chrome Web Store.";
+  "CardSnap and AuRate are free helpers. Both launch in August 2026 on the App Store, Google Play, and Chrome Web Store.";

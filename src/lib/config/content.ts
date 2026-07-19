@@ -51,7 +51,7 @@ export const FOOTER_LINKS = {
   apps: [
     { label: 'TaxFlowAI', href: 'https://taxflow.crewcircle.com.au' },
     { label: 'LocalMate', href: 'https://localmate.crewcircle.com.au' },
-    { label: 'CrewRoster', href: 'https://roster.crewcircle.com' },
+    { label: 'CrewRoster', href: 'https://roster.crewcircle.com.au' },
     { label: 'SmartGL', href: '/#apps' },
     { label: 'CardSnap', href: '/cardsnap' },
     { label: 'AuRate', href: '/#apps' },

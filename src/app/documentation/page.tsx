@@ -82,13 +82,12 @@ export default function DocumentationPage() {
               </div>
               <div>
                 <h3 className="font-semibold text-foreground mb-1">
-                  Are the beta apps ready to use?
+                  Which apps are live today?
                 </h3>
                 <p className="leading-relaxed">
-                  SmartGL, CardSnap, AuRate, and CrewRoster are in beta or coming
-                  soon. CrewRoster is open to early crews; SmartGL, CardSnap, and
-                  AuRate currently have waitlists. Click the app card on the home
-                  page to join the waitlist.
+                  TaxFlowAI, LocalMate, and CrewRoster are live now. SmartGL,
+                  CardSnap, and AuRate are in beta and launching in August 2026.
+                  Join the waitlist from the home page if you want early access.
                 </p>
               </div>
             </div>

@@ -17,11 +17,11 @@ export const metadata: Metadata = {
   },
   title: "CrewCircle | Practical AI Tools for Australian Small Business",
   description:
-      "Practical AI tools built for Australian small business: TaxFlowAI for tax research, LocalMate for local biz automation, plus four more helpers in beta.",
+      "Practical AI tools built for Australian small business: TaxFlowAI for tax research, LocalMate for local biz automation, CrewRoster for rostering, plus three more helpers launching August 2026.",
   openGraph: {
     title: "CrewCircle | Practical AI Tools for Australian Small Business",
     description:
-      "Practical AI tools built for Australian small business: TaxFlowAI for tax research, LocalMate for local biz automation, plus four more helpers in beta.",
+      "Practical AI tools built for Australian small business: TaxFlowAI for tax research, LocalMate for local biz automation, CrewRoster for rostering, plus three more helpers launching August 2026.",
     url: "https://crewcircle.com.au",
     siteName: "CrewCircle",
     images: [{
@@ -39,7 +39,7 @@ export const metadata: Metadata = {
     creator: "@prabhatranjann",
     title: "CrewCircle",
     description:
-      "Practical AI tools built for Australian small business: TaxFlowAI for tax research, LocalMate for local biz automation, plus four more helpers in beta.",
+      "Practical AI tools built for Australian small business: TaxFlowAI for tax research, LocalMate for local biz automation, CrewRoster for rostering, plus three more helpers launching August 2026.",
     images: ["https://crewcircle.com.au/social/social-preview-1200x630.png"],
   },
   other: {
