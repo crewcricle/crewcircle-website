@@ -1,5 +1,5 @@
 imports:
-  - doppler://crewcircle-master/prod
+  - doppler://crewcircle-master/prd
 values:
   # Provider SDKs read from os.environ, not pulumi.Config
   environmentVariables:

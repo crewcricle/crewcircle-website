@@ -3,9 +3,10 @@ set -euo pipefail
 
 PROJECT="${1:-}"
 ENV_FILE="${2:-}"
+CONFIG="${3:-dev}"
 
 if [[ -z "$PROJECT" || -z "$ENV_FILE" ]]; then
-  echo "Usage: $0 <doppler-project> <env-file>"
+  echo "Usage: $0 <doppler-project> <env-file> [config]"
   exit 1
 fi
 
@@ -31,7 +32,7 @@ while IFS= read -r line || [[ -n "$line" ]]; do
   value="${value%\'}"
 
   echo "  -> $key"
-  printf '%s' "$value" | doppler secrets set "$key" --project "$PROJECT" --config dev --no-interactive >/dev/null 2>&1 || true
+  printf '%s' "$value" | doppler secrets set "$key" --project "$PROJECT" --config "$CONFIG" --no-interactive >/dev/null 2>&1 || true
 done < "$ENV_FILE"
 
-echo "Done. Verify with: doppler secrets --project $PROJECT --config dev"
+echo "Done. Verify with: doppler secrets --project $PROJECT --config $CONFIG"
