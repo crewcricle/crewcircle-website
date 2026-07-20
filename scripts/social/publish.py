@@ -6,8 +6,10 @@ without using third-party scheduling tools. Runs on your laptop with cron or lau
 """
 
 import argparse
+import json
 import logging
 import os
+import subprocess
 import sys
 from datetime import datetime, timezone
 from pathlib import Path
@@ -50,9 +52,41 @@ def _substitute_env(data: Any) -> Any:
     return _resolve_env(data)
 
 
+def _load_doppler_secrets(config: dict[str, Any]) -> None:
+    project = config.get("doppler_project")
+    config_name = config.get("doppler_config", "prod")
+    if not project:
+        raise ValueError("doppler_project is required when secrets_source is 'doppler'")
+
+    try:
+        result = subprocess.run(
+            ["doppler", "secrets", "--json", "-p", project, "-c", config_name],
+            capture_output=True,
+            text=True,
+            check=True,
+        )
+    except FileNotFoundError as e:
+        raise RuntimeError(
+            "Doppler CLI not found. Install from https://docs.doppler.com/docs/install-cli "
+            "or use secrets_source: env with a .env file."
+        ) from e
+    except subprocess.CalledProcessError as e:
+        raise RuntimeError(f"Doppler CLI failed: {e.stderr}") from e
+
+    secrets = json.loads(result.stdout)
+    for key, meta in secrets.items():
+        value = meta.get("computed") or meta.get("raw")
+        if value is not None:
+            os.environ.setdefault(key, value)
+
+
 def _load_config(config_path: Path) -> dict[str, Any]:
     raw = _load_yaml(config_path)
-    return _substitute_env(raw)
+    config = _substitute_env(raw)
+    if config.get("secrets_source", "env") == "doppler":
+        _load_doppler_secrets(config)
+        config = _substitute_env(raw)
+    return config
 
 
 def _load_calendar(calendar_path: Path) -> list[dict[str, Any]]:

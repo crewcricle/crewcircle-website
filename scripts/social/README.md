@@ -42,7 +42,23 @@ scripts/social/
    ./scripts/social/.venv/bin/pip install requests requests-oauthlib pyyaml
    ```
 
-3. **Set environment variables for secrets** (recommended) or edit `secret/config.yaml` directly. Never commit `secret/`.
+3. **Choose how to store secrets.**
+
+   **Option A — Doppler (recommended for CrewCircle):**
+   - Install and authenticate the Doppler CLI: https://docs.doppler.com/docs/install-cli
+   - Create a project (e.g. `crew-circle-social`) and a `prod` config.
+   - Add your secrets there, then set in `secret/config.yaml`:
+     ```yaml
+     secrets_source: "doppler"
+     doppler_project: "crew-circle-social"
+     doppler_config: "prod"
+     ```
+   - The rest of the config can use `${ENV_VAR}` references; values are pulled from Doppler at runtime.
+
+   **Option B — Environment variables or `.env`:**
+   - Export secrets as environment variables or put them in `scripts/social/.env`.
+   - Keep `secrets_source: "env"` in `secret/config.yaml`.
+   - All values support `${ENV_VAR}` substitution.
 
 4. **Test in dry-run mode:**
 
@@ -94,7 +110,7 @@ scripts/social/
 ## Security notes
 
 - `scripts/social/secret/` is excluded from git via `.gitignore`.
-- Prefer environment variables for credentials. The config supports `${ENV_VAR}` substitution.
+- Prefer Doppler or environment variables for credentials. The config supports `${ENV_VAR}` substitution.
 - Store tokens in your system keychain if possible; the script does not manage keychain access.
 
 ## Adding a post

@@ -2,6 +2,13 @@
 # Copy this file to secret/config.yaml and fill in your real credentials.
 # Never commit secret/config.yaml.
 
+# Secrets source: "env" reads values from environment variables / .env file.
+# Set to "doppler" to pull secrets from a Doppler project instead.
+# If using Doppler, install the CLI and authenticate: https://docs.doppler.com/docs/install-cli
+secrets_source: "env"
+# doppler_project: "crew-circle-social"
+# doppler_config: "prod"
+
 substack:
   enabled: true
   # Substack publication slug, e.g. "prabhatranjan" for prabhatranjan.substack.com
