@@ -31,7 +31,7 @@ while IFS= read -r line || [[ -n "$line" ]]; do
   value="${value%\'}"
 
   echo "  -> $key"
-  printf '%s' "$value" | doppler secrets upload "$key" --project "$PROJECT" --config dev >/dev/null 2>&1 || true
+  printf '%s' "$value" | doppler secrets set "$key" --project "$PROJECT" --config dev --no-interactive >/dev/null 2>&1 || true
 done < "$ENV_FILE"
 
 echo "Done. Verify with: doppler secrets --project $PROJECT --config dev"
