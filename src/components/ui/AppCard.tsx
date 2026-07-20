@@ -1,7 +1,6 @@
 'use client';
 
 import Link from 'next/link';
-import Image from 'next/image';
 import type { AppDef } from '@/lib/config/apps';
 import { Timer, BookOpen, Camera, Wrench, Users, Calculator, ArrowRight, Download, ExternalLink } from 'lucide-react';
 import { Button } from '@/components/ui/button';
@@ -30,19 +29,6 @@ export default function AppCard({ app, compact = false }: AppCardProps) {
         <span className="absolute right-4 top-4 z-10 inline-flex items-center rounded-full bg-muted px-2.5 py-0.5 text-xs font-semibold text-muted-foreground">Beta</span>
       )}
       <div className="absolute top-0 left-0 right-0 h-0.5 bg-gradient-to-r from-accent/0 via-accent/40 to-accent/0 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-
-      {app.screenshot && !compact && (
-        <div className="relative -mx-6 -mt-6 mb-5 aspect-[16/10] overflow-hidden border-b border-border bg-muted">
-          <Image
-            src={app.screenshot}
-            alt={`${app.name} preview`}
-            fill
-            className="object-cover object-top"
-            sizes="(max-width: 768px) 100vw, 50vw"
-          />
-          <div className="absolute inset-0 bg-gradient-to-t from-card/80 via-transparent to-transparent" />
-        </div>
-      )}
 
       <div className={`flex items-center gap-4 ${compact ? 'mb-3' : 'mb-4'}`}>
         <div className={`bg-accent/10 text-accent rounded-xl flex items-center justify-center group-hover:bg-accent group-hover:text-accent-foreground transition-all duration-200 ${compact ? 'w-10 h-10' : 'w-12 h-12'}`}>

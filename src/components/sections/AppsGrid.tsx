@@ -1,8 +1,8 @@
 import { APPS } from '@/lib/config/apps';
 import AppCard from '@/components/ui/AppCard';
+import AppDemoTabs from '@/components/sections/AppDemoTabs';
 
 export default function AppsGrid() {
-  const liveApps = APPS.filter((app) => !app.beta);
   const betaApps = APPS.filter((app) => app.beta);
 
   return (
@@ -21,10 +21,8 @@ export default function AppsGrid() {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8">
-          {liveApps.map((app) => (
-            <AppCard key={app.slug} app={app} />
-          ))}
+        <div className="mb-16">
+          <AppDemoTabs />
         </div>
 
         <div className="mt-16 mb-10">
