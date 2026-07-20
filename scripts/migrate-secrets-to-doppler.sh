@@ -17,20 +17,21 @@ fi
 echo "Migrating secrets from $ENV_FILE to Doppler project: $PROJECT"
 
 while IFS= read -r line || [[ -n "$line" ]]; do
-  [[ "$line" =~ ^\s*# ]] && continue
-  [[ -z "${line// }" ]] && continue
+  [[ "$line" =~ ^[[:space:]]*# ]] && continue
+  [[ -z "${line// /}" ]] && continue
 
-  if [[ "$line" =~ ^([A-Za-z_][A-Za-z0-9_]*)=(.*)$ ]]; then
-    key="${BASH_REMATCH[1]}"
-    value="${BASH_REMATCH[2]}"
-    value="${value#\"}"
-    value="${value%\"}"
-    value="${value#\'}"
-    value="${value%\'}"
+  key="${line%%=*}"
+  value="${line#*=}"
 
-    echo "  -> $key"
-    printf '%s' "$value" | doppler secrets upload "$key" --project "$PROJECT" --config dev >/dev/null 2>&1 || true
-  fi
+  [[ -z "$key" || "$key" == "$line" ]] && continue
+
+  value="${value#\"}"
+  value="${value%\"}"
+  value="${value#\'}"
+  value="${value%\'}"
+
+  echo "  -> $key"
+  printf '%s' "$value" | doppler secrets upload "$key" --project "$PROJECT" --config dev >/dev/null 2>&1 || true
 done < "$ENV_FILE"
 
 echo "Done. Verify with: doppler secrets --project $PROJECT --config dev"
