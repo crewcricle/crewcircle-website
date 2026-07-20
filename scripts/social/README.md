@@ -46,11 +46,11 @@ scripts/social/
 
    **Option A — Doppler (recommended for CrewCircle):**
    - Install and authenticate the Doppler CLI: https://docs.doppler.com/docs/install-cli
-   - Create a project (e.g. `crew-circle-social`) and a `prod` config.
+   - Store social credentials in the shared `crewcircle-master` project so the same secrets are available to all CrewCircle components.
    - Add your secrets there, then set in `secret/config.yaml`:
      ```yaml
      secrets_source: "doppler"
-     doppler_project: "crew-circle-social"
+     doppler_project: "crewcircle-master"
      doppler_config: "prod"
      ```
    - The rest of the config can use `${ENV_VAR}` references; values are pulled from Doppler at runtime.

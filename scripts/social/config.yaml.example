@@ -6,7 +6,8 @@
 # Set to "doppler" to pull secrets from a Doppler project instead.
 # If using Doppler, install the CLI and authenticate: https://docs.doppler.com/docs/install-cli
 secrets_source: "env"
-# doppler_project: "crew-circle-social"
+# Shared Doppler project for all CrewCircle secrets (apps + social automation).
+# doppler_project: "crewcircle-master"
 # doppler_config: "prod"
 
 substack:
