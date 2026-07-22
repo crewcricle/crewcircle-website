@@ -3,7 +3,40 @@ import Link from 'next/link';
 import { Button } from '@/components/ui/button';
 import { FOUNDER } from '@/lib/config/founder';
 import { SOCIAL_ICONS } from '@/lib/config/social';
-import { MapPin } from 'lucide-react';
+import { MapPin, ShieldCheck, TrendingUp, UtensilsCrossed } from 'lucide-react';
+
+const FOUNDER_IMPACT = [
+  {
+    title: 'Healthcare Platform',
+    description: 'AI-powered clinical decision support that transformed healthcare delivery operations.',
+    metrics: [
+      { value: '83%', label: 'Subscription revenue growth' },
+      { value: '3×', label: 'Client capacity increase' },
+      { value: '76%', label: 'Infrastructure cost reduction' },
+    ],
+    icon: TrendingUp,
+  },
+  {
+    title: 'Financial Services',
+    description: 'Enterprise-grade analytics platform serving global investment firms with zero-downtime operations.',
+    metrics: [
+      { value: '400+', label: 'Funds managed' },
+      { value: '7', label: 'New ESG clients onboarded' },
+      { value: '0', label: 'Downtime incidents' },
+    ],
+    icon: ShieldCheck,
+  },
+  {
+    title: 'Tradie CrewRoster',
+    description: 'Replaced paper timesheets with GPS-tracked digital clock-ins for a 30-person construction crew.',
+    metrics: [
+      { value: '12', label: 'Hours saved per week' },
+      { value: '100%', label: 'Payroll accuracy' },
+      { value: '4.8★', label: 'Crew satisfaction' },
+    ],
+    icon: UtensilsCrossed,
+  },
+];
 
 export default function AboutSection() {
   return (
@@ -57,6 +90,54 @@ export default function AboutSection() {
             <p className="text-muted-foreground leading-relaxed">
               {FOUNDER.shortBio}
             </p>
+
+            {/* Engineering depth that scales - summarized into founder section */}
+            <div className="space-y-6 pt-6 border-t border-border">
+              <div className="flex items-center gap-3">
+                <div className="w-2 h-2 rounded-full bg-accent" />
+                <h4 className="text-lg font-semibold text-foreground">Engineering depth that scales</h4>
+              </div>
+              <p className="text-muted-foreground text-sm">
+                The same rigour applied to CrewCircle apps has delivered results for larger projects too.
+              </p>
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+                {FOUNDER_IMPACT.map((story) => {
+                  const Icon = story.icon;
+                  return (
+                    <div
+                      key={story.title}
+                      className="rounded-xl border border-border bg-card p-5 hover:shadow-md hover:border-accent/20 transition-all duration-200"
+                    >
+                      <div className="flex items-center gap-3 mb-3">
+                        <div className="w-9 h-9 rounded-lg bg-accent/10 flex items-center justify-center">
+                          <Icon className="w-4.5 h-4.5 text-accent" />
+                        </div>
+                        <h5 className="text-base font-bold text-foreground">
+                          {story.title}
+                        </h5>
+                      </div>
+
+                      <p className="text-muted-foreground text-sm leading-relaxed mb-4">
+                        {story.description}
+                      </p>
+
+                      <div className="grid grid-cols-3 gap-3">
+                        {story.metrics.map((metric) => (
+                          <div key={metric.label}>
+                            <div className="text-lg font-bold text-accent">
+                              {metric.value}
+                            </div>
+                            <div className="text-[11px] text-muted-foreground mt-0.5 leading-tight">
+                              {metric.label}
+                            </div>
+                          </div>
+                        ))}
+                      </div>
+                    </div>
+                  );
+                })}
+              </div>
+            </div>
           </div>
 
           <div className="lg:col-span-2 space-y-8">
