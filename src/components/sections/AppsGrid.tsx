@@ -6,7 +6,7 @@ import AppCard from '@/components/ui/AppCard';
 import AppDemoTabs from '@/components/sections/AppDemoTabs';
 import { Button } from '@/components/ui/button';
 import Link from 'next/link';
-import { ArrowRight } from 'lucide-react';
+import { ArrowRight, Clock } from 'lucide-react';
 
 const SOLUTIONS = [
   {
@@ -126,6 +126,11 @@ function SolutionsTabs() {
                   <li key={app.slug} className="flex items-center gap-2 text-sm text-muted-foreground">
                     <span className="w-1.5 h-1.5 rounded-full bg-accent shrink-0" />
                     {app.name} — {app.oneLiner}
+                    {app.beta && (
+                      <span className="ml-2 inline-flex items-center rounded-full bg-muted px-2 py-0.5 text-xs font-semibold text-muted-foreground">
+                        <Clock className="w-3 h-3 mr-1" /> Coming soon
+                      </span>
+                    )}
                   </li>
                 ) : null;
               })}
@@ -142,7 +147,19 @@ function SolutionsTabs() {
                   Try {app.name}
                   <ArrowRight className="w-4 h-4 ml-1" />
                 </Button>
-              ) : null;
+              ) : (
+                app?.beta && (
+                  <Button
+                    key={app.slug}
+                    variant="outline"
+                    className="w-full md:w-auto text-muted-foreground hover:text-muted-foreground/80"
+                    disabled
+                  >
+                    {app.name} — Coming soon
+                    <Clock className="w-4 h-4 ml-1" />
+                  </Button>
+                )
+              );
             })}
           </div>
 
