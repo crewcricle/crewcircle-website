@@ -10,11 +10,11 @@ export const CREWCIRCLE_SOCIAL = {
 
 export const SOCIAL_BIOS = {
   linkedin:
-    'AI consultancy that sorts your small biz. Practical tools for rostering, bookkeeping, and compliance — built by Prabhat Ranjan (ex-Canva, JPMorgan, MSCI). Based in Sydney, serving Australian businesses.',
+    'AI consultancy that sorts your small biz. Practical tools for rostering, bookkeeping, and compliance - built by Prabhat Ranjan (ex-Canva, JPMorgan, MSCI). Based in Sydney, serving Australian businesses.',
   twitter:
     'Building AI tools for Aussie small biz. No hype, no enterprise BS. Just software that works. By @prabhatranjann | crewcircle.co',
   instagram:
-    'Practical AI for Australian small businesses. No jargon, no enterprise nonsense — just real software that works. Built by @prabhatranjan in Sydney.',
+    'Practical AI for Australian small businesses. No jargon, no enterprise nonsense - just real software that works. Built by @prabhatranjan in Sydney.',
   youtube:
     'Building practical AI tools for Australian businesses. Product demos, tutorials, and behind-the-scenes of a solo AI consultancy. No hype, just real software.',
   substack:

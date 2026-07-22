@@ -6,19 +6,28 @@ import AppCard from '@/components/ui/AppCard';
 import AppDemoTabs from '@/components/sections/AppDemoTabs';
 import { Button } from '@/components/ui/button';
 import Link from 'next/link';
-import { ArrowRight, Clock } from 'lucide-react';
+import { ArrowRight, Timer, BookOpen, Camera, Wrench, Users, Calculator } from 'lucide-react';
+
+const appIcons: Record<string, React.ReactNode> = {
+  Timer: <Timer className="w-6 h-6" />,
+  BookOpen: <BookOpen className="w-6 h-6" />,
+  Camera: <Camera className="w-6 h-6" />,
+  Wrench: <Wrench className="w-6 h-6" />,
+  Users: <Users className="w-6 h-6" />,
+  Calculator: <Calculator className="w-6 h-6" />,
+};
 
 const SOLUTIONS = [
   {
     id: 'tradies',
     label: 'Tradies',
-    description: 'Rostering, invoicing, BAS, award compliance — all sorted.',
+    description: 'Rostering, invoicing, BAS, award compliance - all sorted.',
     apps: ['crewroster', 'taxflowai'],
   },
   {
     id: 'cafes',
-    label: 'Cafés & Hospitality',
-    description: 'Review replies, local SEO, rebooking, menu sync — hands off.',
+    label: 'Cafes & Hospitality',
+    description: 'Review replies, local SEO, rebooking, menu sync - hands off.',
     apps: ['localmate'],
   },
   {
@@ -111,61 +120,67 @@ function SolutionsTabs() {
       </div>
 
       <div className="p-6 md:p-8">
-        <div className="grid md:grid-cols-2 gap-0">
-          <div className="p-6 md:p-8 flex flex-col justify-center">
-            <h4 className="text-2xl font-bold text-foreground mb-2">
-              {SOLUTIONS.find(s => s.id === active)?.label}
-            </h4>
-            <p className="text-accent font-medium mb-4">
-              {SOLUTIONS.find(s => s.id === active)?.description}
-            </p>
-            <ul className="space-y-2 mb-6">
-              {SOLUTIONS.find(s => s.id === active)?.apps.map((appSlug) => {
-                const app = APPS.find(a => a.slug === appSlug);
+        <div className="grid md:grid-cols-2 gap-8">
+          <div className="space-y-6">
+            <div>
+              <h4 className="text-2xl font-bold text-foreground mb-2">
+                {SOLUTIONS.find((s) => s.id === active)?.label}
+              </h4>
+              <p className="text-accent font-medium mb-6">
+                {SOLUTIONS.find((s) => s.id === active)?.description}
+              </p>
+            </div>
+
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+              {SOLUTIONS.find((s) => s.id === active)?.apps.map((appSlug) => {
+                const app = APPS.find((a) => a.slug === appSlug);
                 return app ? (
-                  <li key={app.slug} className="flex items-center gap-2 text-sm text-muted-foreground">
-                    <span className="w-1.5 h-1.5 rounded-full bg-accent shrink-0" />
-                    {app.name} — {app.oneLiner}
-                    {app.beta && (
-                      <span className="ml-2 inline-flex items-center rounded-full bg-muted px-2 py-0.5 text-xs font-semibold text-muted-foreground">
-                        <Clock className="w-3 h-3 mr-1" /> Coming soon
-                      </span>
+                  <div
+                    key={app.slug}
+                    className="flex items-center gap-4 p-4 bg-muted/50 rounded-xl border border-border hover:border-accent/20 transition-colors"
+                  >
+                    <div className="bg-accent/10 text-accent rounded-xl flex items-center justify-center w-12 h-12 shrink-0">
+                      {appIcons[app.icon] || <Wrench className="w-6 h-6" />}
+                    </div>
+                    <div className="flex-1 min-w-0">
+                      <h5 className="font-semibold text-foreground truncate">{app.name}</h5>
+                      <p className="text-sm text-muted-foreground truncate">{app.oneLiner}</p>
+                      {app.beta && (
+                        <span className="inline-flex items-center rounded-full bg-muted px-2 py-0.5 text-xs font-semibold text-muted-foreground mt-1">
+                          <Timer className="w-3 h-3 mr-1" /> Coming soon
+                        </span>
+                      )}
+                    </div>
+                    {app.links.web ? (
+                      <Button
+                        variant="default"
+                        size="sm"
+                        className="shrink-0 hover:bg-accent hover:text-accent-foreground"
+                        render={<Link href={app.links.web} />}
+                      >
+                        Try
+                        <ArrowRight className="w-3.5 h-3.5 ml-1" />
+                      </Button>
+                    ) : (
+                      <Button
+                        variant="outline"
+                        size="sm"
+                        className="shrink-0 text-muted-foreground hover:text-muted-foreground/80"
+                        disabled
+                      >
+                        {app.name} - Coming soon
+                        <Timer className="w-3.5 h-3.5 ml-1" />
+                      </Button>
                     )}
-                  </li>
+                  </div>
                 ) : null;
               })}
-            </ul>
-            {SOLUTIONS.find(s => s.id === active)?.apps.map((appSlug) => {
-              const app = APPS.find(a => a.slug === appSlug);
-              return app?.links.web ? (
-                <Button
-                  key={app.slug}
-                  variant="default"
-                  className="w-full md:w-auto hover:bg-accent hover:text-accent-foreground"
-                  render={<Link href={app.links.web} />}
-                >
-                  Try {app.name}
-                  <ArrowRight className="w-4 h-4 ml-1" />
-                </Button>
-              ) : (
-                app?.beta && (
-                  <Button
-                    key={app.slug}
-                    variant="outline"
-                    className="w-full md:w-auto text-muted-foreground hover:text-muted-foreground/80"
-                    disabled
-                  >
-                    {app.name} — Coming soon
-                    <Clock className="w-4 h-4 ml-1" />
-                  </Button>
-                )
-              );
-            })}
+            </div>
           </div>
 
-          <div className="relative aspect-video bg-gradient-to-br from-accent/10 to-primary/10 border-l border-border flex items-center justify-center">
+          <div className="relative aspect-video bg-gradient-to-br from-accent/10 to-primary/10 border border-border rounded-xl flex items-center justify-center">
             <span className="text-muted-foreground text-sm">
-              {SOLUTIONS.find(s => s.id === active)?.label} preview
+              {SOLUTIONS.find((s) => s.id === active)?.label} apps preview
             </span>
           </div>
         </div>

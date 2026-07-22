@@ -31,7 +31,7 @@ export const APPS: AppDef[] = [
       web: 'https://taxflow.crewcircle.com.au',
     },
     description:
-      'AI research assistant built for Australian tax professionals and accounting firms. Ask ATO questions in plain English and get cited answers drawn from public rulings, tax determinations, and legislation. Upload an ATO letter and get a drafted response, generate firm-branded documents, and build a private knowledge base from your own precedents. Every answer shows its sources.',
+      'AI research assistant for Australian tax professionals. Ask ATO questions in plain English, get cited answers from public rulings and legislation. Upload an ATO letter for a drafted response, generate firm-branded documents, build a private knowledge base.',
     featured: true,
   },
   {
@@ -46,7 +46,7 @@ export const APPS: AppDef[] = [
       web: 'https://localmate.crewcircle.com.au',
     },
     description:
-      'Local business automation for Australian SMBs. One dashboard runs five AI jobs: Review Guard drafts replies to Google and Yelp reviews; Rank Report tracks your local SEO weekly; Competitor Watch keeps an eye on nearby rivals; Rebook follows up lapsed customers by SMS and email; Menu Sync pushes updates from Google Sheets to Google Business Profile and Square. Built to save hours every week.',
+      'One dashboard runs five AI jobs: Review Guard drafts replies to Google and Yelp reviews; Rank Report tracks local SEO weekly; Competitor Watch monitors nearby rivals; Rebook follows up lapsed customers by SMS and email; Menu Sync pushes updates from Google Sheets to Google Business Profile and Square.',
     featured: true,
   },
   {
@@ -61,7 +61,7 @@ export const APPS: AppDef[] = [
       web: 'https://roster.crewcircle.com.au',
     },
     description:
-      'Digital rostering and timesheets for shift-based crews. Schedule shifts, record GPS clock-in and clock-out, and export hours for payroll. Built for Aussie cafes, shops, and tradies. Free for up to 5 employees; paid plans scale per employee.',
+      'Digital rostering and timesheets for shift-based crews. Schedule shifts, record GPS clock-in and clock-out, export hours for payroll. Built for Aussie cafes, shops, and tradies. Free for up to 5 employees; paid plans scale per employee.',
     featured: false,
   },
   {
