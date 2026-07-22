@@ -48,32 +48,22 @@ export default function AppDemoTabs() {
         ))}
       </div>
 
-      <div className="grid md:grid-cols-2 gap-0">
-        <div className="relative aspect-video bg-muted border-b md:border-b-0 md:border-r border-border">
+      <div className="grid lg:grid-cols-3 gap-0">
+        <div className="lg:col-span-2 relative aspect-[4/3] lg:aspect-video bg-muted">
           <Image
             src={activeDemo.gif}
             alt={`${app.name} demo`}
             fill
             unoptimized
-            className="object-cover object-top"
-            sizes="(max-width: 768px) 100vw, 50vw"
+            className="object-cover object-center"
+            sizes="(max-width: 768px) 100vw, 66vw"
+            priority
           />
         </div>
 
-        <div className="p-6 md:p-8 flex flex-col justify-center">
+        <div className="p-6 lg:p-8 flex flex-col justify-center">
           <h3 className="text-2xl font-bold text-foreground mb-2">{app.name}</h3>
-          <p className="text-accent font-medium mb-4">{app.oneLiner}</p>
-          <p className="text-muted-foreground leading-relaxed mb-6">
-            {app.description}
-          </p>
-          <ul className="space-y-2 mb-6">
-            {app.features.slice(0, 4).map((f) => (
-              <li key={f} className="flex items-center gap-2 text-sm text-muted-foreground">
-                <span className="w-1.5 h-1.5 rounded-full bg-accent shrink-0" />
-                {f}
-              </li>
-            ))}
-          </ul>
+          <p className="text-accent font-medium mb-3">{app.oneLiner}</p>
           {app.links.web && (
             <Button
               variant="default"

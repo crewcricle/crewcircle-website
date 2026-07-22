@@ -120,27 +120,28 @@ function SolutionsTabs() {
                       <h5 className="font-semibold text-foreground truncate text-sm">{app.name}</h5>
                       <p className="text-xs text-muted-foreground truncate">{app.oneLiner}</p>
                     </div>
-                    {app.links.web ? (
-                      <Button
-                        variant="default"
-                        size="sm"
-                        className="shrink-0 hover:bg-accent hover:text-accent-foreground"
-                        render={<Link href={app.links.web} />}
-                      >
-                        Try
-                        <ArrowRight className="w-3.5 h-3.5 ml-1" />
-                      </Button>
-                    ) : (
-                      <Button
-                        variant="outline"
-                        size="sm"
-                        className="shrink-0 text-muted-foreground hover:text-muted-foreground/80"
-                        disabled
-                      >
-                        Coming soon
-                        <Timer className="w-3.5 h-3.5 ml-1" />
-                      </Button>
-                    )}
+{app.links.web ? (
+                        <Button
+                          variant="default"
+                          size="sm"
+                          className="shrink-0 hover:bg-accent hover:text-accent-foreground"
+                          render={<Link href={app.links.web} />}
+                          title={`Try ${app.name} - ${app.oneLiner}`}
+                        >
+                          Try {app.name}
+                          <ArrowRight className="w-3.5 h-3.5 ml-1" />
+                        </Button>
+                      ) : (
+                        <Button
+                          variant="outline"
+                          size="sm"
+                          className="shrink-0 text-muted-foreground hover:text-muted-foreground/80"
+                          disabled
+                        >
+                          Beta
+                          <Timer className="w-3.5 h-3.5 ml-1" />
+                        </Button>
+                      )}
                   </div>
                 ) : null;
               })}

@@ -3,7 +3,7 @@ import Link from 'next/link';
 import { Button } from '@/components/ui/button';
 import { FOUNDER } from '@/lib/config/founder';
 import { SOCIAL_ICONS } from '@/lib/config/social';
-import { MapPin, ShieldCheck, TrendingUp, UtensilsCrossed } from 'lucide-react';
+import { MapPin, ShieldCheck, TrendingUp } from 'lucide-react';
 
 const FOUNDER_IMPACT = [
   {
@@ -25,16 +25,6 @@ const FOUNDER_IMPACT = [
       { value: '0', label: 'Downtime incidents' },
     ],
     icon: ShieldCheck,
-  },
-  {
-    title: 'Tradie CrewRoster',
-    description: 'Replaced paper timesheets with GPS-tracked digital clock-ins for a 30-person construction crew.',
-    metrics: [
-      { value: '12', label: 'Hours saved per week' },
-      { value: '100%', label: 'Payroll accuracy' },
-      { value: '4.8★', label: 'Crew satisfaction' },
-    ],
-    icon: UtensilsCrossed,
   },
 ];
 
