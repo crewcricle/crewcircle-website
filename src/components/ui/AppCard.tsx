@@ -123,7 +123,7 @@ export default function AppCard({ app, compact = false }: AppCardProps) {
             className="w-full"
             disabled
           >
-            Coming soon
+            Beta
           </Button>
         )}
       </div>
