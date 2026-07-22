@@ -80,9 +80,10 @@ export default function AboutSection() {
             <p className="text-muted-foreground leading-relaxed">
               {FOUNDER.shortBio}
             </p>
+          </div>
 
-            {/* Engineering depth that scales - summarized into founder section */}
-            <div className="space-y-6 pt-6 border-t border-border">
+          <div className="lg:col-span-2 space-y-8">
+            <div className="space-y-6 pt-6 border-t border-border lg:border-t-0 lg:border-l lg:pl-8">
               <div className="flex items-center gap-3">
                 <div className="w-2 h-2 rounded-full bg-accent" />
                 <h4 className="text-lg font-semibold text-foreground">Engineering depth that scales</h4>
@@ -90,7 +91,7 @@ export default function AboutSection() {
               <p className="text-muted-foreground text-sm">
                 The same rigour applied to CrewCircle apps has delivered results for larger projects too.
               </p>
-              <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                 {FOUNDER_IMPACT.map((story) => {
                   const Icon = story.icon;
                   return (
@@ -126,31 +127,6 @@ export default function AboutSection() {
                     </div>
                   );
                 })}
-              </div>
-            </div>
-          </div>
-
-          <div className="lg:col-span-2 space-y-8">
-            <div className="rounded-xl border border-border bg-accent/5 p-6">
-              <h4 className="text-sm font-semibold text-foreground uppercase tracking-wider mb-3">
-                Follow crew circle
-              </h4>
-              <p className="text-sm text-muted-foreground mb-4 leading-relaxed">
-                Get the latest updates, insights, and behind-the-scenes content from our crew circle journey.
-              </p>
-              <div className="flex flex-wrap gap-2">
-                {SOCIAL_ICONS.map(({ href, icon, label }) => (
-                  <Button
-                    key={label}
-                    variant="ghost"
-                    size="icon"
-                    className="text-muted-foreground hover:text-foreground hover:bg-accent/10"
-                    aria-label={label}
-                    render={<Link href={href} target="_blank" rel="noopener noreferrer" />}
-                  >
-                    {icon('w-5 h-5')}
-                  </Button>
-                ))}
               </div>
             </div>
           </div>

@@ -109,40 +109,24 @@ function SolutionsTabs() {
               {sol.apps.map((appSlug) => {
                 const app = APPS.find((a) => a.slug === appSlug);
                 return app ? (
-                  <div
+                  <Link
                     key={app.slug}
-                    className="flex items-center gap-3 p-3 bg-background rounded-lg border border-border"
+                    href={app.links.web || '#'}
+                    className="flex flex-col gap-3 p-3 bg-background rounded-lg border border-border hover:border-accent/20 transition-all duration-200"
+                    target={app.links.web ? '_blank' : undefined}
+                    rel={app.links.web ? 'noopener noreferrer' : undefined}
                   >
-                    <div className="bg-accent/10 text-accent rounded-lg flex items-center justify-center w-10 h-10 shrink-0">
+                    <div className="bg-accent/10 text-accent rounded-lg flex items-center justify-center w-12 h-12 shrink-0">
                       {appIcons[app.icon] || <Wrench className="w-5 h-5" />}
                     </div>
                     <div className="flex-1 min-w-0">
                       <h5 className="font-semibold text-foreground truncate text-sm">{app.name}</h5>
                       <p className="text-xs text-muted-foreground truncate">{app.oneLiner}</p>
+                      <p className="text-[11px] text-muted-foreground/80 leading-relaxed">
+                        {app.description}
+                      </p>
                     </div>
-{app.links.web ? (
-                        <Button
-                          variant="default"
-                          size="sm"
-                          className="shrink-0 hover:bg-accent hover:text-accent-foreground"
-                          render={<Link href={app.links.web} />}
-                          title={`Try ${app.name} - ${app.oneLiner}`}
-                        >
-                          Try {app.name}
-                          <ArrowRight className="w-3.5 h-3.5 ml-1" />
-                        </Button>
-                      ) : (
-                        <Button
-                          variant="outline"
-                          size="sm"
-                          className="shrink-0 text-muted-foreground hover:text-muted-foreground/80"
-                          disabled
-                        >
-                          Beta
-                          <Timer className="w-3.5 h-3.5 ml-1" />
-                        </Button>
-                      )}
-                  </div>
+                  </Link>
                 ) : null;
               })}
             </div>

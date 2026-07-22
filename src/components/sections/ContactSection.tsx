@@ -1,12 +1,13 @@
 import Link from 'next/link';
 import { Calendar, ExternalLink, Mail, Phone } from 'lucide-react';
 import { FOUNDER } from '@/lib/config/founder';
+import { SOCIAL_ICONS } from '@/lib/config/social';
 import ContactForm from '@/components/ContactForm';
 import { Button } from '@/components/ui/button';
 
 export default function ContactSection() {
   return (
-      <section id="contact" className="py-24 md:py-32 px-6 bg-background">
+    <section id="contact" className="py-24 md:py-32 px-6 bg-background">
       <div className="max-w-7xl mx-auto">
         <div className="max-w-2xl mx-auto text-center mb-12">
           <span className="text-xs font-semibold tracking-widest uppercase text-accent mb-3 block">
@@ -77,6 +78,29 @@ export default function ContactSection() {
                 <p className="text-muted-foreground pt-1">
                   ABN 86 699 000 5064
                 </p>
+              </div>
+
+              <div className="mt-8 pt-8 border-t border-border">
+                <h4 className="text-sm font-semibold text-foreground uppercase tracking-wider mb-3">
+                  Follow crew circle
+                </h4>
+                <p className="text-sm text-muted-foreground mb-4 leading-relaxed">
+                  Get the latest updates, insights, and behind-the-scenes content from our crew circle journey.
+                </p>
+                <div className="flex flex-wrap gap-2">
+                  {SOCIAL_ICONS.map(({ href, icon, label }) => (
+                    <Button
+                      key={label}
+                      variant="ghost"
+                      size="icon"
+                      className="text-muted-foreground hover:text-foreground hover:bg-accent/10"
+                      aria-label={label}
+                      render={<Link href={href} target="_blank" rel="noopener noreferrer" />}
+                    >
+                      {icon('w-5 h-5')}
+                    </Button>
+                  ))}
+                </div>
               </div>
             </div>
           </div>

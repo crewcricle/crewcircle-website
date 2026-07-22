@@ -64,6 +64,15 @@ export default function AppDemoTabs() {
         <div className="p-6 lg:p-8 flex flex-col justify-center">
           <h3 className="text-2xl font-bold text-foreground mb-2">{app.name}</h3>
           <p className="text-accent font-medium mb-3">{app.oneLiner}</p>
+          <p className="text-muted-foreground leading-relaxed mb-4">{app.description}</p>
+          <ul className="space-y-2 mb-6">
+            {app.features.slice(0, 4).map((f) => (
+              <li key={f} className="flex items-center gap-2 text-sm text-muted-foreground">
+                <span className="w-1.5 h-1.5 rounded-full bg-accent shrink-0" />
+                {f}
+              </li>
+            ))}
+          </ul>
           {app.links.web && (
             <Button
               variant="default"
