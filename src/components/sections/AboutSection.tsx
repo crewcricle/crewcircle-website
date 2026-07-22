@@ -45,8 +45,8 @@ export default function AboutSection() {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-5 gap-12">
-          <div className="lg:col-span-3 space-y-8">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
+          <div className="space-y-8">
             <div className="flex items-start gap-5">
               <div className="relative w-20 h-20 rounded-full overflow-hidden bg-gradient-to-br from-accent/10 to-primary/10 border-2 border-accent/20 flex-shrink-0">
                 <Image
@@ -82,8 +82,8 @@ export default function AboutSection() {
             </p>
           </div>
 
-          <div className="lg:col-span-2 space-y-8">
-            <div className="space-y-6 pt-6 border-t border-border lg:border-t-0 lg:border-l lg:pl-8">
+          <div className="space-y-8">
+            <div className="space-y-6 pt-6 border-t border-border">
               <div className="flex items-center gap-3">
                 <div className="w-2 h-2 rounded-full bg-accent" />
                 <h4 className="text-lg font-semibold text-foreground">Engineering depth that scales</h4>

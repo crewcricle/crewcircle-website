@@ -25,9 +25,9 @@ export default function ContactSection() {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-5 gap-8 max-w-5xl mx-auto">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 max-w-5xl mx-auto">
           {/* Calendar booking */}
-          <div className="lg:col-span-2 order-2 lg:order-1">
+          <div>
             <div className="rounded-xl border border-border bg-muted/30 p-6 h-full">
               <div className="flex items-center gap-3 mb-4">
                 <div className="w-10 h-10 rounded-lg bg-accent/10 flex items-center justify-center">
@@ -106,7 +106,7 @@ export default function ContactSection() {
           </div>
 
           {/* Contact form */}
-          <div className="lg:col-span-3 order-1 lg:order-2">
+          <div>
             <ContactForm />
           </div>
         </div>

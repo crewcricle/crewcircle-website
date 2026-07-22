@@ -97,33 +97,41 @@ export default function AppsGrid() {
 function SolutionsTabs() {
   return (
     <div className="bg-card border border-border rounded-xl overflow-hidden p-6 md:p-8">
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+      <div className="grid grid-cols-1 lg:grid-cols-4 gap-6">
         {SOLUTIONS.map((sol) => (
           <div
             key={sol.id}
             className="bg-muted/50 border border-border rounded-xl p-6 hover:border-accent/20 hover:shadow-md transition-all duration-200 flex flex-col"
           >
             <h4 className="text-lg font-bold text-foreground mb-2">{sol.label}</h4>
-            <p className="text-accent font-medium mb-4 text-sm">{sol.description}</p>
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 flex-1">
+            <p className="text-accent font-medium mb-6 text-sm">{sol.description}</p>
+            <div className="flex flex-wrap gap-3 flex-1">
               {sol.apps.map((appSlug) => {
                 const app = APPS.find((a) => a.slug === appSlug);
                 return app ? (
                   <Link
                     key={app.slug}
                     href={app.links.web || '#'}
-                    className="flex flex-col gap-3 p-3 bg-background rounded-lg border border-border hover:border-accent/20 transition-all duration-200"
+                    className="flex flex-col gap-2 min-w-[140px] flex-1 p-3 bg-background rounded-lg border border-border hover:border-accent/20 transition-all duration-200"
                     target={app.links.web ? '_blank' : undefined}
                     rel={app.links.web ? 'noopener noreferrer' : undefined}
                   >
-                    <div className="bg-accent/10 text-accent rounded-lg flex items-center justify-center w-12 h-12 shrink-0">
+                    <div className="bg-accent/10 text-accent rounded-lg flex items-center justify-center w-10 h-10 shrink-0">
                       {appIcons[app.icon] || <Wrench className="w-5 h-5" />}
                     </div>
                     <div className="flex-1 min-w-0">
                       <h5 className="font-semibold text-foreground truncate text-sm">{app.name}</h5>
-                      <p className="text-xs text-muted-foreground truncate">{app.oneLiner}</p>
-                      <p className="text-[11px] text-muted-foreground/80 leading-relaxed">
-                        {app.description}
+                      <p className="text-xs text-muted-foreground/80 leading-relaxed">
+                        {sol.apps.length > 1 
+                          ? (sol.id === 'tradies' && app.slug === 'taxflowai') ? 'ATO tax research & compliance'
+                            : (sol.id === 'tradies' && app.slug === 'crewroster') ? 'Shift scheduling & GPS timesheets'
+                            : (sol.id === 'clinics' && app.slug === 'taxflowai') ? 'ATO compliance & BAS help'
+                            : (sol.id === 'clinics' && app.slug === 'crewroster') ? 'Shift scheduling & compliance'
+                            : (sol.id === 'clinics' && app.slug === 'localmate') ? 'Review replies & local SEO'
+                            : (sol.id === 'retail' && app.slug === 'crewroster') ? 'Staff rostering & costs'
+                            : (sol.id === 'retail' && app.slug === 'localmate') ? 'Review replies & local visibility'
+                            : app.oneLiner
+                          : app.oneLiner}
                       </p>
                     </div>
                   </Link>
