@@ -2,11 +2,10 @@ export const NAV_ITEMS = [
   { label: 'Our Apps', href: '/#apps', hasDropdown: false },
   { label: 'Services', href: '/#services', hasDropdown: false },
   { label: 'Why CrewCircle', href: '/#proof', hasDropdown: false },
-  { label: 'About', href: '/#about', hasDropdown: false },
-  { label: 'Solutions', href: '/solutions', hasDropdown: false },
-  { label: 'Locations', href: '/locations', hasDropdown: false },
+  { label: 'Solutions', href: '/#apps', hasDropdown: false },
   { label: 'Pricing', href: '/pricing', hasDropdown: false },
   { label: 'Blog', href: '/blog', hasDropdown: false },
+  { label: 'About', href: '/#about', hasDropdown: false },
   { label: 'Contact', href: '/#contact', hasDropdown: false },
 ];
 

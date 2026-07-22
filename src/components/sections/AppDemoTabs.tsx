@@ -10,17 +10,17 @@ import { Button } from '@/components/ui/button';
 const demos = [
   {
     slug: 'taxflowai',
-    gif: '/demos/taxflowai-demo-v2.gif',
+    gif: '/demos/taxflowai-demo.gif',
     label: 'TaxFlowAI',
   },
   {
     slug: 'localmate',
-    gif: '/demos/localmate-demo-v2.gif',
+    gif: '/demos/localmate-demo.gif',
     label: 'LocalMate',
   },
   {
     slug: 'crewroster',
-    gif: '/demos/crewroster-demo-v2.gif',
+    gif: '/demos/crewroster-demo.gif',
     label: 'CrewRoster',
   },
 ];
