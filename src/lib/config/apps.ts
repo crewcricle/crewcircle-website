@@ -20,7 +20,7 @@ export interface AppDef {
 
 export const APPS: AppDef[] = [
   {
-    name: 'TaxFlowAI',
+    name: 'TaxFlow',
     slug: 'taxflowai',
     oneLiner: 'ATO tax research, done.',
     features: ['Cited ATO answers', 'ATO letter response drafting', 'Firm knowledge base', 'Document generation'],

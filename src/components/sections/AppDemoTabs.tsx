@@ -6,22 +6,26 @@ import Link from 'next/link';
 import { APPS } from '@/lib/config/apps';
 import { ArrowRight } from 'lucide-react';
 import { Button } from '@/components/ui/button';
+import { Calculator, Users, Timer } from 'lucide-react';
 
 const demos = [
   {
     slug: 'taxflowai',
     gif: '/demos/taxflowai-demo.gif',
-    label: 'TaxFlowAI',
+    label: 'TaxFlow',
+    icon: Calculator,
   },
   {
     slug: 'localmate',
     gif: '/demos/localmate-demo.gif',
     label: 'LocalMate',
+    icon: Users,
   },
   {
     slug: 'crewroster',
     gif: '/demos/crewroster-demo.gif',
     label: 'CrewRoster',
+    icon: Timer,
   },
 ];
 
@@ -37,12 +41,13 @@ export default function AppDemoTabs() {
           <button
             key={demo.slug}
             onClick={() => setActive(demo.slug)}
-            className={`flex-1 px-4 py-3 text-sm font-semibold transition-colors ${
+            className={`flex-1 px-4 py-3 text-sm font-semibold transition-colors flex items-center gap-2 ${
               active === demo.slug
                 ? 'bg-accent text-accent-foreground'
                 : 'text-muted-foreground hover:bg-muted'
             }`}
           >
+            <demo.icon className="w-4 h-4" />
             {demo.label}
           </button>
         ))}
